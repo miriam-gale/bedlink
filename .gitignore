@@ -1,0 +1,34 @@
+# Environment variables and private settings
+config/.env
+.env
+
+# Dependencies
+/vendor/
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+storage/*
+!storage/.gitkeep
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor settings
+.vscode/
+
+# Cache files
+/cache/
+/tmp/
+
+# PHP session files
+*.sess
+
+# Test and debug output
+error_log
