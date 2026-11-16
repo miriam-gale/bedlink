@@ -9,3 +9,6 @@ echo '<p>' . t('help.button') . '</p>';
 echo '<p>' . t('this.key.does.not.exist') . '</p>';
 echo '<p>Language now: ' . currentLang() . '</p>';
 echo '<p><a href="?lang=en">English</a> · <a href="?lang=tw">Twi</a></p>';
+
+echo '<link rel="stylesheet" href="/bedlink/assets/css/style.css">';
+echo '<script src="/bedlink/assets/js/app.js"></script>';
