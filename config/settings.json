@@ -1,0 +1,11 @@
+{
+  "app_name": "BedLink Ghana",
+  "default_lang": "en",
+  "languages": ["en", "tw", "gaa", "ee"],
+  "session_idle_minutes": 15,
+  "login_max_failures": 5,
+  "login_lockout_minutes": 15,
+  "otp_expiry_minutes": 5,
+  "otp_max_attempts": 3,
+  "min_password_length": 8
+}
