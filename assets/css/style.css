@@ -12,6 +12,7 @@
 
     /* Status colours */
     --red: #C62828;
+    --red-soft: #FDECEC;
     --green: #168A52;
     --orange: #C47A00;
     --grey: #625B73;
@@ -63,6 +64,30 @@ body {
     padding: 16px;
 }
 
+/* Shared Form Inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+input[type="datetime-local"],
+select,
+textarea {
+    width: 100%;
+    min-height: var(--tap);
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text);
+    font: 16px/1.4 var(--font);
+}
+
+textarea {
+    min-height: 96px;
+    resize: vertical;
+}
 
 /* =========================================
    SECTION 3: CARDS
@@ -155,7 +180,7 @@ body {
 ========================================= */
 
 /* Visible keyboard focus */
-:let's  {
+:focus-visible {
     outline: 3px solid var(--blue);
     outline-offset: 2px;
 }
