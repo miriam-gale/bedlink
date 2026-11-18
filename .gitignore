@@ -32,3 +32,6 @@ desktop.ini
 
 # Test and debug output
 error_log
+config/.env
+storage/*
+!storage/.gitkeep
