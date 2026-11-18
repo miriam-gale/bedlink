@@ -1,4 +1,3 @@
-
 /* =========================================
    SECTION 1: BEDLINK DESIGN TOKENS
    Colours, typography and shared dimensions
@@ -8,32 +7,30 @@
     /* Primary brand colours */
     --blue: #4B168C;
     --blue-dark: #32105F;
-   --teal: #0F766E;
-
+    --teal: #0F766E;
     /* Status colours */
     --red: #C62828;
     --red-soft: #FDECEC;
     --green: #168A52;
     --orange: #C47A00;
     --grey: #625B73;
-
     /* Background and text colours */
     --bg: #F4F0FF;
     --card: #FFFFFF;
     --text: #171329;
     --muted: #625B73;
     --border: #E5DDF2;
-
     /* Layout */
     --radius: 14px;
     --tap: 44px;
-
     /* Typography */
     --font: 'Inter', system-ui, sans-serif;
     --display: 'Space Grotesk', var(--font);
 }
 
+
 /* Ambulance Mode: dark theme */
+
 body.dark {
     --bg: #111827;
     --card: #1E293B;
@@ -43,7 +40,6 @@ body.dark {
     --tap: 56px;
     --blue: #7C3AED;
 }
-
 
 
 /* =========================================
@@ -57,14 +53,18 @@ body {
     font: 16px/1.5 var(--font);
 }
 
+
 /* Main content container */
+
 .container {
     max-width: 1100px;
     margin: 0 auto;
     padding: 16px;
 }
 
+
 /* Shared Form Inputs */
+
 input[type="text"],
 input[type="email"],
 input[type="password"],
@@ -88,6 +88,7 @@ textarea {
     min-height: 96px;
     resize: vertical;
 }
+
 
 /* =========================================
    SECTION 3: CARDS
@@ -116,21 +117,27 @@ textarea {
     cursor: pointer;
 }
 
+
 /* Main purple button */
+
 .btn--primary {
     background: var(--blue);
     color: #FFFFFF;
     border: 0;
 }
 
+
 /* Emergency or destructive button */
+
 .btn--danger {
     background: var(--red);
     color: #FFFFFF;
     border: 0;
 }
 
+
 /* Teal secondary action */
+
 .btn--secondary {
     background: var(--teal);
     color: #FFFFFF;
@@ -142,25 +149,33 @@ textarea {
    SECTION 5: BED AVAILABILITY INDICATORS
 ========================================= */
 
+
 /* Three or more beds available */
+
 .badge--free {
     background: #E3F2E9;
     color: #14532D;
 }
 
+
 /* One or two beds available */
+
 .badge--few {
     background: #FDF0E1;
     color: #7A3E00;
 }
 
+
 /* No beds available */
+
 .badge--none {
     background: #EEF1F4;
     color: #374151;
 }
 
+
 /* Individual bed status */
+
 .bed--free {
     border-color: var(--green);
 }
@@ -179,13 +194,17 @@ textarea {
    SECTION 6: ACCESSIBILITY & RESPONSIVENESS
 ========================================= */
 
+
 /* Visible keyboard focus */
+
 :focus-visible {
     outline: 3px solid var(--blue);
     outline-offset: 2px;
 }
 
+
 /* Two-column layout on larger screens */
+
 @media (min-width: 768px) {
     .grid-2 {
         display: grid;
@@ -194,18 +213,18 @@ textarea {
     }
 }
 
+
 /* Smaller screens */
+
 @media (max-width: 767px) {
     .container {
         padding: 12px;
     }
-
     .grid-2 {
         display: grid;
         grid-template-columns: 1fr;
         gap: 12px;
     }
-
     .card {
         padding: 14px;
     }
@@ -217,18 +236,26 @@ textarea {
    Used by app.js and Jeff's screens
 ========================================= */
 
+
 /* Consistent sizing */
+
 * {
     box-sizing: border-box;
 }
 
+
 /* Headings */
-h1, h2, h3 {
+
+h1,
+h2,
+h3 {
     font-family: var(--display);
     line-height: 1.2;
 }
 
+
 /* Website header */
+
 .site-header {
     display: flex;
     align-items: center;
@@ -245,7 +272,9 @@ h1, h2, h3 {
     margin-right: auto;
 }
 
+
 /* Additional button layouts */
+
 .btn {
     display: inline-flex;
     align-items: center;
@@ -280,7 +309,9 @@ h1, h2, h3 {
     gap: 8px;
 }
 
+
 /* Availability badge base style */
+
 .badge {
     display: inline-block;
     padding: 2px 10px;
@@ -289,7 +320,9 @@ h1, h2, h3 {
     font-weight: 600;
 }
 
+
 /* Information banners */
+
 .banner {
     padding: 12px 16px;
     border-radius: var(--radius);
@@ -307,7 +340,9 @@ h1, h2, h3 {
     color: #8B1A1A;
 }
 
+
 /* Toast notifications */
+
 .toast {
     position: fixed;
     left: 50%;
@@ -325,7 +360,9 @@ h1, h2, h3 {
     background: var(--red);
 }
 
+
 /* Dialog boxes */
+
 dialog {
     border: 0;
     border-radius: var(--radius);
@@ -349,6 +386,403 @@ dialog::backdrop {
 
 /* =========================================
    SECTION 8: JEFF'S COMPONENTS
-   Ambulance and hospital staff screens
-   Jeff adds his CSS below this line.
+   Ambulance and hospital staff screens  
 ========================================= */
+
+.amb {
+    max-width: 720px;
+}
+
+.gps {
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+
+/* Match Cards */
+
+.card.match {
+    border-width: 2px;
+}
+
+.card.match--best {
+    border-color: var(--green);
+}
+
+.eta {
+    font-family: var(--display);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--green);
+    margin-bottom: 6px;
+}
+
+
+/* Triage Buttons & Cards */
+
+.triage {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+@media (min-width: 600px) {
+    .triage {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.triage label.btn {
+    margin: 0;
+    border-width: 2px;
+}
+
+.triage--red {
+    border-color: var(--red);
+}
+
+.triage--red:has(input:checked),
+.incoming.triage--red {
+    border-left: 8px solid var(--red);
+}
+
+.triage--red:has(input:checked) {
+    background: color-mix(in srgb, var(--red) 20%, transparent);
+}
+
+.triage--yellow {
+    border-color: var(--orange);
+}
+
+.triage--yellow:has(input:checked),
+.incoming.triage--yellow {
+    border-left: 8px solid var(--orange);
+}
+
+.triage--yellow:has(input:checked) {
+    background: color-mix(in srgb, var(--orange) 20%, transparent);
+}
+
+.triage--green {
+    border-color: var(--green);
+}
+
+.triage--green:has(input:checked),
+.incoming.triage--green {
+    border-left: 8px solid var(--green);
+}
+
+.triage--green:has(input:checked) {
+    background: color-mix(in srgb, var(--green) 20%, transparent);
+}
+
+.vitals {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+@media (min-width: 600px) {
+    .vitals {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+/* Active Trip Screen */
+
+.countdown {
+    font-size: 1.15rem;
+    margin: 8px 0 16px;
+}
+
+#countdown {
+    font-family: var(--display);
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+}
+
+#countdown.warn {
+    color: var(--orange);
+}
+
+.steps {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.step {
+    padding: 10px 8px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--muted);
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.step--done {
+    border-color: var(--green);
+    background: color-mix(in srgb, var(--green) 15%, transparent);
+    color: var(--text);
+}
+
+.ticks {
+    padding: 12px 14px;
+    border-radius: 10px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    font-weight: 700;
+}
+
+.tick--ready {
+    border-color: var(--green);
+    color: var(--green);
+}
+
+
+/* Bed Board & Grid */
+
+.board-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.board-head select {
+    width: auto;
+    min-width: 200px;
+    font-weight: 700;
+}
+
+#synced {
+    margin-left: auto;
+    color: var(--muted);
+    font-weight: 600;
+}
+
+.tiles {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+@media (min-width: 600px) {
+    .tiles {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.tile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 4px;
+    padding: 14px;
+    border-radius: var(--radius);
+    background: var(--card);
+    border: 2px solid var(--border);
+}
+
+.tile strong {
+    font-family: var(--display);
+    font-size: 1.5rem;
+}
+
+.bed-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 12px;
+    margin-top: 14px;
+}
+
+.bed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-height: 84px;
+    padding: 12px;
+    border-radius: var(--radius);
+    border: 2px solid var(--border);
+    background: var(--card);
+    color: var(--text);
+    font-family: var(--font);
+    cursor: pointer;
+}
+
+.bed strong {
+    font-family: var(--display);
+    font-size: 1.1rem;
+}
+
+.bed span {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--muted);
+}
+
+#qr-video {
+    width: 100%;
+    max-width: 420px;
+    border-radius: var(--radius);
+    margin-top: 12px;
+    border: 2px solid var(--blue);
+}
+
+
+/* Incoming & Alarms */
+
+.incoming__title {
+    font-family: var(--display);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.incoming--alarm {
+    border: 2px solid var(--red);
+    background: var(--red-soft);
+    animation: pulseAlarm 1.2s infinite alternate;
+}
+
+body.dark .incoming--alarm {
+    background: var(--card);
+}
+
+@keyframes pulseAlarm {
+    from {
+        box-shadow: 0 0 0 0 color-mix(in srgb, var(--red) 35%, transparent);
+    }
+    to {
+        box-shadow: 0 0 0 8px transparent;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .incoming--alarm {
+        animation: none;
+    }
+}
+
+
+/* Shift Handover Checklist Rows */
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    margin-bottom: 8px;
+}
+
+.row select {
+    width: auto;
+    min-width: 140px;
+}
+
+.row--changed {
+    border-color: var(--blue);
+    background: color-mix(in srgb, var(--blue) 8%, transparent);
+}
+
+
+/* Blood Bank Stock Tiles */
+
+.blood--good {
+    border-color: var(--green);
+}
+
+.blood--low {
+    border-color: var(--orange);
+}
+
+.blood--critical {
+    border-color: var(--red);
+    background: var(--red-soft);
+}
+
+.blood--none {
+    border-color: var(--grey);
+    opacity: 0.8;
+}
+
+
+/* Chips and Form Inputs */
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.chips label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: var(--tap);
+    padding: 8px 14px;
+    margin: 0;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    cursor: pointer;
+    user-select: none;
+}
+
+.chips label:has(input:checked) {
+    border-color: var(--blue);
+    background: color-mix(in srgb, var(--blue) 12%, transparent);
+}
+
+.switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-height: var(--tap);
+    cursor: pointer;
+    margin: 0;
+}
+
+
+/* Bed Status Colours */
+
+.bed.bed--free,
+.tile.bed--free {
+    border-color: var(--green);
+}
+
+.bed.bed--occupied,
+.tile.bed--occupied {
+    border-color: var(--grey);
+}
+
+.bed.bed--cleaning,
+.tile.bed--cleaning {
+    border-color: var(--orange);
+    border-style: dashed;
+}
+
+.bed.bed--held,
+.tile.bed--held {
+    border-color: var(--blue);
+}
