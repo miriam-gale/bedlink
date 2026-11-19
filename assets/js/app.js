@@ -28,56 +28,198 @@ function confirmDialog(message) {
 // THEME MANAGEMENT
 // ==========================================
 
-function initTheme() {
-    const isAmbulancePage =
-        document.body.classList.contains('ambulance-page');
-
-    // Ambulance pages must always use dark mode
-    if (isAmbulancePage) {
-        document.body.classList.add('dark');
-        return;
-    }
-
-    // Restore the user's saved preference
-    const savedTheme = localStorage.getItem('bedlink-theme');
-
-    if (savedTheme === 'dark') {
-        document.body.classList.add('dark');
-    } else {
-        document.body.classList.remove('dark');
-    }
-}
-
-function toggleTheme() {
-    // Prevent ambulance pages from changing themes
-    if (document.body.classList.contains('ambulance-page')) {
-        return;
-    }
-
-    const isDark = document.body.classList.toggle('dark');
-
-    // Save the user's preference
-    localStorage.setItem('bedlink-theme', isDark ? 'dark' : 'light');
-}
-
-// Initialize theme when the page loads
 document.addEventListener('DOMContentLoaded', () => {
-    initTheme();
 
+    // Theme toggle
     const themeToggle = document.getElementById('theme-toggle');
 
     if (themeToggle) {
-        themeToggle.addEventListener('click', toggleTheme);
+        // Set initial accessibility state
+        themeToggle.setAttribute(
+            'aria-pressed',
+            document.body.classList.contains('dark') ? 'true' : 'false'
+        );
+
+        themeToggle.addEventListener('click', (e) => {
+            const dark = document.body.classList.toggle('dark');
+
+            // Save theme preference in a cookie
+            document.cookie =
+                'theme=' + (dark ? 'dark' : 'light') +
+                '; path=/bedlink; max-age=31536000; SameSite=Lax';
+
+            // Update accessibility state
+            e.currentTarget.setAttribute(
+                'aria-pressed',
+                dark ? 'true' : 'false'
+            );
+        });
     }
 
     // Language selector
-const languageSelect = document.getElementById('language-select');
+    const languageSelect = document.getElementById('language-select');
 
-if (languageSelect) {
-    languageSelect.addEventListener('change', function () {
-        const url = new URL(window.location.href);
-        url.searchParams.set('lang', this.value);
-        window.location.href = url.toString();
+    if (languageSelect) {
+        languageSelect.addEventListener('change', function () {
+            const url = new URL(window.location.href);
+            url.searchParams.set('lang', this.value);
+            window.location.href = url.toString();
+        });
+    }
+
+});
+
+/* =========================================
+   BEDLINK API HELPER
+========================================= */
+
+async function api(endpoint, options = {}) {
+    const {
+        method = "GET",
+        body = null,
+        headers = {},
+        ...fetchOptions
+    } = options;
+
+    const requestMethod = method.toUpperCase();
+
+    const requestHeaders = {
+        Accept: "application/json",
+        ...headers
+    };
+
+    const requestOptions = {
+        method: requestMethod,
+        headers: requestHeaders,
+        ...fetchOptions
+    };
+
+    // CSRF protection for state-changing requests
+    if (!["GET", "HEAD", "OPTIONS"].includes(requestMethod)) {
+        const CSRF =
+            document.querySelector('meta[name="csrf"]')?.content || "";
+
+        if (CSRF) {
+            requestHeaders["X-CSRF-Token"] = CSRF;
+        }
+    }
+
+    // Send request body
+    if (body !== null) {
+        if (
+            typeof body === "object" &&
+            !(body instanceof FormData)
+        ) {
+            requestHeaders["Content-Type"] = "application/json";
+            requestOptions.body = JSON.stringify(body);
+        } else {
+            requestOptions.body = body;
+        }
+    }
+
+    try {
+        const response = await fetch(endpoint, requestOptions);
+
+        let result;
+
+        try {
+            result = await response.json();
+        } catch {
+            result = {
+                ok: false,
+                error: "Invalid server response"
+            };
+        }
+
+        // Preserve server response fields such as:
+        // error, data, next_best, etc.
+        return {
+            ...result,
+            ok: result?.ok === true && response.ok,
+            status: response.status
+        };
+
+    } catch (error) {
+        return {
+            ok: false,
+            status: 0,
+            error: error.message || "Network error"
+        };
+    }
+}
+
+
+/* =========================================
+   BEDLINK POLLING HELPER
+========================================= */
+
+function poll(endpoint, callback, interval = 15000) {
+    let timer = null;
+    let stopped = true;
+    let running = false;
+
+    async function execute() {
+        if (stopped || running) return;
+
+        running = true;
+
+        try {
+            const result = await api(endpoint);
+
+            if (!stopped && result.ok) {
+    await callback(result.data);
+}
+        } catch (error) {
+            console.error("BedLink polling error:", error);
+        } finally {
+            running = false;
+
+            if (!stopped) {
+                timer = setTimeout(execute, interval);
+            }
+        }
+    }
+
+    function start() {
+        if (!stopped) return;
+
+        stopped = false;
+        execute();
+    }
+
+    function stop() {
+        stopped = true;
+        clearTimeout(timer);
+        timer = null;
+    }
+
+    start();
+
+    return {
+        start,
+        stop
+    };
+}
+
+/* =========================================
+   BEDLINK TRANSLATION HELPERS
+========================================= */
+
+function t(key, vars = {}) {
+    const text = window.L?.[key] ?? key;
+
+    return String(text).replace(/\{(\w+)\}/g, (match, name) => {
+        return vars[name] !== undefined
+            ? String(vars[name])
+            : match;
     });
 }
-});
+
+function tn(key, n, vars = {}) {
+    const suffix = n === 1 ? ".one" : ".other";
+
+    return t(key + suffix, {
+        ...vars,
+        n
+    });
+}
