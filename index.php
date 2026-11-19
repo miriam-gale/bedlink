@@ -1,14 +1,31 @@
 <?php
-// index.php — TEST of i18n.php (we replace this with the real search page later)
-session_start();
-require_once __DIR__ . '/includes/i18n.php';
+// index.php — BedLink homepage
 
-echo '<h1>' . t('pub.search.title') . '</h1>';
-echo '<p>' . tn('pub.card.free', 1) . ' · ' . tn('pub.card.free', 3) . '</p>';
-echo '<p>' . t('help.button') . '</p>';
-echo '<p>' . t('this.key.does.not.exist') . '</p>';
-echo '<p>Language now: ' . currentLang() . '</p>';
-echo '<p><a href="?lang=en">English</a> · <a href="?lang=tw">Twi</a></p>';
+require_once __DIR__ . '/includes/auth.php';
 
-echo '<link rel="stylesheet" href="/bedlink/assets/css/style.css">';
-echo '<script src="/bedlink/assets/js/app.js"></script>';
+$pageTitle = 'Find a bed';
+$bodyClass = '';
+
+require __DIR__ . '/includes/header.php';
+?>
+
+<main class="container">
+
+  <section class="card">
+    <h1><?= e(t('pub.search.title')) ?></h1>
+
+    <p>
+      <?= e(tn('pub.card.free', 1)) ?>
+    </p>
+
+    <p>
+      <?= e(t('help.button')) ?>
+    </p>
+
+    <p>
+      Language now: <?= e(currentLang()) ?>
+    </p>
+  </section>
+
+</main>
+<?php require __DIR__ . '/includes/footer.php'; ?>

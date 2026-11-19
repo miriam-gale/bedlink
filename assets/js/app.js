@@ -22,3 +22,62 @@ function confirmDialog(message) {
     d.showModal();                                         // 4. show it and dim the page behind
   });
 }
+
+
+// ==========================================
+// THEME MANAGEMENT
+// ==========================================
+
+function initTheme() {
+    const isAmbulancePage =
+        document.body.classList.contains('ambulance-page');
+
+    // Ambulance pages must always use dark mode
+    if (isAmbulancePage) {
+        document.body.classList.add('dark');
+        return;
+    }
+
+    // Restore the user's saved preference
+    const savedTheme = localStorage.getItem('bedlink-theme');
+
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark');
+    } else {
+        document.body.classList.remove('dark');
+    }
+}
+
+function toggleTheme() {
+    // Prevent ambulance pages from changing themes
+    if (document.body.classList.contains('ambulance-page')) {
+        return;
+    }
+
+    const isDark = document.body.classList.toggle('dark');
+
+    // Save the user's preference
+    localStorage.setItem('bedlink-theme', isDark ? 'dark' : 'light');
+}
+
+// Initialize theme when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+    initTheme();
+
+    const themeToggle = document.getElementById('theme-toggle');
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+    }
+
+    // Language selector
+const languageSelect = document.getElementById('language-select');
+
+if (languageSelect) {
+    languageSelect.addEventListener('change', function () {
+        const url = new URL(window.location.href);
+        url.searchParams.set('lang', this.value);
+        window.location.href = url.toString();
+    });
+}
+});
