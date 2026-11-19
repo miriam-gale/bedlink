@@ -8,6 +8,28 @@ require_once __DIR__ . '/i18n.php';
 // Determine the selected language before HTML output begins.
 $lang = currentLang();
 
+// Restore the saved theme before rendering the page.
+
+$bodyClasses = preg_split('/\s+/', trim($bodyClass ?? ''));
+$bodyClasses = array_filter($bodyClasses);
+
+$defaultDark = in_array('dark', $bodyClasses, true);
+$savedTheme  = $_COOKIE['theme'] ?? '';
+
+$isDark = $savedTheme === 'dark'
+    || ($savedTheme === '' && $defaultDark);
+
+$bodyClasses = array_values(array_filter(
+    $bodyClasses,
+    fn($class) => $class !== 'dark'
+));
+
+if ($isDark) {
+    $bodyClasses[] = 'dark';
+}
+
+$bodyClass = implode(' ', $bodyClasses);
+
 // Security headers
 header(
     "Content-Security-Policy: default-src 'self'; "
