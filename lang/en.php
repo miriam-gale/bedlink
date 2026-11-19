@@ -59,6 +59,9 @@ return [
   'amb.ward'            => 'Ward needed',
   'amb.needs'           => 'Needs',
   'amb.blood'           => 'Blood needed',
+
+  'amb.bloodty'       => 'Blood type',
+
   'amb.units'           => 'Units of blood',
   'amb.town'            => 'Town or landmark',
   'amb.need_location'   => 'We need your location to find a hospital.',
@@ -88,8 +91,11 @@ return [
   'amb.confirm_hold'    => 'Confirm hold',
   'amb.blood_hold'      => 'Also holding {units} units of {type} blood',
   'amb.no_match'        => 'No match within {km} km.',
+
   'amb.no_blood'        => 'No blood needed',
   'amb.no_blood_nearby' => 'No blood of that type is available nearby.',
+
+  'amb.no_blood'        => 'No blood of that type is available nearby.',
   'amb.widen'           => 'Widen search',
   'amb.coordinator_told'=> 'The regional coordinator has been told.',
 
@@ -225,10 +231,11 @@ return [
   'blood.saved'         => '{type} updated to {n}',
 
 
+
+];
+
   // === P3: Hariel — login, accounts, admin ===
 
   // === P4: Yaw — matching, trips, emergency ===
 
   // === P5: James — hospital, blood, simulators ===
-
-];

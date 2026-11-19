@@ -1,2699 +1,3228 @@
-/* =========================================
+        /* =========================================
    SECTION 1: BEDLINK DESIGN TOKENS
    Colours, typography and shared dimensions
 ========================================= */
-
-:root {
-    /* Primary brand colours */
-    --blue: #4B168C;
-    --blue-dark: #32105F;
-    --teal: #0F766E;
-    /* Status colours */
-    --red: #C62828;
-    --red-soft: #FDECEC;
-    --green: #168A52;
-    --orange: #C47A00;
-    --grey: #625B73;
-    /* Background and text colours */
-    --bg: #F4F0FF;
-    --card: #FFFFFF;
-    --text: #171329;
-    --muted: #625B73;
-    --border: #E5DDF2;
-    /* Layout */
-    --radius: 14px;
-    --tap: 44px;
-    /* Typography */
-    --font: 'Inter', system-ui, sans-serif;
-    --display: 'Space Grotesk', var(--font);
-}
-
-
-/* Ambulance Mode: dark theme */
-
-body.dark {
-    --bg: #111827;
-    --card: #1E293B;
-    --text: #F8FAFC;
-    --muted: #CBD5E1;
-    --border: #334155;
-    --tap: 56px;
-    --blue: #7C3AED;
-}
-
-
-/* =========================================
+        
+         :root {
+            /* Primary brand colours */
+            --blue: #4B168C;
+            --blue-dark: #32105F;
+            --teal: #0F766E;
+            /* Status colours */
+            --red: #C62828;
+            --red-soft: #FDECEC;
+            --green: #168A52;
+            --orange: #C47A00;
+            --grey: #625B73;
+            /* Background and text colours */
+            --bg: #F4F0FF;
+            --card: #FFFFFF;
+            --text: #171329;
+            --muted: #625B73;
+            --border: #E5DDF2;
+            /* Layout */
+            --radius: 14px;
+            --tap: 44px;
+            /* Typography */
+            --font: 'Inter', system-ui, sans-serif;
+            --display: 'Space Grotesk', var(--font);
+        }
+        /* Ambulance Mode: dark theme */
+        
+        body.dark {
+            --bg: #111827;
+            --card: #1E293B;
+            --text: #F8FAFC;
+            --muted: #CBD5E1;
+            --border: #334155;
+            --tap: 56px;
+            --blue: #7C3AED;
+        }
+        /* =========================================
    SECTION 2: BASIC PAGE STYLING
 ========================================= */
-
-body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    font: 16px/1.5 var(--font);
-}
-
-
-/* Main content container */
-
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 16px;
-}
-
-
-/* Shared Form Inputs */
-
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="tel"],
-input[type="number"],
-input[type="date"],
-input[type="datetime-local"],
-select,
-textarea {
-    width: 100%;
-    min-height: var(--tap);
-    padding: 10px 12px;
-    border-radius: 10px;
-    border: 1px solid var(--border);
-    background: var(--card);
-    color: var(--text);
-    font: 16px/1.4 var(--font);
-}
-
-textarea {
-    min-height: 96px;
-    resize: vertical;
-}
-
-
-/* =========================================
+        
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font: 16px/1.5 var(--font);
+        }
+        /* Main content container */
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 16px;
+        }
+        /* Shared Form Inputs */
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="tel"],
+        input[type="number"],
+        input[type="date"],
+        input[type="datetime-local"],
+        select,
+        textarea {
+            width: 100%;
+            min-height: var(--tap);
+            padding: 10px 12px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            background: var(--card);
+            color: var(--text);
+            font: 16px/1.4 var(--font);
+        }
+        
+        textarea {
+            min-height: 96px;
+            resize: vertical;
+        }
+        /* =========================================
    SECTION 3: CARDS
 ========================================= */
-
-.card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 16px;
-}
-
-
-/* =========================================
+        
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 16px;
+        }
+        /* =========================================
    SECTION 4: BUTTONS
 ========================================= */
-
-.btn {
-    min-height: var(--tap);
-    padding: 0 16px;
-    border-radius: 12px;
-    border: 1px solid var(--border);
-    background: var(--card);
-    color: var(--text);
-    font: 600 15px var(--font);
-    cursor: pointer;
-}
-
-
-/* Main purple button */
-
-.btn--primary {
-    background: var(--blue);
-    color: #FFFFFF;
-    border: 0;
-}
-
-
-/* Emergency or destructive button */
-
-.btn--danger {
-    background: var(--red);
-    color: #FFFFFF;
-    border: 0;
-}
-
-
-/* Teal secondary action */
-
-.btn--secondary {
-    background: var(--teal);
-    color: #FFFFFF;
-    border: 0;
-}
-
-
-/* =========================================
+        
+        .btn {
+            min-height: var(--tap);
+            padding: 0 16px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            background: var(--card);
+            color: var(--text);
+            font: 600 15px var(--font);
+            cursor: pointer;
+        }
+        /* Main purple button */
+        
+        .btn--primary {
+            background: var(--blue);
+            color: #FFFFFF;
+            border: 0;
+        }
+        /* Emergency or destructive button */
+        
+        .btn--danger {
+            background: var(--red);
+            color: #FFFFFF;
+            border: 0;
+        }
+        /* Teal secondary action */
+        
+        .btn--secondary {
+            background: var(--teal);
+            color: #FFFFFF;
+            border: 0;
+        }
+        /* =========================================
    SECTION 5: BED AVAILABILITY INDICATORS
 ========================================= */
-
-
-/* Three or more beds available */
-
-.badge--free {
-    background: #E3F2E9;
-    color: #14532D;
-}
-
-
-/* One or two beds available */
-
-.badge--few {
-    background: #FDF0E1;
-    color: #7A3E00;
-}
-
-
-/* No beds available */
-
-.badge--none {
-    background: #EEF1F4;
-    color: #374151;
-}
-
-
-/* Individual bed status */
-
-.bed--free {
-    border-color: var(--green);
-}
-
-.bed--held {
-    border: 2px solid var(--blue);
-}
-
-.bed--cleaning {
-    border-style: dashed;
-    border-color: var(--orange);
-}
-
-
-/* =========================================
+        /* Three or more beds available */
+        
+        .badge--free {
+            background: #E3F2E9;
+            color: #14532D;
+        }
+        /* One or two beds available */
+        
+        .badge--few {
+            background: #FDF0E1;
+            color: #7A3E00;
+        }
+        /* No beds available */
+        
+        .badge--none {
+            background: #EEF1F4;
+            color: #374151;
+        }
+        /* Individual bed status */
+        
+        .bed--free {
+            border-color: var(--green);
+        }
+        
+        .bed--held {
+            border: 2px solid var(--blue);
+        }
+        
+        .bed--cleaning {
+            border-style: dashed;
+            border-color: var(--orange);
+        }
+        /* =========================================
    SECTION 6: ACCESSIBILITY & RESPONSIVENESS
 ========================================= */
-
-
-/* Visible keyboard focus */
-
-:focus-visible {
-    outline: 3px solid var(--blue);
-    outline-offset: 2px;
-}
-
-
-/* Two-column layout on larger screens */
-
-@media (min-width: 768px) {
-    .grid-2 {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 16px;
-    }
-}
-
-
-/* Smaller screens */
-
-@media (max-width: 767px) {
-    .container {
-        padding: 12px;
-    }
-    .grid-2 {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-    .card {
-        padding: 14px;
-    }
-}
-
-
-/* =========================================
+        /* Visible keyboard focus */
+        
+         :focus-visible {
+            outline: 3px solid var(--blue);
+            outline-offset: 2px;
+        }
+        /* Two-column layout on larger screens */
+        
+        @media (min-width: 768px) {
+            .grid-2 {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+            }
+        }
+        /* Smaller screens */
+        
+        @media (max-width: 767px) {
+            .container {
+                padding: 12px;
+            }
+            .grid-2 {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            .card {
+                padding: 14px;
+            }
+        }
+        /* =========================================
    SECTION 7: SHARED COMPONENTS
    Used by app.js and Jeff's screens
 ========================================= */
-
-
-/* Consistent sizing */
-
-* {
-    box-sizing: border-box;
-}
-
-
-/* Headings */
-
-h1,
-h2,
-h3 {
-    font-family: var(--display);
-    line-height: 1.2;
-}
-
-
-/* Website header */
-
-.site-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px 16px;
-    background: var(--card);
-    border-bottom: 1px solid var(--border);
-}
-
-.brand {
-    font: 700 20px var(--display);
-    color: var(--blue);
-    text-decoration: none;
-    margin-right: auto;
-}
-
-
-/* Additional button layouts */
-
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-}
-
-.btn:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-
-.btn:hover:not(:disabled) {
-    filter: brightness(0.92);
-}
-
-.btn-big {
-    min-height: 56px;
-    width: 100%;
-    font-size: 17px;
-}
-
-.btn-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.btn-col {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-
-/* Availability badge base style */
-
-.badge {
-    display: inline-block;
-    padding: 2px 10px;
-    border-radius: 999px;
-    font-size: 13px;
-    font-weight: 600;
-}
-
-
-/* Information banners */
-
-.banner {
-    padding: 12px 16px;
-    border-radius: var(--radius);
-    margin: 12px 0;
-    font-weight: 600;
-}
-
-.banner--warn {
-    background: #FDF0E1;
-    color: #7A3E00;
-}
-
-.banner--danger {
-    background: #FDECEC;
-    color: #8B1A1A;
-}
-
-
-/* Toast notifications */
-
-.toast {
-    position: fixed;
-    left: 50%;
-    bottom: 24px;
-    transform: translateX(-50%);
-    z-index: 1000;
-    padding: 12px 20px;
-    border-radius: 12px;
-    color: #FFFFFF;
-    background: #15803D;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-}
-
-.toast--error {
-    background: var(--red);
-}
-
-
-/* Dialog boxes */
-
-dialog {
-    border: 0;
-    border-radius: var(--radius);
-    padding: 20px;
-    max-width: 420px;
-    width: 92%;
-    background: var(--card);
-    color: var(--text);
-}
-
-dialog::backdrop {
-    background: rgba(0, 0, 0, 0.5);
-}
-
-.toast {
-    width: max-content;
-    max-width: calc(100% - 32px);
-    text-align: center;
-}
-
-/* Brand logo */
-.brand {
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-    text-decoration: none;
-}
-
-.brand-logo {
-    display: block;
-    width: 150px;
-    height: auto;
-    object-fit: contain;
-}
-
-/* Theme icon visibility */
-.theme-icon--sun {
-    display: none;
-}
-
-body.dark .theme-icon--moon {
-    display: none;
-}
-
-body.dark .theme-icon--sun {
-    display: block;
-}
-
-/* Language selector */
-.language-select {
-    width: auto;
-    min-height: 44px;
-    padding: 8px 30px 8px 12px;
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    background: var(--card);
-    color: var(--text);
-    font: 600 14px var(--font);
-    cursor: pointer;
-}
-
-/* Screen-reader-only text */
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-}
-
-
-/* Main navigation */
-.main-nav {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-
-.nav-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 40px;
-    padding: 8px 14px;
-    border-radius: 999px;
-    color: var(--text);
-    background: transparent;
-    border: 0;
-    text-decoration: none;
-    font: 600 14px var(--font);
-    cursor: pointer;
-}
-
-.nav-link:hover {
-    color: var(--blue);
-    background: var(--bg);
-}
-
-.nav-link.active {
-    color: #FFFFFF;
-    background: var(--blue);
-}
-
-.nav-user {
-    color: var(--muted);
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.logout-form {
-    display: inline-flex;
-    margin: 0;
-}
-
-.nav-logout {
-    font-family: var(--font);
-}
-
-
-
-/* =========================================================
+        /* Consistent sizing */
+        
+        * {
+            box-sizing: border-box;
+        }
+        /* Headings */
+        
+        h1,
+        h2,
+        h3 {
+            font-family: var(--display);
+            line-height: 1.2;
+        }
+        /* Website header */
+        
+        .site-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            background: var(--card);
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .brand {
+            font: 700 20px var(--display);
+            color: var(--blue);
+            text-decoration: none;
+            margin-right: auto;
+        }
+        /* Additional button layouts */
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+        
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .btn:hover:not(:disabled) {
+            filter: brightness(0.92);
+        }
+        
+        .btn-big {
+            min-height: 56px;
+            width: 100%;
+            font-size: 17px;
+        }
+        
+        .btn-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .btn-col {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        /* Availability badge base style */
+        
+        .badge {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        /* Information banners */
+        
+        .banner {
+            padding: 12px 16px;
+            border-radius: var(--radius);
+            margin: 12px 0;
+            font-weight: 600;
+        }
+        
+        .banner--warn {
+            background: #FDF0E1;
+            color: #7A3E00;
+        }
+        
+        .banner--danger {
+            background: #FDECEC;
+            color: #8B1A1A;
+        }
+        /* Toast notifications */
+        
+        .toast {
+            position: fixed;
+            left: 50%;
+            bottom: 24px;
+            transform: translateX(-50%);
+            z-index: 1000;
+            padding: 12px 20px;
+            border-radius: 12px;
+            color: #FFFFFF;
+            background: #15803D;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .toast--error {
+            background: var(--red);
+        }
+        /* Dialog boxes */
+        
+        dialog {
+            border: 0;
+            border-radius: var(--radius);
+            padding: 20px;
+            max-width: 420px;
+            width: 92%;
+            background: var(--card);
+            color: var(--text);
+        }
+        
+        dialog::backdrop {
+            background: rgba(0, 0, 0, 0.5);
+        }
+        
+        .toast {
+            width: max-content;
+            max-width: calc(100% - 32px);
+            text-align: center;
+        }
+        /* Brand logo */
+        
+        .brand {
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+            text-decoration: none;
+        }
+        
+        .brand-logo {
+            display: block;
+            width: 150px;
+            height: auto;
+            object-fit: contain;
+        }
+        /* Theme icon visibility */
+        
+        .theme-icon--sun {
+            display: none;
+        }
+        
+        body.dark .theme-icon--moon {
+            display: none;
+        }
+        
+        body.dark .theme-icon--sun {
+            display: block;
+        }
+        /* Language selector */
+        
+        .language-select {
+            width: auto;
+            min-height: 44px;
+            padding: 8px 30px 8px 12px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: var(--card);
+            color: var(--text);
+            font: 600 14px var(--font);
+            cursor: pointer;
+        }
+        /* Screen-reader-only text */
+        
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        /* Main navigation */
+        
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        
+        .nav-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 40px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            color: var(--text);
+            background: transparent;
+            border: 0;
+            text-decoration: none;
+            font: 600 14px var(--font);
+            cursor: pointer;
+        }
+        
+        .nav-link:hover {
+            color: var(--blue);
+            background: var(--bg);
+        }
+        
+        .nav-link.active {
+            color: #FFFFFF;
+            background: var(--blue);
+        }
+        
+        .nav-user {
+            color: var(--muted);
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .logout-form {
+            display: inline-flex;
+            margin: 0;
+        }
+        
+        .nav-logout {
+            font-family: var(--font);
+        }
+        /* =========================================================
    BEDLINK HEADER REDESIGN
    ========================================================= */
-
-.site-header {
-    width: 100%;
-    background: var(--card);
-    border-bottom: 1px solid var(--border);
-}
-
-.header-inner {
-    width: 100%;
-    min-height: 100px;
-    padding: 16px 32px;
-    display: flex;
-    align-items: center;
-    gap: 28px;
-}
-
-/* Logo */
-.brand {
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-    text-decoration: none;
-    padding-right: 28px;
-    border-right: 1px solid var(--border);
-}
-
-.brand-logo {
-    display: block;
-    width: 220px;
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-}
-
-/* Navigation */
-.main-nav {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex: 1;
-    min-width: 0;
-    flex-wrap: wrap;
-}
-
-.nav-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 44px;
-    padding: 10px 18px;
-    border-radius: 999px;
-    color: var(--text);
-    background: transparent;
-    border: 1px solid transparent;
-    text-decoration: none;
-    font: 600 14px var(--font);
-    white-space: nowrap;
-    cursor: pointer;
-    transition: background 0.2s ease, color 0.2s ease,
-                border-color 0.2s ease, transform 0.2s ease;
-}
-
-.nav-link:hover {
-    color: var(--purple);
-    background: var(--lavender);
-}
-
-.nav-link.active {
-    color: var(--purple);
-    background: var(--lavender);
-}
-
-/* Header controls */
-.header-controls {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    flex-shrink: 0;
-}
-
-/* Find a bed action */
-.nav-link[href="/bedlink/"] {
-    /* Main navigation link remains separate */
-}
-
-/* Theme toggle */
-.theme-toggle {
-    width: 48px;
-    height: 48px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    border: 1px solid transparent;
-    border-radius: 50%;
-    background: var(--lavender);
-    color: var(--purple);
-    cursor: pointer;
-    transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.theme-toggle:hover {
-    transform: translateY(-2px);
-}
-
-.theme-icon {
-    display: block;
-}
-
-/* Language selector */
-.language-selector {
-    display: flex;
-    align-items: center;
-}
-
-.language-select {
-    min-height: 48px;
-    min-width: 100px;
-    width: auto;
-    padding: 10px 16px;
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    background: var(--card);
-    color: var(--text);
-    font: 600 14px var(--font);
-    cursor: pointer;
-}
-
-/* Dark theme header */
-body.dark .site-header {
-    background: var(--card);
-    border-bottom-color: var(--border);
-}
-
-body.dark .brand {
-    border-right-color: var(--border);
-}
-
-body.dark .nav-link {
-    color: var(--text);
-}
-
-body.dark .nav-link:hover,
-body.dark .nav-link.active {
-    color: #fff;
-    background: var(--purple);
-}
-
-body.dark .theme-toggle {
-    color: #fff;
-    background: var(--purple);
-}
-
-body.dark .language-select {
-    background: var(--card);
-    color: var(--text);
-    border-color: var(--border);
-}
-
-/* Responsive header */
-@media (max-width: 1100px) {
-    .header-inner {
-        gap: 18px;
-        padding: 16px 24px;
-    }
-
-    .brand {
-        padding-right: 18px;
-    }
-
-    .brand-logo {
-        width: 180px;
-    }
-
-    .main-nav {
-        gap: 4px;
-    }
-
-    .nav-link {
-        padding: 10px 12px;
-    }
-
-    .header-controls {
-        gap: 10px;
-    }
-}
-
-@media (max-width: 850px) {
-    .header-inner {
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-
-    .brand {
-        border-right: none;
-        padding-right: 0;
-    }
-
-    .main-nav {
-        order: 3;
-        width: 100%;
-        flex-basis: 100%;
-        justify-content: center;
-    }
-
-    .header-controls {
-        margin-left: auto;
-    }
-}
-
-@media (max-width: 520px) {
-    .header-inner {
-        padding: 12px 16px;
-        gap: 12px;
-    }
-
-    .brand-logo {
-        width: 150px;
-    }
-
-    .header-controls {
-        gap: 8px;
-    }
-
-    .theme-toggle {
-        width: 42px;
-        height: 42px;
-    }
-
-    .language-select {
-        min-height: 42px;
-        min-width: 80px;
-        padding: 8px 10px;
-    }
-
-    .main-nav {
-        overflow-x: auto;
-        justify-content: flex-start;
-        flex-wrap: nowrap;
-        padding-bottom: 4px;
-    }
-
-    .nav-link {
-        min-height: 40px;
-        padding: 8px 12px;
-        font-size: 13px;
-    }
-}
-
-/* ==========================================================
+        
+        .site-header {
+            width: 100%;
+            background: var(--card);
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .header-inner {
+            width: 100%;
+            min-height: 100px;
+            padding: 16px 32px;
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+        /* Logo */
+        
+        .brand {
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+            text-decoration: none;
+            padding-right: 28px;
+            border-right: 1px solid var(--border);
+        }
+        
+        .brand-logo {
+            display: block;
+            width: 220px;
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+        /* Navigation */
+        
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex: 1;
+            min-width: 0;
+            flex-wrap: wrap;
+        }
+        
+        .nav-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            padding: 10px 18px;
+            border-radius: 999px;
+            color: var(--text);
+            background: transparent;
+            border: 1px solid transparent;
+            text-decoration: none;
+            font: 600 14px var(--font);
+            white-space: nowrap;
+            cursor: pointer;
+            transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--purple);
+            background: var(--lavender);
+        }
+        
+        .nav-link.active {
+            color: var(--purple);
+            background: var(--lavender);
+        }
+        /* Header controls */
+        
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-shrink: 0;
+        }
+        /* Find a bed action */
+        
+        .nav-link[href="/bedlink/"] {
+            /* Main navigation link remains separate */
+        }
+        /* Theme toggle */
+        
+        .theme-toggle {
+            width: 48px;
+            height: 48px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            border: 1px solid transparent;
+            border-radius: 50%;
+            background: var(--lavender);
+            color: var(--purple);
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+        
+        .theme-toggle:hover {
+            transform: translateY(-2px);
+        }
+        
+        .theme-icon {
+            display: block;
+        }
+        /* Language selector */
+        
+        .language-selector {
+            display: flex;
+            align-items: center;
+        }
+        
+        .language-select {
+            min-height: 48px;
+            min-width: 100px;
+            width: auto;
+            padding: 10px 16px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: var(--card);
+            color: var(--text);
+            font: 600 14px var(--font);
+            cursor: pointer;
+        }
+        /* Dark theme header */
+        
+        body.dark .site-header {
+            background: var(--card);
+            border-bottom-color: var(--border);
+        }
+        
+        body.dark .brand {
+            border-right-color: var(--border);
+        }
+        
+        body.dark .nav-link {
+            color: var(--text);
+        }
+        
+        body.dark .nav-link:hover,
+        body.dark .nav-link.active {
+            color: #fff;
+            background: var(--purple);
+        }
+        
+        body.dark .theme-toggle {
+            color: #fff;
+            background: var(--purple);
+        }
+        
+        body.dark .language-select {
+            background: var(--card);
+            color: var(--text);
+            border-color: var(--border);
+        }
+        /* Responsive header */
+        
+        @media (max-width: 1100px) {
+            .header-inner {
+                gap: 18px;
+                padding: 16px 24px;
+            }
+            .brand {
+                padding-right: 18px;
+            }
+            .brand-logo {
+                width: 180px;
+            }
+            .main-nav {
+                gap: 4px;
+            }
+            .nav-link {
+                padding: 10px 12px;
+            }
+            .header-controls {
+                gap: 10px;
+            }
+        }
+        
+        @media (max-width: 850px) {
+            .header-inner {
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+            .brand {
+                border-right: none;
+                padding-right: 0;
+            }
+            .main-nav {
+                order: 3;
+                width: 100%;
+                flex-basis: 100%;
+                justify-content: center;
+            }
+            .header-controls {
+                margin-left: auto;
+            }
+        }
+        
+        @media (max-width: 520px) {
+            .header-inner {
+                padding: 12px 16px;
+                gap: 12px;
+            }
+            .brand-logo {
+                width: 150px;
+            }
+            .header-controls {
+                gap: 8px;
+            }
+            .theme-toggle {
+                width: 42px;
+                height: 42px;
+            }
+            .language-select {
+                min-height: 42px;
+                min-width: 80px;
+                padding: 8px 10px;
+            }
+            .main-nav {
+                overflow-x: auto;
+                justify-content: flex-start;
+                flex-wrap: nowrap;
+                padding-bottom: 4px;
+            }
+            .nav-link {
+                min-height: 40px;
+                padding: 8px 12px;
+                font-size: 13px;
+            }
+        }
+        /* ==========================================================
    BEDLINK HEADER — FINAL NAVIGATION DESIGN
    ========================================================== */
-
-
-/* ----------------------------------------------------------
+        /* ----------------------------------------------------------
    1. HEADER CONTAINER
    ---------------------------------------------------------- */
-
-.site-header {
-    width: 100%;
-    background: var(--card);
-    border-bottom: 1px solid var(--border);
-}
-
-.header-inner {
-    width: 100%;
-    min-height: 100px;
-    padding: 16px 32px;
-
-    display: flex;
-    align-items: center;
-    gap: 24px;
-}
-
-
-/* ----------------------------------------------------------
+        
+        .site-header {
+            width: 100%;
+            background: var(--card);
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .header-inner {
+            width: 100%;
+            min-height: 100px;
+            padding: 16px 32px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+        /* ----------------------------------------------------------
    2. BRAND / LOGO
    ---------------------------------------------------------- */
-
-.brand {
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-
-    padding-right: 24px;
-    border-right: 1px solid var(--border);
-}
-
-.brand-logo {
-    display: block;
-    width: 190px;
-    height: auto;
-    object-fit: contain;
-}
-
-
-/* ----------------------------------------------------------
+        
+        .brand {
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+            padding-right: 24px;
+            border-right: 1px solid var(--border);
+        }
+        
+        .brand-logo {
+            display: block;
+            width: 190px;
+            height: auto;
+            object-fit: contain;
+        }
+        /* ----------------------------------------------------------
    3. MAIN NAVIGATION
    ---------------------------------------------------------- */
-
-.main-nav {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-
-    flex: 1;
-    min-width: 0;
-}
-
-/* Base navigation link */
-.nav-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    min-height: 46px;
-    padding: 10px 18px;
-
-    border: 1px solid transparent;
-    border-radius: 12px;
-
-    background: transparent;
-    color: var(--text);
-
-    font-family: var(--font);
-    font-size: 14px;
-    font-weight: 600;
-
-    text-decoration: none;
-    white-space: nowrap;
-
-    transition: background 0.2s ease,
-                color 0.2s ease,
-                transform 0.2s ease;
-}
-
-/* Hover effect for navigation links */
-.nav-link:hover {
-    background: #F4F0FF;
-    color: var(--blue);
-}
-
-/* ----------------------------------------------------------
+        
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex: 1;
+            min-width: 0;
+        }
+        /* Base navigation link */
+        
+        .nav-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 46px;
+            padding: 10px 18px;
+            border: 1px solid transparent;
+            border-radius: 12px;
+            background: transparent;
+            color: var(--text);
+            font-family: var(--font);
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+        }
+        /* Hover effect for navigation links */
+        
+        .nav-link:hover {
+            background: #F4F0FF;
+            color: var(--blue);
+        }
+        /* ----------------------------------------------------------
    4. FIND A BED — PRIMARY NAVIGATION BUTTON
    ---------------------------------------------------------- */
-
-/* Find a Bed is the main navigation destination */
-.nav-find-link {
-    background: var(--blue);
-    color: #FFFFFF;
-
-    border-color: var(--blue);
-    border-radius: 12px;
-
-    padding: 12px 20px;
-}
-
-/* Hover effect */
-.nav-find-link:hover {
-    background: var(--blue-dark);
-    color: #FFFFFF;
-
-    transform: translateY(-1px);
-}
-
-/* Active Find a Bed page */
-.nav-find-link.active {
-    background: var(--blue);
-    color: #FFFFFF;
-}
-
-
-/* ----------------------------------------------------------
+        /* Find a Bed is the main navigation destination */
+        
+        .nav-find-link {
+            background: var(--blue);
+            color: #FFFFFF;
+            border-color: var(--blue);
+            border-radius: 12px;
+            padding: 12px 20px;
+        }
+        /* Hover effect */
+        
+        .nav-find-link:hover {
+            background: var(--blue-dark);
+            color: #FFFFFF;
+            transform: translateY(-1px);
+        }
+        /* Active Find a Bed page */
+        
+        .nav-find-link.active {
+            background: var(--blue);
+            color: #FFFFFF;
+        }
+        /* ----------------------------------------------------------
    5. ROLE-SPECIFIC NAVIGATION LINKS
    ---------------------------------------------------------- */
-
-.nav-role-link {
-    border-radius: 12px;
-}
-
-.nav-role-link.active {
-    background: #F4F0FF;
-    color: var(--blue);
-}
-
-
-/* ----------------------------------------------------------
+        
+        .nav-role-link {
+            border-radius: 12px;
+        }
+        
+        .nav-role-link.active {
+            background: #F4F0FF;
+            color: var(--blue);
+        }
+        /* ----------------------------------------------------------
    6. LOGIN / LOGOUT AREA
    ---------------------------------------------------------- */
-
-.nav-actions {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-
-    flex-shrink: 0;
-}
-
-/* Logged-in user name */
-.nav-user {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--text);
-}
-
-/* Logout form */
-.logout-form {
-    margin: 0;
-}
-
-/* Login and logout button */
-.nav-action-login {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-
-    min-height: 46px;
-    padding: 12px 18px;
-
-    border: 1px solid var(--border);
-    border-radius: 12px;
-
-    background: transparent;
-    color: var(--text);
-
-    font-family: var(--font);
-    font-size: 14px;
-    font-weight: 600;
-
-    text-decoration: none;
-    cursor: pointer;
-
-    transition: background 0.2s ease,
-                color 0.2s ease;
-}
-
-/* Login/logout hover */
-.nav-action-login:hover {
-    background: #F4F0FF;
-    color: var(--blue);
-}
-
-
-/* ----------------------------------------------------------
+        
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+        /* Logged-in user name */
+        
+        .nav-user {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text);
+        }
+        /* Logout form */
+        
+        .logout-form {
+            margin: 0;
+        }
+        /* Login and logout button */
+        
+        .nav-action-login {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-height: 46px;
+            padding: 12px 18px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: transparent;
+            color: var(--text);
+            font-family: var(--font);
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+        /* Login/logout hover */
+        
+        .nav-action-login:hover {
+            background: #F4F0FF;
+            color: var(--blue);
+        }
+        /* ----------------------------------------------------------
    7. THEME TOGGLE AND LANGUAGE CONTROLS
    ---------------------------------------------------------- */
-
-.header-controls {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-
-    flex-shrink: 0;
-}
-
-/* Circular theme button */
-.theme-toggle {
-    width: 46px;
-    height: 46px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border: 1px solid var(--border);
-    border-radius: 50%;
-
-    background: #F4F0FF;
-    color: var(--blue);
-
-    cursor: pointer;
-    transition: background 0.2s ease;
-}
-
-/* Theme button hover */
-.theme-toggle:hover {
-    background: #E9DFFF;
-}
-
-/* Language dropdown */
-.language-select {
-    min-height: 46px;
-    min-width: 100px;
-
-    padding: 8px 12px;
-
-    border: 1px solid var(--border);
-    border-radius: 12px;
-
-    background: var(--card);
-    color: var(--text);
-
-    font-family: var(--font);
-    font-size: 14px;
-    font-weight: 600;
-
-    cursor: pointer;
-}
-
-
-/* ----------------------------------------------------------
+        
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+        /* Circular theme button */
+        
+        .theme-toggle {
+            width: 46px;
+            height: 46px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            background: #F4F0FF;
+            color: var(--blue);
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+        /* Theme button hover */
+        
+        .theme-toggle:hover {
+            background: #E9DFFF;
+        }
+        /* Language dropdown */
+        
+        .language-select {
+            min-height: 46px;
+            min-width: 100px;
+            padding: 8px 12px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: var(--card);
+            color: var(--text);
+            font-family: var(--font);
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        /* ----------------------------------------------------------
    8. DARK MODE
    ---------------------------------------------------------- */
-
-body.dark .site-header {
-    background: var(--card);
-    border-color: var(--border);
-}
-
-/* Regular navigation links in dark mode */
-body.dark .nav-link:not(.nav-find-link):hover {
-    background: #334155;
-    color: #C4B5FD;
-}
-
-/* Active role link in dark mode */
-body.dark .nav-role-link.active {
-    background: #334155;
-    color: #C4B5FD;
-}
-
-/* Login button in dark mode */
-body.dark .nav-action-login:hover {
-    background: #334155;
-    color: #C4B5FD;
-}
-
-/* Theme toggle in dark mode */
-body.dark .theme-toggle {
-    background: #334155;
-    color: #C4B5FD;
-}
-
-/* Find a Bed stays prominent in dark mode */
-body.dark .nav-find-link {
-    background: var(--blue);
-    color: #FFFFFF;
-}
-
-
-/* ----------------------------------------------------------
+        
+        body.dark .site-header {
+            background: var(--card);
+            border-color: var(--border);
+        }
+        /* Regular navigation links in dark mode */
+        
+        body.dark .nav-link:not(.nav-find-link):hover {
+            background: #334155;
+            color: #C4B5FD;
+        }
+        /* Active role link in dark mode */
+        
+        body.dark .nav-role-link.active {
+            background: #334155;
+            color: #C4B5FD;
+        }
+        /* Login button in dark mode */
+        
+        body.dark .nav-action-login:hover {
+            background: #334155;
+            color: #C4B5FD;
+        }
+        /* Theme toggle in dark mode */
+        
+        body.dark .theme-toggle {
+            background: #334155;
+            color: #C4B5FD;
+        }
+        /* Find a Bed stays prominent in dark mode */
+        
+        body.dark .nav-find-link {
+            background: var(--blue);
+            color: #FFFFFF;
+        }
+        /* ----------------------------------------------------------
    9. TABLET RESPONSIVENESS
    ---------------------------------------------------------- */
-
-@media (max-width: 1200px) {
-
-    .header-inner {
-        padding: 16px 20px;
-        gap: 16px;
-    }
-
-    .brand {
-        padding-right: 16px;
-    }
-
-    .brand-logo {
-        width: 150px;
-    }
-
-    .nav-link {
-        padding: 10px 12px;
-        font-size: 13px;
-    }
-
-    .header-controls {
-        gap: 8px;
-    }
-}
-
-
-/* ----------------------------------------------------------
+        
+        @media (max-width: 1200px) {
+            .header-inner {
+                padding: 16px 20px;
+                gap: 16px;
+            }
+            .brand {
+                padding-right: 16px;
+            }
+            .brand-logo {
+                width: 150px;
+            }
+            .nav-link {
+                padding: 10px 12px;
+                font-size: 13px;
+            }
+            .header-controls {
+                gap: 8px;
+            }
+        }
+        /* ----------------------------------------------------------
    10. SMALLER SCREENS
    ---------------------------------------------------------- */
-
-@media (max-width: 900px) {
-
-    .header-inner {
-        flex-wrap: wrap;
-    }
-
-    .main-nav {
-        order: 3;
-        flex-basis: 100%;
-
-        flex-wrap: wrap;
-    }
-
-    .nav-actions {
-        margin-left: auto;
-    }
-
-    .header-controls {
-        margin-left: 0;
-    }
-}
-
-
-/* ----------------------------------------------------------
+        
+        @media (max-width: 900px) {
+            .header-inner {
+                flex-wrap: wrap;
+            }
+            .main-nav {
+                order: 3;
+                flex-basis: 100%;
+                flex-wrap: wrap;
+            }
+            .nav-actions {
+                margin-left: auto;
+            }
+            .header-controls {
+                margin-left: 0;
+            }
+        }
+        /* ----------------------------------------------------------
    11. MOBILE RESPONSIVENESS
    ---------------------------------------------------------- */
-
-@media (max-width: 600px) {
-
-    .header-inner {
-        padding: 12px 16px;
-        gap: 12px;
-    }
-
-    .brand-logo {
-        width: 120px;
-    }
-
-    .nav-actions {
-        gap: 8px;
-    }
-
-    .nav-action-login {
-        min-height: 42px;
-        padding: 10px 12px;
-    }
-
-    .main-nav {
-        gap: 6px;
-    }
-
-    .nav-link {
-        min-height: 42px;
-        padding: 8px 12px;
-        font-size: 12px;
-    }
-
-    .header-controls {
-        gap: 8px;
-    }
-
-    .theme-toggle {
-        width: 42px;
-        height: 42px;
-    }
-
-    .language-select {
-        min-width: 80px;
-        min-height: 42px;
-    }
-}
-
-/* ==========================================================
+        
+        @media (max-width: 600px) {
+            .header-inner {
+                padding: 12px 16px;
+                gap: 12px;
+            }
+            .brand-logo {
+                width: 120px;
+            }
+            .nav-actions {
+                gap: 8px;
+            }
+            .nav-action-login {
+                min-height: 42px;
+                padding: 10px 12px;
+            }
+            .main-nav {
+                gap: 6px;
+            }
+            .nav-link {
+                min-height: 42px;
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+            .header-controls {
+                gap: 8px;
+            }
+            .theme-toggle {
+                width: 42px;
+                height: 42px;
+            }
+            .language-select {
+                min-width: 80px;
+                min-height: 42px;
+            }
+        }
+        /* ==========================================================
    THEME TOGGLE ICON VISIBILITY
    Show only the icon appropriate for the current theme.
    ========================================================== */
-
-/* Light mode: show the moon */
-body:not(.dark) .theme-icon--moon {
-    display: block;
-}
-
-body:not(.dark) .theme-icon--sun {
-    display: none;
-}
-
-/* Dark mode: show the sun */
-body.dark .theme-icon--moon {
-    display: none;
-}
-
-body.dark .theme-icon--sun {
-    display: block;
-}
-
-/* Keep both icons centered inside the toggle */
-.theme-toggle svg {
-    flex-shrink: 0;
-}
-
-/* ==========================================================
+        /* Light mode: show the moon */
+        
+        body:not(.dark) .theme-icon--moon {
+            display: block;
+        }
+        
+        body:not(.dark) .theme-icon--sun {
+            display: none;
+        }
+        /* Dark mode: show the sun */
+        
+        body.dark .theme-icon--moon {
+            display: none;
+        }
+        
+        body.dark .theme-icon--sun {
+            display: block;
+        }
+        /* Keep both icons centered inside the toggle */
+        
+        .theme-toggle svg {
+            flex-shrink: 0;
+        }
+        /* ==========================================================
    BEDLINK FOOTER — V1.0
    Matches the approved footer mockup.
    ========================================================== */
-
-
-/* ----------------------------------------------------------
+        /* ----------------------------------------------------------
    1. MAIN FOOTER
    ---------------------------------------------------------- */
-
-.site-footer {
-    width: 100%;
-    background: #F4F0FF;
-    color: #171329;
-    border-top: 4px solid #D8B4FE;
-    margin-top: 40px;
-}
-
-
-/* ----------------------------------------------------------
+        
+        .site-footer {
+            width: 100%;
+            background: #F4F0FF;
+            color: #171329;
+            border-top: 4px solid #D8B4FE;
+            margin-top: 40px;
+        }
+        /* ----------------------------------------------------------
    2. FOOTER CONTENT LAYOUT
    ---------------------------------------------------------- */
-
-.footer-inner {
-    width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 36px 7%;
-    display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 48px;
-    align-items: center;
-}
-
-
-/* ----------------------------------------------------------
+        
+        .footer-inner {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 36px 7%;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 48px;
+            align-items: center;
+        }
+        /* ----------------------------------------------------------
    3. BRAND SECTION
    ---------------------------------------------------------- */
-
-.footer-brand-section {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-}
-
-.footer-brand {
-    display: inline-flex;
-    align-items: center;
-    text-decoration: none;
-}
-
-.footer-logo {
-    display: block;
-    width: 240px;
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-}
-
-.footer-tagline {
-    margin: 0;
-    font-family: var(--heading-font, 'Space Grotesk', sans-serif);
-    font-size: 25px;
-    font-weight: 700;
-    line-height: 1.4;
-    color: #171329;
-}
-
-.footer-description {
-    margin: 0;
-    font-size: 18px;
-    line-height: 1.5;
-    color: #625B73;
-}
-
-
-/* ----------------------------------------------------------
+        
+        .footer-brand-section {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        
+        .footer-brand {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .footer-logo {
+            display: block;
+            width: 240px;
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+        
+        .footer-tagline {
+            margin: 0;
+            font-family: var(--heading-font, 'Space Grotesk', sans-serif);
+            font-size: 25px;
+            font-weight: 700;
+            line-height: 1.4;
+            color: #171329;
+        }
+        
+        .footer-description {
+            margin: 0;
+            font-size: 18px;
+            line-height: 1.5;
+            color: #625B73;
+        }
+        /* ----------------------------------------------------------
    4. EMERGENCY CALL BUTTON
    ---------------------------------------------------------- */
-
-.footer-emergency {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    width: 100%;
-    max-width: 520px;
-    min-height: 92px;
-    margin-top: 12px;
-    padding: 18px 24px;
-    background: #4B168C;
-    color: #FFFFFF;
-    border-radius: 20px;
-    text-decoration: none;
-    transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.footer-emergency:hover {
-    background: #32105F;
-    transform: translateY(-2px);
-}
-
-.footer-emergency-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-}
-
-.footer-emergency-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 2px;
-    border-left: 2px solid rgba(255,255,255,0.5);
-    padding-left: 20px;
-}
-
-.footer-emergency-text strong {
-    font-size: 25px;
-    font-weight: 700;
-}
-
-.footer-emergency-text span {
-    font-size: 18px;
-}
-
-
-/* ----------------------------------------------------------
+        
+        .footer-emergency {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+            max-width: 520px;
+            min-height: 92px;
+            margin-top: 12px;
+            padding: 18px 24px;
+            background: #4B168C;
+            color: #FFFFFF;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+        
+        .footer-emergency:hover {
+            background: #32105F;
+            transform: translateY(-2px);
+        }
+        
+        .footer-emergency-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .footer-emergency-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 2px;
+            border-left: 2px solid rgba(255, 255, 255, 0.5);
+            padding-left: 20px;
+        }
+        
+        .footer-emergency-text strong {
+            font-size: 25px;
+            font-weight: 700;
+        }
+        
+        .footer-emergency-text span {
+            font-size: 18px;
+        }
+        /* ----------------------------------------------------------
    5. EXPLORE BEDLINK SECTION
    ---------------------------------------------------------- */
-
-.footer-explore-section {
-    min-height: 300px;
-    padding-left: 48px;
-    border-left: 2px solid #D8B4FE;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.footer-explore-title {
-    margin: 0;
-    font-family: var(--heading-font, 'Space Grotesk', sans-serif);
-    font-size: 30px;
-    font-weight: 700;
-    color: #32105F;
-}
-
-
-/* Teal accent line */
-
-.footer-accent {
-    width: 90px;
-    height: 8px;
-    margin: 18px 0 28px;
-    background: #0F766E;
-    border-radius: 20px;
-}
-
-
-/* Find a Bed link */
-
-.footer-find-bed {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    text-decoration: none;
-    color: #32105F;
-    transition: transform 0.2s ease;
-}
-
-.footer-find-bed:hover {
-    transform: translateX(4px);
-}
-
-
-/* Bed icon background */
-
-.footer-bed-icon {
-    width: 90px;
-    height: 90px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    border-radius: 20px;
-    background: #E9D5FF;
-    color: #4B168C;
-}
-
-.footer-bed-icon svg {
-    width: 42px;
-    height: 42px;
-}
-
-
-/* Find a Bed text */
-
-.footer-find-bed-text {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.footer-find-bed-text strong {
-    font-size: 25px;
-    font-weight: 700;
-}
-
-.footer-find-bed-text span {
-    font-size: 18px;
-    color: #625B73;
-}
-
-
-/* ----------------------------------------------------------
+        
+        .footer-explore-section {
+            min-height: 300px;
+            padding-left: 48px;
+            border-left: 2px solid #D8B4FE;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        
+        .footer-explore-title {
+            margin: 0;
+            font-family: var(--heading-font, 'Space Grotesk', sans-serif);
+            font-size: 30px;
+            font-weight: 700;
+            color: #32105F;
+        }
+        /* Teal accent line */
+        
+        .footer-accent {
+            width: 90px;
+            height: 8px;
+            margin: 18px 0 28px;
+            background: #0F766E;
+            border-radius: 20px;
+        }
+        /* Find a Bed link */
+        
+        .footer-find-bed {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            text-decoration: none;
+            color: #32105F;
+            transition: transform 0.2s ease;
+        }
+        
+        .footer-find-bed:hover {
+            transform: translateX(4px);
+        }
+        /* Bed icon background */
+        
+        .footer-bed-icon {
+            width: 90px;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            border-radius: 20px;
+            background: #E9D5FF;
+            color: #4B168C;
+        }
+        
+        .footer-bed-icon svg {
+            width: 42px;
+            height: 42px;
+        }
+        /* Find a Bed text */
+        
+        .footer-find-bed-text {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        
+        .footer-find-bed-text strong {
+            font-size: 25px;
+            font-weight: 700;
+        }
+        
+        .footer-find-bed-text span {
+            font-size: 18px;
+            color: #625B73;
+        }
+        /* ----------------------------------------------------------
    6. COPYRIGHT BAR
    ---------------------------------------------------------- */
-
-.footer-bottom {
-    width: 100%;
-    background: #32105F;
-    color: #FFFFFF;
-    padding: 16px 20px;
-    text-align: center;
-}
-
-.footer-bottom p {
-    margin: 0;
-    font-size: 20px;
-}
-
-
-/* ----------------------------------------------------------
+        
+        .footer-bottom {
+            width: 100%;
+            background: #32105F;
+            color: #FFFFFF;
+            padding: 16px 20px;
+            text-align: center;
+        }
+        
+        .footer-bottom p {
+            margin: 0;
+            font-size: 20px;
+        }
+        /* ----------------------------------------------------------
    7. DARK MODE
    ---------------------------------------------------------- */
-
-body.dark .site-footer {
-    background: #1E293B;
-    color: #F8FAFC;
-    border-top-color: #7C3AED;
-}
-
-body.dark .footer-tagline {
-    color: #F8FAFC;
-}
-
-body.dark .footer-description {
-    color: #CBD5E1;
-}
-
-body.dark .footer-explore-section {
-    border-left-color: #475569;
-}
-
-body.dark .footer-explore-title {
-    color: #C4B5FD;
-}
-
-body.dark .footer-find-bed {
-    color: #C4B5FD;
-}
-
-body.dark .footer-bed-icon {
-    background: #334155;
-    color: #C4B5FD;
-}
-
-body.dark .footer-find-bed-text span {
-    color: #CBD5E1;
-}
-
-body.dark .footer-bottom {
-    background: #111827;
-}
-
-
-/* ----------------------------------------------------------
+        
+        body.dark .site-footer {
+            background: #1E293B;
+            color: #F8FAFC;
+            border-top-color: #7C3AED;
+        }
+        
+        body.dark .footer-tagline {
+            color: #F8FAFC;
+        }
+        
+        body.dark .footer-description {
+            color: #CBD5E1;
+        }
+        
+        body.dark .footer-explore-section {
+            border-left-color: #475569;
+        }
+        
+        body.dark .footer-explore-title {
+            color: #C4B5FD;
+        }
+        
+        body.dark .footer-find-bed {
+            color: #C4B5FD;
+        }
+        
+        body.dark .footer-bed-icon {
+            background: #334155;
+            color: #C4B5FD;
+        }
+        
+        body.dark .footer-find-bed-text span {
+            color: #CBD5E1;
+        }
+        
+        body.dark .footer-bottom {
+            background: #111827;
+        }
+        /* ----------------------------------------------------------
    8. TABLET RESPONSIVENESS
    ---------------------------------------------------------- */
-
-@media (max-width: 900px) {
-
-    .footer-inner {
-        padding: 32px 5%;
-        gap: 32px;
-    }
-
-    .footer-logo {
-        width: 190px;
-    }
-
-    .footer-tagline {
-        font-size: 21px;
-    }
-
-    .footer-description {
-        font-size: 16px;
-    }
-
-    .footer-explore-section {
-        padding-left: 30px;
-        min-height: 250px;
-    }
-
-    .footer-explore-title {
-        font-size: 25px;
-    }
-
-    .footer-emergency {
-        min-height: 78px;
-    }
-
-    .footer-emergency-text strong {
-        font-size: 22px;
-    }
-
-    .footer-emergency-text span {
-        font-size: 16px;
-    }
-
-    .footer-find-bed-text strong {
-        font-size: 22px;
-    }
-
-    .footer-find-bed-text span {
-        font-size: 16px;
-    }
-
-    .footer-bed-icon {
-        width: 75px;
-        height: 75px;
-    }
-}
-
-
-/* ----------------------------------------------------------
+        
+        @media (max-width: 900px) {
+            .footer-inner {
+                padding: 32px 5%;
+                gap: 32px;
+            }
+            .footer-logo {
+                width: 190px;
+            }
+            .footer-tagline {
+                font-size: 21px;
+            }
+            .footer-description {
+                font-size: 16px;
+            }
+            .footer-explore-section {
+                padding-left: 30px;
+                min-height: 250px;
+            }
+            .footer-explore-title {
+                font-size: 25px;
+            }
+            .footer-emergency {
+                min-height: 78px;
+            }
+            .footer-emergency-text strong {
+                font-size: 22px;
+            }
+            .footer-emergency-text span {
+                font-size: 16px;
+            }
+            .footer-find-bed-text strong {
+                font-size: 22px;
+            }
+            .footer-find-bed-text span {
+                font-size: 16px;
+            }
+            .footer-bed-icon {
+                width: 75px;
+                height: 75px;
+            }
+        }
+        /* ----------------------------------------------------------
    9. MOBILE RESPONSIVENESS
    ---------------------------------------------------------- */
-
-@media (max-width: 600px) {
-
-    .footer-inner {
-        grid-template-columns: 1fr;
-        gap: 28px;
-        padding: 28px 20px;
-    }
-
-    .footer-brand-section {
-        gap: 10px;
-    }
-
-    .footer-logo {
-        width: 160px;
-    }
-
-    .footer-tagline {
-        font-size: 20px;
-    }
-
-    .footer-description {
-        font-size: 15px;
-    }
-
-    .footer-emergency {
-        min-height: 72px;
-        padding: 14px 18px;
-        gap: 14px;
-        border-radius: 14px;
-    }
-
-    .footer-emergency-icon svg {
-        width: 26px;
-        height: 26px;
-    }
-
-    .footer-emergency-text {
-        padding-left: 14px;
-    }
-
-    .footer-emergency-text strong {
-        font-size: 20px;
-    }
-
-    .footer-emergency-text span {
-        font-size: 15px;
-    }
-
-    .footer-explore-section {
-        min-height: auto;
-        padding: 24px 0 0;
-        border-left: none;
-        border-top: 1px solid #D8B4FE;
-    }
-
-    .footer-explore-title {
-        font-size: 23px;
-    }
-
-    .footer-accent {
-        width: 65px;
-        height: 6px;
-        margin: 14px 0 20px;
-    }
-
-    .footer-find-bed {
-        gap: 14px;
-    }
-
-    .footer-bed-icon {
-        width: 65px;
-        height: 65px;
-        border-radius: 14px;
-    }
-
-    .footer-bed-icon svg {
-        width: 32px;
-        height: 32px;
-    }
-
-    .footer-find-bed-text strong {
-        font-size: 20px;
-    }
-
-    .footer-find-bed-text span {
-        font-size: 14px;
-    }
-
-    .footer-bottom {
-        padding: 14px;
-    }
-
-    .footer-bottom p {
-        font-size: 16px;
-    }
-}
-
-
-/* ==========================================================
+        
+        @media (max-width: 600px) {
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 28px;
+                padding: 28px 20px;
+            }
+            .footer-brand-section {
+                gap: 10px;
+            }
+            .footer-logo {
+                width: 160px;
+            }
+            .footer-tagline {
+                font-size: 20px;
+            }
+            .footer-description {
+                font-size: 15px;
+            }
+            .footer-emergency {
+                min-height: 72px;
+                padding: 14px 18px;
+                gap: 14px;
+                border-radius: 14px;
+            }
+            .footer-emergency-icon svg {
+                width: 26px;
+                height: 26px;
+            }
+            .footer-emergency-text {
+                padding-left: 14px;
+            }
+            .footer-emergency-text strong {
+                font-size: 20px;
+            }
+            .footer-emergency-text span {
+                font-size: 15px;
+            }
+            .footer-explore-section {
+                min-height: auto;
+                padding: 24px 0 0;
+                border-left: none;
+                border-top: 1px solid #D8B4FE;
+            }
+            .footer-explore-title {
+                font-size: 23px;
+            }
+            .footer-accent {
+                width: 65px;
+                height: 6px;
+                margin: 14px 0 20px;
+            }
+            .footer-find-bed {
+                gap: 14px;
+            }
+            .footer-bed-icon {
+                width: 65px;
+                height: 65px;
+                border-radius: 14px;
+            }
+            .footer-bed-icon svg {
+                width: 32px;
+                height: 32px;
+            }
+            .footer-find-bed-text strong {
+                font-size: 20px;
+            }
+            .footer-find-bed-text span {
+                font-size: 14px;
+            }
+            .footer-bottom {
+                padding: 14px;
+            }
+            .footer-bottom p {
+                font-size: 16px;
+            }
+        }
+        /* ==========================================================
    BEDLINK FOOTER — COMPACT SIZE ADJUSTMENT
    ========================================================== */
-
-.site-footer {
-    margin-top: 24px;
-}
-
-/* Reduce the overall footer padding and spacing */
-.footer-inner {
-    padding: 24px 7%;
-    gap: 32px;
-}
-
-/* Reduce logo */
-.footer-logo {
-    width: 190px;
-}
-
-/* Reduce spacing within the brand section */
-.footer-brand-section {
-    gap: 8px;
-}
-
-/* Tagline */
-.footer-tagline {
-    font-size: 20px;
-    line-height: 1.3;
-}
-
-/* Description */
-.footer-description {
-    font-size: 15px;
-}
-
-/* Compact emergency button */
-.footer-emergency {
-    max-width: 420px;
-    min-height: 72px;
-    margin-top: 6px;
-    padding: 14px 20px;
-    gap: 16px;
-    border-radius: 14px;
-}
-
-/* Smaller emergency icon */
-.footer-emergency-icon svg {
-    width: 26px;
-    height: 26px;
-}
-
-/* Emergency text */
-.footer-emergency-text {
-    padding-left: 16px;
-}
-
-.footer-emergency-text strong {
-    font-size: 21px;
-}
-
-.footer-emergency-text span {
-    font-size: 15px;
-}
-
-/* Explore section */
-.footer-explore-section {
-    min-height: 230px;
-    padding-left: 36px;
-}
-
-/* Explore heading */
-.footer-explore-title {
-    font-size: 26px;
-}
-
-/* Teal accent */
-.footer-accent {
-    width: 75px;
-    height: 6px;
-    margin: 14px 0 20px;
-}
-
-/* Find a Bed icon */
-.footer-bed-icon {
-    width: 72px;
-    height: 72px;
-    border-radius: 16px;
-}
-
-.footer-bed-icon svg {
-    width: 34px;
-    height: 34px;
-}
-
-/* Find a Bed text */
-.footer-find-bed-text strong {
-    font-size: 21px;
-}
-
-.footer-find-bed-text span {
-    font-size: 15px;
-}
-
-/* Copyright bar */
-.footer-bottom {
-    padding: 12px 20px;
-}
-
-.footer-bottom p {
-    font-size: 17px;
-}
-/* ===== BEDLINK: SMALLER FOOTER ===== */
-
-.site-footer {
-    margin-top: 0 !important;
-}
-
-.site-footer .footer-inner {
-    padding: 8px 5% !important;
-    gap: 10px !important;
-    min-height: unset !important;
-}
-
-/* Brand section */
-.site-footer .footer-brand-section {
-    gap: 2px !important;
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-.site-footer .footer-logo {
-    width: 80px !important;
-    height: auto !important;
-    margin: 0 !important;
-}
-
-.site-footer .footer-tagline {
-    font-size: 12px !important;
-    margin: 2px 0 !important;
-    line-height: 1.2 !important;
-}
-
-.site-footer .footer-description {
-    font-size: 10px !important;
-    margin: 2px 0 4px !important;
-    line-height: 1.2 !important;
-}
-
-/* Emergency button */
-.site-footer .footer-emergency {
-    max-width: 220px !important;
-    width: 220px !important;
-    padding: 5px 8px !important;
-    margin: 2px 0 0 !important;
-    min-height: unset !important;
-    height: auto !important;
-    gap: 6px !important;
-}
-
-.site-footer .footer-emergency-icon {
-    padding: 4px !important;
-}
-
-.site-footer .footer-emergency-icon svg {
-    width: 16px !important;
-    height: 16px !important;
-}
-
-.site-footer .footer-emergency-text {
-    padding-left: 8px !important;
-    gap: 0 !important;
-}
-
-.site-footer .footer-emergency-text strong {
-    font-size: 12px !important;
-    line-height: 1.2 !important;
-}
-
-.site-footer .footer-emergency-text span {
-    font-size: 10px !important;
-    line-height: 1.2 !important;
-}
-
-/* Explore section */
-.site-footer .footer-explore-section {
-    min-height: unset !important;
-    height: auto !important;
-    padding: 4px 0 4px 12px !important;
-    margin: 0 !important;
-}
-
-/* Explore heading */
-.site-footer .footer-explore-title {
-    font-size: 14px !important;
-    margin: 0 0 4px !important;
-    line-height: 1.2 !important;
-}
-
-/* Accent */
-.site-footer .footer-accent {
-    width: 35px !important;
-    height: 3px !important;
-    margin: 0 0 5px !important;
-}
-
-/* Find a bed */
-.site-footer .footer-find-bed {
-    gap: 6px !important;
-    margin: 0 !important;
-}
-
-.site-footer .footer-bed-icon {
-    width: 32px !important;
-    height: 32px !important;
-    min-width: 32px !important;
-}
-
-.site-footer .footer-bed-icon svg {
-    width: 17px !important;
-    height: 17px !important;
-}
-
-.site-footer .footer-find-bed-text {
-    gap: 1px !important;
-}
-
-.site-footer .footer-find-bed-text strong {
-    font-size: 12px !important;
-    line-height: 1.2 !important;
-}
-
-.site-footer .footer-find-bed-text span {
-    font-size: 10px !important;
-    line-height: 1.2 !important;
-}
-
-/* Copyright strip */
-.site-footer .footer-bottom {
-    padding: 4px 8px !important;
-    min-height: unset !important;
-}
-
-.site-footer .footer-bottom p {
-    font-size: 10px !important;
-    line-height: 1.2 !important;
-    margin: 0 !important;
-}
-
-/* Remove unnecessary spacing from footer children */
-.site-footer p,
-.site-footer h2,
-.site-footer h3 {
-    margin-top: 0 !important;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-    .site-footer .footer-inner {
-        grid-template-columns: 1fr !important;
-        padding: 10px 16px !important;
-        gap: 10px !important;
-    }
-
-    .site-footer .footer-explore-section {
-        border-left: none !important;
-        border-top: 1px solid #D8B4FE !important;
-        padding: 8px 0 0 !important;
-    }
-}
-
-/* ==========================================================
+        
+        .site-footer {
+            margin-top: 24px;
+        }
+        /* Reduce the overall footer padding and spacing */
+        
+        .footer-inner {
+            padding: 24px 7%;
+            gap: 32px;
+        }
+        /* Reduce logo */
+        
+        .footer-logo {
+            width: 190px;
+        }
+        /* Reduce spacing within the brand section */
+        
+        .footer-brand-section {
+            gap: 8px;
+        }
+        /* Tagline */
+        
+        .footer-tagline {
+            font-size: 20px;
+            line-height: 1.3;
+        }
+        /* Description */
+        
+        .footer-description {
+            font-size: 15px;
+        }
+        /* Compact emergency button */
+        
+        .footer-emergency {
+            max-width: 420px;
+            min-height: 72px;
+            margin-top: 6px;
+            padding: 14px 20px;
+            gap: 16px;
+            border-radius: 14px;
+        }
+        /* Smaller emergency icon */
+        
+        .footer-emergency-icon svg {
+            width: 26px;
+            height: 26px;
+        }
+        /* Emergency text */
+        
+        .footer-emergency-text {
+            padding-left: 16px;
+        }
+        
+        .footer-emergency-text strong {
+            font-size: 21px;
+        }
+        
+        .footer-emergency-text span {
+            font-size: 15px;
+        }
+        /* Explore section */
+        
+        .footer-explore-section {
+            min-height: 230px;
+            padding-left: 36px;
+        }
+        /* Explore heading */
+        
+        .footer-explore-title {
+            font-size: 26px;
+        }
+        /* Teal accent */
+        
+        .footer-accent {
+            width: 75px;
+            height: 6px;
+            margin: 14px 0 20px;
+        }
+        /* Find a Bed icon */
+        
+        .footer-bed-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 16px;
+        }
+        
+        .footer-bed-icon svg {
+            width: 34px;
+            height: 34px;
+        }
+        /* Find a Bed text */
+        
+        .footer-find-bed-text strong {
+            font-size: 21px;
+        }
+        
+        .footer-find-bed-text span {
+            font-size: 15px;
+        }
+        /* Copyright bar */
+        
+        .footer-bottom {
+            padding: 12px 20px;
+        }
+        
+        .footer-bottom p {
+            font-size: 17px;
+        }
+        /* ===== BEDLINK: SMALLER FOOTER ===== */
+        
+        .site-footer {
+            margin-top: 0 !important;
+        }
+        
+        .site-footer .footer-inner {
+            padding: 8px 5% !important;
+            gap: 10px !important;
+            min-height: unset !important;
+        }
+        /* Brand section */
+        
+        .site-footer .footer-brand-section {
+            gap: 2px !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        
+        .site-footer .footer-logo {
+            width: 80px !important;
+            height: auto !important;
+            margin: 0 !important;
+        }
+        
+        .site-footer .footer-tagline {
+            font-size: 12px !important;
+            margin: 2px 0 !important;
+            line-height: 1.2 !important;
+        }
+        
+        .site-footer .footer-description {
+            font-size: 10px !important;
+            margin: 2px 0 4px !important;
+            line-height: 1.2 !important;
+        }
+        /* Emergency button */
+        
+        .site-footer .footer-emergency {
+            max-width: 220px !important;
+            width: 220px !important;
+            padding: 5px 8px !important;
+            margin: 2px 0 0 !important;
+            min-height: unset !important;
+            height: auto !important;
+            gap: 6px !important;
+        }
+        
+        .site-footer .footer-emergency-icon {
+            padding: 4px !important;
+        }
+        
+        .site-footer .footer-emergency-icon svg {
+            width: 16px !important;
+            height: 16px !important;
+        }
+        
+        .site-footer .footer-emergency-text {
+            padding-left: 8px !important;
+            gap: 0 !important;
+        }
+        
+        .site-footer .footer-emergency-text strong {
+            font-size: 12px !important;
+            line-height: 1.2 !important;
+        }
+        
+        .site-footer .footer-emergency-text span {
+            font-size: 10px !important;
+            line-height: 1.2 !important;
+        }
+        /* Explore section */
+        
+        .site-footer .footer-explore-section {
+            min-height: unset !important;
+            height: auto !important;
+            padding: 4px 0 4px 12px !important;
+            margin: 0 !important;
+        }
+        /* Explore heading */
+        
+        .site-footer .footer-explore-title {
+            font-size: 14px !important;
+            margin: 0 0 4px !important;
+            line-height: 1.2 !important;
+        }
+        /* Accent */
+        
+        .site-footer .footer-accent {
+            width: 35px !important;
+            height: 3px !important;
+            margin: 0 0 5px !important;
+        }
+        /* Find a bed */
+        
+        .site-footer .footer-find-bed {
+            gap: 6px !important;
+            margin: 0 !important;
+        }
+        
+        .site-footer .footer-bed-icon {
+            width: 32px !important;
+            height: 32px !important;
+            min-width: 32px !important;
+        }
+        
+        .site-footer .footer-bed-icon svg {
+            width: 17px !important;
+            height: 17px !important;
+        }
+        
+        .site-footer .footer-find-bed-text {
+            gap: 1px !important;
+        }
+        
+        .site-footer .footer-find-bed-text strong {
+            font-size: 12px !important;
+            line-height: 1.2 !important;
+        }
+        
+        .site-footer .footer-find-bed-text span {
+            font-size: 10px !important;
+            line-height: 1.2 !important;
+        }
+        /* Copyright strip */
+        
+        .site-footer .footer-bottom {
+            padding: 4px 8px !important;
+            min-height: unset !important;
+        }
+        
+        .site-footer .footer-bottom p {
+            font-size: 10px !important;
+            line-height: 1.2 !important;
+            margin: 0 !important;
+        }
+        /* Remove unnecessary spacing from footer children */
+        
+        .site-footer p,
+        .site-footer h2,
+        .site-footer h3 {
+            margin-top: 0 !important;
+        }
+        /* Mobile */
+        
+        @media (max-width: 768px) {
+            .site-footer .footer-inner {
+                grid-template-columns: 1fr !important;
+                padding: 10px 16px !important;
+                gap: 10px !important;
+            }
+            .site-footer .footer-explore-section {
+                border-left: none !important;
+                border-top: 1px solid #D8B4FE !important;
+                padding: 8px 0 0 !important;
+            }
+        }
+        /* ==========================================================
    FIX: KEEP FOOTER AT THE BOTTOM OF THE PAGE
    ========================================================== */
-
-/* Make the entire page fill at least the browser height */
-html,
-body {
-    min-height: 100%;
-    margin: 0;
-}
-
-/* Arrange page sections vertically */
-body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Header keeps its natural size */
-.site-header {
-    flex-shrink: 0;
-}
-
-/* Main content fills the available empty space */
-main.container {
-    flex: 1;
-}
-
-/* Footer stays at the bottom when content is short */
-.site-footer {
-    margin-top: auto;
-    flex-shrink: 0;
-}
-
-
-/* ==========================================================
+        /* Make the entire page fill at least the browser height */
+        
+        html,
+        body {
+            min-height: 100%;
+            margin: 0;
+        }
+        /* Arrange page sections vertically */
+        
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        /* Header keeps its natural size */
+        
+        .site-header {
+            flex-shrink: 0;
+        }
+        /* Main content fills the available empty space */
+        
+        main.container {
+            flex: 1;
+        }
+        /* Footer stays at the bottom when content is short */
+        
+        .site-footer {
+            margin-top: auto;
+            flex-shrink: 0;
+        }
+        /* ==========================================================
    HEADER SIZE REDUCTION
    ========================================================== */
-
-.site-header {
-    padding: 0;
-}
-
-.header-inner {
-    min-height: 85px;
-    height: auto;
-    padding: 10px 28px;
-    gap: 18px;
-}
-
-.brand {
-    padding-right: 18px;
-}
-
-.brand-logo {
-    width: 155px;
-}
-
-.main-nav {
-    gap: 6px;
-}
-
-.nav-link {
-    min-height: 40px;
-    padding: 8px 14px;
-    font-size: 13px;
-}
-
-.nav-actions {
-    gap: 10px;
-}
-
-.nav-action-login {
-    min-height: 40px;
-    padding: 8px 14px;
-    font-size: 13px;
-}
-
-.header-controls {
-    gap: 10px;
-}
-
-.theme-toggle {
-    width: 40px;
-    height: 40px;
-}
-
-.language-select {
-    min-height: 40px;
-    font-size: 13px;
-    padding: 6px 10px;
-}
-
-/* ==========================================================
+        
+        .site-header {
+            padding: 0;
+        }
+        
+        .header-inner {
+            min-height: 85px;
+            height: auto;
+            padding: 10px 28px;
+            gap: 18px;
+        }
+        
+        .brand {
+            padding-right: 18px;
+        }
+        
+        .brand-logo {
+            width: 155px;
+        }
+        
+        .main-nav {
+            gap: 6px;
+        }
+        
+        .nav-link {
+            min-height: 40px;
+            padding: 8px 14px;
+            font-size: 13px;
+        }
+        
+        .nav-actions {
+            gap: 10px;
+        }
+        
+        .nav-action-login {
+            min-height: 40px;
+            padding: 8px 14px;
+            font-size: 13px;
+        }
+        
+        .header-controls {
+            gap: 10px;
+        }
+        
+        .theme-toggle {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .language-select {
+            min-height: 40px;
+            font-size: 13px;
+            padding: 6px 10px;
+        }
+        /* ==========================================================
    403 — ACCESS DENIED PAGE
    ========================================================== */
-
-.error-page {
-    max-width: 480px;
-    margin: 35px auto;
-    padding: 24px 22px;
-    text-align: center;
-}
-
-.error-code {
-    margin: 0 0 8px;
-    font-size: 56px;
-    font-weight: 700;
-    color: var(--blue);
-    line-height: 1;
-}
-
-.error-page h1 {
-    margin-bottom: 12px;
-    font-size: 28px;
-}
-
-.error-page p {
-    color: var(--muted);
-    line-height: 1.6;
-    font-size: 15px;
-}
-
-.error-page .btn {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    margin: 16px 0;
-    padding: 11px 20px;
-    min-height: 42px;
-    border-radius: 12px;
-    background: var(--blue);
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.error-page .btn:hover {
-    background: var(--blue-dark);
-}
-
-.error-page > p:last-child a {
-    color: var(--blue);
-    font-weight: 600;
-}
-
-/* ==========================================================
+        
+        .error-page {
+            max-width: 480px;
+            margin: 35px auto;
+            padding: 24px 22px;
+            text-align: center;
+        }
+        
+        .error-code {
+            margin: 0 0 8px;
+            font-size: 56px;
+            font-weight: 700;
+            color: var(--blue);
+            line-height: 1;
+        }
+        
+        .error-page h1 {
+            margin-bottom: 12px;
+            font-size: 28px;
+        }
+        
+        .error-page p {
+            color: var(--muted);
+            line-height: 1.6;
+            font-size: 15px;
+        }
+        
+        .error-page .btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin: 16px 0;
+            padding: 11px 20px;
+            min-height: 42px;
+            border-radius: 12px;
+            background: var(--blue);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .error-page .btn:hover {
+            background: var(--blue-dark);
+        }
+        
+        .error-page>p:last-child a {
+            color: var(--blue);
+            font-weight: 600;
+        }
+        /* ==========================================================
    FIX: KEEP THE FOOTER AT THE BOTTOM OF THE VIEWPORT
    ========================================================== */
-
-html,
-body {
-    min-height: 100%;
-}
-
-body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Main content grows to fill available space */
-main {
-    flex: 1;
-}
-
-/* Footer stays at the bottom */
-.site-footer {
-    margin-top: auto;
-}
-
-
-/* ==========================================================
+        
+        html,
+        body {
+            min-height: 100%;
+        }
+        
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        /* Main content grows to fill available space */
+        
+        main {
+            flex: 1;
+        }
+        /* Footer stays at the bottom */
+        
+        .site-footer {
+            margin-top: auto;
+        }
+        /* ==========================================================
    BEDLINK PAGE LAYOUT — FOOTER FIX
    ========================================================== */
-
-html {
-    height: 100%;
-    margin: 0;
-}
-
-body {
-    min-height: 100vh;
-    margin: 0;
-
-    display: flex;
-    flex-direction: column;
-}
-
-/* Main content occupies the remaining available space */
-main {
-    flex: 1 0 auto;
-}
-
-/* Footer stays at the bottom when content is short */
-.site-footer {
-    flex-shrink: 0;
-    margin-top: auto;
-}
-
-
-/* ==========================================================
+        
+        html {
+            height: 100%;
+            margin: 0;
+        }
+        
+        body {
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        /* Main content occupies the remaining available space */
+        
+        main {
+            flex: 1 0 auto;
+        }
+        /* Footer stays at the bottom when content is short */
+        
+        .site-footer {
+            flex-shrink: 0;
+            margin-top: auto;
+        }
+        /* ==========================================================
    403 PAGE — FIT CONTENT AND FOOTER INTO THE VIEWPORT
    ========================================================== */
-
-body.error-403-page {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Make the 403 main section use only the available space */
-.error-403-page main {
-    flex: 1 0 auto;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    margin: 0;
-}
-
-/* Stop the error card from becoming unnecessarily large */
-.error-403-page .error-page {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 32px 36px;
-    min-height: unset;
-    height: auto;
-}
-
-/* Reduce excessive spacing inside the error card */
-.error-403-page .error-page p {
-    margin: 12px 0;
-}
-
-.error-403-page .error-code {
-    margin: 0 0 12px;
-}
-
-.error-403-page .error-page h1 {
-    margin: 10px 0 16px;
-}
-
-/* Keep the footer at the bottom */
-.error-403-page .site-footer {
-    flex-shrink: 0;
-    margin-top: auto;
-}
-
-/* Smaller screens */
-@media (max-width: 600px) {
-    .error-403-page main {
-        padding: 16px;
-    }
-
-    .error-403-page .error-page {
-        padding: 24px 20px;
-    }
-}
-
-/* ==========================================================
+        
+        body.error-403-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        /* Make the 403 main section use only the available space */
+        
+        .error-403-page main {
+            flex: 1 0 auto;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            margin: 0;
+        }
+        /* Stop the error card from becoming unnecessarily large */
+        
+        .error-403-page .error-page {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 32px 36px;
+            min-height: unset;
+            height: auto;
+        }
+        /* Reduce excessive spacing inside the error card */
+        
+        .error-403-page .error-page p {
+            margin: 12px 0;
+        }
+        
+        .error-403-page .error-code {
+            margin: 0 0 12px;
+        }
+        
+        .error-403-page .error-page h1 {
+            margin: 10px 0 16px;
+        }
+        /* Keep the footer at the bottom */
+        
+        .error-403-page .site-footer {
+            flex-shrink: 0;
+            margin-top: auto;
+        }
+        /* Smaller screens */
+        
+        @media (max-width: 600px) {
+            .error-403-page main {
+                padding: 16px;
+            }
+            .error-403-page .error-page {
+                padding: 24px 20px;
+            }
+        }
+        /* ==========================================================
    BEDLINK PAGE LAYOUT — KEEP FOOTER AT THE BOTTOM
    ========================================================== */
-
-/* Make the entire page a vertical layout */
-html,
-body {
-    min-height: 100%;
-}
-
-body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Allow the main page content to take up available space */
-body > main {
-    flex: 1 0 auto;
-}
-
-/* Prevent the footer from shrinking */
-body > .site-footer {
-    flex-shrink: 0;
-    margin-top: auto;
-}
-
-/* ==========================================================
+        /* Make the entire page a vertical layout */
+        
+        html,
+        body {
+            min-height: 100%;
+        }
+        
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        /* Allow the main page content to take up available space */
+        
+        body>main {
+            flex: 1 0 auto;
+        }
+        /* Prevent the footer from shrinking */
+        
+        body>.site-footer {
+            flex-shrink: 0;
+            margin-top: auto;
+        }
+        /* ==========================================================
    STICKY FOOTER LAYOUT
    Keeps the footer at the bottom of the screen when content
    is short, without making it fixed or causing overlap.
    ========================================================== */
-
-/* Make the entire page a vertical layout */
-body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Header stays at its natural height */
-.site-header {
-    flex-shrink: 0;
-}
-
-/* Main content fills the remaining available space */
-main.container {
-    flex: 1;
-}
-
-/* Footer stays at the bottom when content is short */
-.site-footer {
-    margin-top: auto;
-    flex-shrink: 0;
-}
-
-/* ==========================================
+        /* Make the entire page a vertical layout */
+        
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        /* Header stays at its natural height */
+        
+        .site-header {
+            flex-shrink: 0;
+        }
+        /* Main content fills the remaining available space */
+        
+        main.container {
+            flex: 1;
+        }
+        /* Footer stays at the bottom when content is short */
+        
+        .site-footer {
+            margin-top: auto;
+            flex-shrink: 0;
+        }
+        /* ==========================================
    403 PAGE — FIT HEADER, CONTENT AND FOOTER
    ========================================== */
-
-html,
-body {
-    min-height: 100%;
-    margin: 0;
-}
-
-body.error-403-page {
-    min-height: 100vh;
-    min-height: 100dvh;
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
-}
-
-/* Header */
-.error-403-page .site-header {
-    flex-shrink: 0;
-}
-
-/* Main area uses only the space available */
-.error-403-page main {
-    flex: 1 1 auto !important;
-    min-height: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    padding: 8px 16px !important;
-    margin: 0 !important;
-}
-
-/* Smaller 403 card */
-.error-403-page .error-page {
-    width: 100% !important;
-    max-width: 650px !important;
-    margin: 0 auto !important;
-    padding: 18px 24px !important;
-    min-height: unset !important;
-    height: auto !important;
-}
-
-/* 403 code */
-.error-403-page .error-code {
-    font-size: 36px !important;
-    margin: 0 0 8px !important;
-    line-height: 1.1 !important;
-}
-
-/* Heading */
-.error-403-page .error-page h1 {
-    font-size: 26px !important;
-    margin: 8px 0 12px !important;
-}
-
-/* Paragraphs */
-.error-403-page .error-page p {
-    font-size: 15px !important;
-    line-height: 1.5 !important;
-    margin: 8px 0 !important;
-}
-
-/* Buttons */
-.error-403-page .error-page .btn {
-    margin: 10px 0 !important;
-    padding: 10px 18px !important;
-    min-height: 40px !important;
-}
-
-/* Footer */
-.error-403-page .site-footer {
-    flex-shrink: 0 !important;
-    margin-top: 0 !important;
-}
-
-/* Compact footer spacing */
-.error-403-page .footer-inner {
-    padding: 8px 5% !important;
-    gap: 10px !important;
-}
-
-.error-403-page .footer-explore-section {
-    min-height: unset !important;
-}
-
-.error-403-page .footer-bottom {
-    padding: 4px 8px !important;
-}
-
-/* Smaller screens */
-@media (max-width: 600px) {
-    .error-403-page main {
-        padding: 8px 12px !important;
-    }
-
-    .error-403-page .error-page {
-        padding: 16px !important;
-    }
-}
-/* =========================================
+        
+        html,
+        body {
+            min-height: 100%;
+            margin: 0;
+        }
+        
+        body.error-403-page {
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+        /* Header */
+        
+        .error-403-page .site-header {
+            flex-shrink: 0;
+        }
+        /* Main area uses only the space available */
+        
+        .error-403-page main {
+            flex: 1 1 auto !important;
+            min-height: 0 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            padding: 8px 16px !important;
+            margin: 0 !important;
+        }
+        /* Smaller 403 card */
+        
+        .error-403-page .error-page {
+            width: 100% !important;
+            max-width: 650px !important;
+            margin: 0 auto !important;
+            padding: 18px 24px !important;
+            min-height: unset !important;
+            height: auto !important;
+        }
+        /* 403 code */
+        
+        .error-403-page .error-code {
+            font-size: 36px !important;
+            margin: 0 0 8px !important;
+            line-height: 1.1 !important;
+        }
+        /* Heading */
+        
+        .error-403-page .error-page h1 {
+            font-size: 26px !important;
+            margin: 8px 0 12px !important;
+        }
+        /* Paragraphs */
+        
+        .error-403-page .error-page p {
+            font-size: 15px !important;
+            line-height: 1.5 !important;
+            margin: 8px 0 !important;
+        }
+        /* Buttons */
+        
+        .error-403-page .error-page .btn {
+            margin: 10px 0 !important;
+            padding: 10px 18px !important;
+            min-height: 40px !important;
+        }
+        /* Footer */
+        
+        .error-403-page .site-footer {
+            flex-shrink: 0 !important;
+            margin-top: 0 !important;
+        }
+        /* Compact footer spacing */
+        
+        .error-403-page .footer-inner {
+            padding: 8px 5% !important;
+            gap: 10px !important;
+        }
+        
+        .error-403-page .footer-explore-section {
+            min-height: unset !important;
+        }
+        
+        .error-403-page .footer-bottom {
+            padding: 4px 8px !important;
+        }
+        /* Smaller screens */
+        
+        @media (max-width: 600px) {
+            .error-403-page main {
+                padding: 8px 12px !important;
+            }
+            .error-403-page .error-page {
+                padding: 16px !important;
+            }
+        }
+        /* =========================================
    SECTION 8: JEFF'S COMPONENTS
    Ambulance and hospital staff screens  
 ========================================= */
-
-.amb {
-    max-width: 720px;
-}
-
-.gps {
-    padding: 10px 14px;
-    border-radius: 10px;
-    background: var(--card);
-    border: 1px solid var(--border);
-    color: var(--muted);
-    font-weight: 600;
-    font-size: 0.95rem;
-}
-
-
-/* Match Cards */
-
-.card.match {
-    border-width: 2px;
-}
-
-.card.match--best {
-    border-color: var(--green);
-}
-
-.eta {
-    font-family: var(--display);
-    font-size: 1.35rem;
-    font-weight: 700;
-    color: var(--green);
-    margin-bottom: 6px;
-}
-
-
-/* Triage Buttons & Cards */
-
-.triage {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
-}
-
-@media (min-width: 600px) {
-    .triage {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-.triage label.btn {
-    margin: 0;
-    border-width: 2px;
-}
-
-.triage--red {
-    border-color: var(--red);
-}
-
-.triage--red:has(input:checked),
-.incoming.triage--red {
-    border-left: 8px solid var(--red);
-}
-
-.triage--red:has(input:checked) {
-    background: color-mix(in srgb, var(--red) 20%, transparent);
-}
-
-.triage--yellow {
-    border-color: var(--orange);
-}
-
-.triage--yellow:has(input:checked),
-.incoming.triage--yellow {
-    border-left: 8px solid var(--orange);
-}
-
-.triage--yellow:has(input:checked) {
-    background: color-mix(in srgb, var(--orange) 20%, transparent);
-}
-
-.triage--green {
-    border-color: var(--green);
-}
-
-.triage--green:has(input:checked),
-.incoming.triage--green {
-    border-left: 8px solid var(--green);
-}
-
-.triage--green:has(input:checked) {
-    background: color-mix(in srgb, var(--green) 20%, transparent);
-}
-
-.vitals {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-}
-
-@media (min-width: 600px) {
-    .vitals {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-
-/* Active Trip Screen */
-
-.countdown {
-    font-size: 1.15rem;
-    margin: 8px 0 16px;
-}
-
-#countdown {
-    font-family: var(--display);
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 0.03em;
-}
-
-#countdown.warn {
-    color: var(--orange);
-}
-
-.steps {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 16px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
-}
-
-.step {
-    padding: 10px 8px;
-    border-radius: 10px;
-    border: 1px solid var(--border);
-    background: var(--card);
-    color: var(--muted);
-    text-align: center;
-    font-size: 0.85rem;
-    font-weight: 700;
-}
-
-.step--done {
-    border-color: var(--green);
-    background: color-mix(in srgb, var(--green) 15%, transparent);
-    color: var(--text);
-}
-
-.ticks {
-    padding: 12px 14px;
-    border-radius: 10px;
-    background: var(--card);
-    border: 1px solid var(--border);
-    font-weight: 700;
-}
-
-.tick--ready {
-    border-color: var(--green);
-    color: var(--green);
-}
-
-
-/* Bed Board & Grid */
-
-.board-head {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 16px;
-}
-
-.board-head select {
-    width: auto;
-    min-width: 200px;
-    font-weight: 700;
-}
-
-#synced {
-    margin-left: auto;
-    color: var(--muted);
-    font-weight: 600;
-}
-
-.tiles {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    margin-bottom: 16px;
-}
-
-@media (min-width: 600px) {
-    .tiles {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-.tile {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 4px;
-    padding: 14px;
-    border-radius: var(--radius);
-    background: var(--card);
-    border: 2px solid var(--border);
-}
-
-.tile strong {
-    font-family: var(--display);
-    font-size: 1.5rem;
-}
-
-.bed-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 12px;
-    margin-top: 14px;
-}
-
-.bed {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    min-height: 84px;
-    padding: 12px;
-    border-radius: var(--radius);
-    border: 2px solid var(--border);
-    background: var(--card);
-    color: var(--text);
-    font-family: var(--font);
-    cursor: pointer;
-}
-
-.bed strong {
-    font-family: var(--display);
-    font-size: 1.1rem;
-}
-
-.bed span {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--muted);
-}
-
-#qr-video {
-    width: 100%;
-    max-width: 420px;
-    border-radius: var(--radius);
-    margin-top: 12px;
-    border: 2px solid var(--blue);
-}
-
-
-/* Incoming & Alarms */
-
-.incoming__title {
-    font-family: var(--display);
-    font-size: 1.2rem;
-    font-weight: 700;
-}
-
-.incoming--alarm {
-    border: 2px solid var(--red);
-    background: var(--red-soft);
-    animation: pulseAlarm 1.2s infinite alternate;
-}
-
-body.dark .incoming--alarm {
-    background: var(--card);
-}
-
-@keyframes pulseAlarm {
-    from {
-        box-shadow: 0 0 0 0 color-mix(in srgb, var(--red) 35%, transparent);
-    }
-    to {
-        box-shadow: 0 0 0 8px transparent;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .incoming--alarm {
-        animation: none;
-    }
-}
-
-
-/* Shift Handover Checklist Rows */
-
-.row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 10px 12px;
-    border-radius: 10px;
-    border: 1px solid var(--border);
-    background: var(--card);
-    margin-bottom: 8px;
-}
-
-.row select {
-    width: auto;
-    min-width: 140px;
-}
-
-.row--changed {
-    border-color: var(--blue);
-    background: color-mix(in srgb, var(--blue) 8%, transparent);
-}
-
-
-/* Blood Bank Stock Tiles */
-
-.blood--good {
-    border-color: var(--green);
-}
-
-.blood--low {
-    border-color: var(--orange);
-}
-
-.blood--critical {
-    border-color: var(--red);
-    background: var(--red-soft);
-}
-
-.blood--none {
-    border-color: var(--grey);
-    opacity: 0.8;
-}
-
-
-/* Chips and Form Inputs */
-
-.chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.chips label {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    min-height: var(--tap);
-    padding: 8px 14px;
-    margin: 0;
-    border-radius: 12px;
-    border: 1px solid var(--border);
-    background: var(--card);
-    cursor: pointer;
-    user-select: none;
-}
-
-.chips label:has(input:checked) {
-    border-color: var(--blue);
-    background: color-mix(in srgb, var(--blue) 12%, transparent);
-}
-
-.switch {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    min-height: var(--tap);
-    cursor: pointer;
-    margin: 0;
-}
-
-
-/* Bed Status Colours */
-
-.bed.bed--free,
-.tile.bed--free {
-    border-color: var(--green);
-}
-
-.bed.bed--occupied,
-.tile.bed--occupied {
-    border-color: var(--grey);
-}
-
-.bed.bed--cleaning,
-.tile.bed--cleaning {
-    border-color: var(--orange);
-    border-style: dashed;
-}
-
-.bed.bed--held,
-.tile.bed--held {
-    border-color: var(--blue);
-}
+        
+        .amb {
+            max-width: 720px;
+        }
+        
+        .gps {
+            padding: 10px 14px;
+            border-radius: 10px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            color: var(--muted);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        /* Match Cards */
+        
+        .card.match {
+            border-width: 2px;
+        }
+        
+        .card.match--best {
+            border-color: var(--green);
+        }
+        
+        .eta {
+            font-family: var(--display);
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--green);
+            margin-bottom: 6px;
+        }
+        /* Triage Buttons & Cards */
+        
+        .triage {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+        
+        @media (min-width: 600px) {
+            .triage {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .triage label.btn {
+            margin: 0;
+            border-width: 2px;
+        }
+        
+        .triage--red {
+            border-color: var(--red);
+        }
+        
+        .triage--red:has(input:checked),
+        .incoming.triage--red {
+            border-left: 8px solid var(--red);
+        }
+        
+        .triage--red:has(input:checked) {
+            background: color-mix(in srgb, var(--red) 20%, transparent);
+        }
+        
+        .triage--yellow {
+            border-color: var(--orange);
+        }
+        
+        .triage--yellow:has(input:checked),
+        .incoming.triage--yellow {
+            border-left: 8px solid var(--orange);
+        }
+        
+        .triage--yellow:has(input:checked) {
+            background: color-mix(in srgb, var(--orange) 20%, transparent);
+        }
+        
+        .triage--green {
+            border-color: var(--green);
+        }
+        
+        .triage--green:has(input:checked),
+        .incoming.triage--green {
+            border-left: 8px solid var(--green);
+        }
+        
+        .triage--green:has(input:checked) {
+            background: color-mix(in srgb, var(--green) 20%, transparent);
+        }
+        
+        .vitals {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+        
+        @media (min-width: 600px) {
+            .vitals {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        /* Active Trip Screen */
+        
+        .countdown {
+            font-size: 1.15rem;
+            margin: 8px 0 16px;
+        }
+        
+        #countdown {
+            font-family: var(--display);
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+        }
+        
+        #countdown.warn {
+            color: var(--orange);
+        }
+        
+        .steps {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 16px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+        }
+        
+        .step {
+            padding: 10px 8px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            background: var(--card);
+            color: var(--muted);
+            text-align: center;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+        
+        .step--done {
+            border-color: var(--green);
+            background: color-mix(in srgb, var(--green) 15%, transparent);
+            color: var(--text);
+        }
+        
+        .ticks {
+            padding: 12px 14px;
+            border-radius: 10px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            font-weight: 700;
+        }
+        
+        .tick--ready {
+            border-color: var(--green);
+            color: var(--green);
+        }
+        /* Bed Board & Grid */
+        
+        .board-head {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        
+        .board-head select {
+            width: auto;
+            min-width: 200px;
+            font-weight: 700;
+        }
+        
+        #synced {
+            margin-left: auto;
+            color: var(--muted);
+            font-weight: 600;
+        }
+        
+        .tiles {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+        
+        @media (min-width: 600px) {
+            .tiles {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        .tile {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 4px;
+            padding: 14px;
+            border-radius: var(--radius);
+            background: var(--card);
+            border: 2px solid var(--border);
+        }
+        
+        .tile strong {
+            font-family: var(--display);
+            font-size: 1.5rem;
+        }
+        
+        .bed-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 12px;
+            margin-top: 14px;
+        }
+        
+        .bed {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            min-height: 84px;
+            padding: 12px;
+            border-radius: var(--radius);
+            border: 2px solid var(--border);
+            background: var(--card);
+            color: var(--text);
+            font-family: var(--font);
+            cursor: pointer;
+        }
+        
+        .bed strong {
+            font-family: var(--display);
+            font-size: 1.1rem;
+        }
+        
+        .bed span {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--muted);
+        }
+        
+        #qr-video {
+            width: 100%;
+            max-width: 420px;
+            border-radius: var(--radius);
+            margin-top: 12px;
+            border: 2px solid var(--blue);
+        }
+        /* Incoming & Alarms */
+        
+        .incoming__title {
+            font-family: var(--display);
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+        
+        .incoming--alarm {
+            border: 2px solid var(--red);
+            background: var(--red-soft);
+            animation: pulseAlarm 1.2s infinite alternate;
+        }
+        
+        body.dark .incoming--alarm {
+            background: var(--card);
+        }
+        
+        @keyframes pulseAlarm {
+            from {
+                box-shadow: 0 0 0 0 color-mix(in srgb, var(--red) 35%, transparent);
+            }
+            to {
+                box-shadow: 0 0 0 8px transparent;
+            }
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            .incoming--alarm {
+                animation: none;
+            }
+        }
+        /* Shift Handover Checklist Rows */
+        
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 10px 12px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            background: var(--card);
+            margin-bottom: 8px;
+        }
+        
+        .row select {
+            width: auto;
+            min-width: 140px;
+        }
+        
+        .row--changed {
+            border-color: var(--blue);
+            background: color-mix(in srgb, var(--blue) 8%, transparent);
+        }
+        /* Blood Bank Stock Tiles */
+        
+        .blood--good {
+            border-color: var(--green);
+        }
+        
+        .blood--low {
+            border-color: var(--orange);
+        }
+        
+        .blood--critical {
+            border-color: var(--red);
+            background: var(--red-soft);
+        }
+        
+        .blood--none {
+            border-color: var(--grey);
+            opacity: 0.8;
+        }
+        /* Chips and Form Inputs */
+        
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .chips label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            min-height: var(--tap);
+            padding: 8px 14px;
+            margin: 0;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            background: var(--card);
+            cursor: pointer;
+            user-select: none;
+        }
+        
+        .chips label:has(input:checked) {
+            border-color: var(--blue);
+            background: color-mix(in srgb, var(--blue) 12%, transparent);
+        }
+        
+        .switch {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            min-height: var(--tap);
+            cursor: pointer;
+            margin: 0;
+        }
+        /* Bed Status Colours */
+        
+        .bed.bed--free,
+        .tile.bed--free {
+            border-color: var(--green);
+        }
+        
+        .bed.bed--occupied,
+        .tile.bed--occupied {
+            border-color: var(--grey);
+        }
+        
+        .bed.bed--cleaning,
+        .tile.bed--cleaning {
+            border-color: var(--orange);
+            border-style: dashed;
+        }
+        
+        .bed.bed--held,
+        .tile.bed--held {
+            border-color: var(--blue);
+        }
+        /* =========================================================
+   BEDLINK — AMBULANCE CREW PAGE
+   Additional styling for the ambulance hospital finder
+   Uses existing BedLink CSS variables
+   ========================================================= */
+        /* Main ambulance container */
+        
+        .amb {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 24px 16px;
+        }
+        /* Hero heading */
+        
+        .amb>h1 {
+            font-family: var(--display);
+            font-size: clamp(26px, 4vw, 38px);
+            font-weight: 700;
+            line-height: 1.15;
+            margin: 12px 0 6px;
+            color: var(--text);
+        }
+        
+        .amb>h1::before {
+            content: "〰";
+            color: #14DCC1;
+            margin-right: 16px;
+            font-size: 1.1em;
+        }
+        
+        .amb>h1+p {
+            margin: 0 0 24px;
+            color: var(--text);
+            font-size: 17px;
+        }
+        /* GPS status banner */
+        
+        .amb .gps {
+            display: flex;
+            align-items: center;
+            min-height: 58px;
+            padding: 12px 20px;
+            margin: 18px 0;
+            border-radius: 15px;
+            background: rgba(0, 190, 150, 0.13);
+            border: 1px solid rgba(0, 210, 170, 0.35);
+            color: #10DDB5;
+            font-size: 15px;
+            font-weight: 700;
+        }
+        /* Town / landmark input */
+        
+        .amb #town-box {
+            display: block;
+            margin: 16px 0 24px;
+            color: var(--text);
+            font-weight: 600;
+        }
+        
+        .amb #town-box[hidden] {
+            display: none;
+        }
+        
+        .amb #town {
+            margin-top: 8px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+        /* Form layout */
+        
+        .amb form {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+        /* Form sections */
+        
+        .amb fieldset {
+            min-width: 0;
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+        
+        .amb fieldset legend {
+            display: block;
+            width: 100%;
+            margin-bottom: 12px;
+            font-family: var(--display);
+            font-size: 19px;
+            font-weight: 700;
+            color: var(--text);
+        }
+        /* Ward and service cards */
+        
+        .amb .chips {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 12px;
+        }
+        
+        .amb .chips label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            min-height: 80px;
+            padding: 14px 10px;
+            margin: 0;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            color: var(--text);
+            font-weight: 700;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+        /* Radio and checkbox controls */
+        
+        .amb .chips input {
+            width: 19px;
+            height: 19px;
+            min-height: auto;
+            margin: 0;
+            accent-color: var(--blue);
+            flex-shrink: 0;
+        }
+        /* Selected cards */
+        
+        .amb .chips label:has(input:checked) {
+            background: rgba(124, 58, 237, 0.16);
+            border: 2px solid var(--blue);
+            color: var(--text);
+        }
+        /* Services section */
+        
+        .amb fieldset:nth-of-type(2) .chips label {
+            min-height: 64px;
+            justify-content: flex-start;
+            text-align: left;
+        }
+        
+        .amb fieldset:nth-of-type(2) .chips label:has(input:checked) {
+            background: rgba(0, 190, 150, 0.13);
+            border-color: #00CDAA;
+        }
+        /* Blood section */
+        
+        .amb .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+        }
+        
+        .amb .grid-2 label {
+            display: block;
+            color: var(--text);
+            font-weight: 600;
+        }
+        
+        .amb .grid-2 select,
+        .amb .grid-2 input {
+            margin-top: 8px;
+            border-radius: 12px;
+            background: var(--card);
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+        /* Find hospital button */
+        
+        .amb .btn--primary {
+            width: 100%;
+            min-height: 70px;
+            border: 0;
+            border-radius: 16px;
+            background: linear-gradient( 100deg, #08BFA5, #00A98E);
+            color: #FFFFFF;
+            font-family: var(--display);
+            font-size: 22px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: filter 0.2s ease;
+        }
+        
+        .amb .btn--primary:hover {
+            filter: brightness(1.08);
+        }
+        /* Information note below button */
+        
+        .amb>p:last-child {
+            margin: 18px 0 8px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 14px;
+        }
+        /* Dark theme */
+        
+        body.dark .amb {
+            color: var(--text);
+        }
+        
+        body.dark .amb .gps {
+            background: rgba(0, 190, 150, 0.13);
+            border-color: rgba(0, 210, 170, 0.35);
+        }
+        /* Responsive layout */
+        
+        @media (max-width: 650px) {
+            .amb {
+                padding: 18px 12px;
+            }
+            .amb .chips {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+            .amb .chips label {
+                min-height: 70px;
+                font-size: 14px;
+            }
+            .amb .grid-2 {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+            .amb .btn--primary {
+                min-height: 60px;
+                font-size: 19px;
+            }
+        }
+        
+        @media (max-width: 380px) {
+            .amb .chips {
+                gap: 8px;
+            }
+            .amb .chips label {
+                padding: 10px 6px;
+                font-size: 13px;
+            }
+        }
+        /* =========================================================
+   BEDLINK — AMBULANCE CREW PAGE
+   Additional styling for the ambulance hospital finder
+   Uses existing BedLink CSS variables
+   ========================================================= */
+        /* Main ambulance container */
+        
+        .amb {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 24px 16px;
+        }
+        /* Hero heading */
+        
+        .amb>h1 {
+            font-family: var(--display);
+            font-size: clamp(26px, 4vw, 38px);
+            font-weight: 700;
+            line-height: 1.15;
+            margin: 12px 0 6px;
+            color: var(--text);
+        }
+        
+        .amb>h1::before {
+            content: "〰";
+            color: #14DCC1;
+            margin-right: 16px;
+            font-size: 1.1em;
+        }
+        
+        .amb>h1+p {
+            margin: 0 0 24px;
+            color: var(--text);
+            font-size: 17px;
+        }
+        /* GPS status banner */
+        
+        .amb .gps {
+            display: flex;
+            align-items: center;
+            min-height: 58px;
+            padding: 12px 20px;
+            margin: 18px 0;
+            border-radius: 15px;
+            background: rgba(0, 190, 150, 0.13);
+            border: 1px solid rgba(0, 210, 170, 0.35);
+            color: #10DDB5;
+            font-size: 15px;
+            font-weight: 700;
+        }
+        /* Town / landmark input */
+        
+        .amb #town-box {
+            display: block;
+            margin: 16px 0 24px;
+            color: var(--text);
+            font-weight: 600;
+        }
+        
+        .amb #town-box[hidden] {
+            display: none;
+        }
+        
+        .amb #town {
+            margin-top: 8px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+        /* Form layout */
+        
+        .amb form {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+        /* Form sections */
+        
+        .amb fieldset {
+            min-width: 0;
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+        
+        .amb fieldset legend {
+            display: block;
+            width: 100%;
+            margin-bottom: 12px;
+            font-family: var(--display);
+            font-size: 19px;
+            font-weight: 700;
+            color: var(--text);
+        }
+        /* Ward and service cards */
+        
+        .amb .chips {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 12px;
+        }
+        
+        .amb .chips label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            min-height: 80px;
+            padding: 14px 10px;
+            margin: 0;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            color: var(--text);
+            font-weight: 700;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+        /* Radio and checkbox controls */
+        
+        .amb .chips input {
+            width: 19px;
+            height: 19px;
+            min-height: auto;
+            margin: 0;
+            accent-color: var(--blue);
+            flex-shrink: 0;
+        }
+        /* Selected cards */
+        
+        .amb .chips label:has(input:checked) {
+            background: rgba(124, 58, 237, 0.16);
+            border: 2px solid var(--blue);
+            color: var(--text);
+        }
+        /* Services section */
+        
+        .amb fieldset:nth-of-type(2) .chips label {
+            min-height: 64px;
+            justify-content: flex-start;
+            text-align: left;
+        }
+        
+        .amb fieldset:nth-of-type(2) .chips label:has(input:checked) {
+            background: rgba(0, 190, 150, 0.13);
+            border-color: #00CDAA;
+        }
+        /* Blood section */
+        
+        .amb .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+        }
+        
+        .amb .grid-2 label {
+            display: block;
+            color: var(--text);
+            font-weight: 600;
+        }
+        
+        .amb .grid-2 select,
+        .amb .grid-2 input {
+            margin-top: 8px;
+            border-radius: 12px;
+            background: var(--card);
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+        /* Find hospital button */
+        
+        .amb .btn--primary {
+            width: 100%;
+            min-height: 70px;
+            border: 0;
+            border-radius: 16px;
+            background: linear-gradient( 100deg, #08BFA5, #00A98E);
+            color: #FFFFFF;
+            font-family: var(--display);
+            font-size: 22px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: filter 0.2s ease;
+        }
+        
+        .amb .btn--primary:hover {
+            filter: brightness(1.08);
+        }
+        /* Information note below button */
+        
+        .amb>p:last-child {
+            margin: 18px 0 8px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 14px;
+        }
+        /* Dark theme */
+        
+        body.dark .amb {
+            color: var(--text);
+        }
+        
+        body.dark .amb .gps {
+            background: rgba(0, 190, 150, 0.13);
+            border-color: rgba(0, 210, 170, 0.35);
+        }
+        /* Responsive layout */
+        
+        @media (max-width: 650px) {
+            .amb {
+                padding: 18px 12px;
+            }
+            .amb .chips {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+            .amb .chips label {
+                min-height: 70px;
+                font-size: 14px;
+            }
+            .amb .grid-2 {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+            .amb .btn--primary {
+                min-height: 60px;
+                font-size: 19px;
+            }
+        }
+        
+        @media (max-width: 380px) {
+            .amb .chips {
+                gap: 8px;
+            }
+            .amb .chips label {
+                padding: 10px 6px;
+                font-size: 13px;
+            }
+        }
+        
+        .amb-hero-image {
+            width: 280px;
+            height: 160px;
+            object-fit: contain;
+            display: block;
+        }
+        /* Ambulance hero layout */
+        
+        .amb-hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            min-height: 160px;
+            margin-bottom: 20px;
+        }
+        
+        .amb-hero__content {
+            flex: 1;
+        }
+        
+        .amb-hero__content h1 {
+            margin-top: 0;
+        }
+        
+        .amb-hero-image {
+            width: 300px;
+            height: 180px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+        /* Mobile layout */
+        
+        @media (max-width: 650px) {
+            .amb-hero {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            .amb-hero-image {
+                width: 100%;
+                max-width: 260px;
+                height: 140px;
+            }
+        }
+        /* ==========================================
+   BEDLINK AMBULANCE HERO
+   ========================================== */
+        
+        .amb .amb-hero {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            width: 100%;
+            min-height: 170px;
+            margin: 10px 0 20px;
+        }
+        
+        .amb .amb-hero__content {
+            flex: 1;
+            min-width: 0;
+        }
+        
+        .amb .amb-hero__content h1 {
+            margin: 0 0 10px;
+            font-size: clamp(26px, 3vw, 38px);
+            line-height: 1.2;
+        }
+        
+        .amb .amb-hero__content p {
+            margin: 0;
+            font-size: 17px;
+        }
+        
+        .amb .amb-hero-image {
+            display: block;
+            width: 340px;
+            height: 180px;
+            max-width: 40%;
+            object-fit: contain;
+            object-position: center;
+            flex-shrink: 0;
+        }
+        /* Reduce the space before GPS */
+        
+        .amb .amb-hero+.gps {
+            margin-top: 12px;
+        }
+        /* Mobile responsiveness */
+        
+        @media (max-width: 650px) {
+            .amb .amb-hero {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+                min-height: auto;
+            }
+            .amb .amb-hero-image {
+                width: 100%;
+                max-width: 280px;
+                height: 140px;
+                align-self: center;
+            }
+        }
+        /* =========================================
+   AMBULANCE WARD AND SERVICE ICON CARDS
+   ========================================= */
+        
+        .amb .amb-ward-chips,
+        .amb .amb-service-chips {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 12px;
+        }
+        
+        .amb .amb-ward-chips label,
+        .amb .amb-service-chips label {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            min-height: 105px;
+            padding: 14px 8px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            color: var(--text);
+            cursor: pointer;
+            text-align: center;
+            transition: all .2s ease;
+        }
+        
+        .amb .chips label svg {
+            width: 34px;
+            height: 34px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        
+        .amb .chips label span {
+            font-size: 14px;
+            font-weight: 700;
+        }
+        /* Keep inputs accessible but visually hidden */
+        
+        .amb .chips label input {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            opacity: 0;
+            accent-color: var(--blue);
+        }
+        
+        .amb .chips label:focus-within {
+            outline: 2px solid #00D5B0;
+            outline-offset: 3px;
+        }
+        /* Selected ward: purple */
+        
+        .amb .amb-ward-chips label:has(input:checked) {
+            background: rgba(124, 58, 237, .20);
+            border: 2px solid #9333FF;
+            color: #FFFFFF;
+            box-shadow: 0 0 16px rgba(147, 51, 255, .18);
+        }
+        /* Selected service: teal */
+        
+        .amb .amb-service-chips label:has(input:checked) {
+            background: rgba(0, 205, 170, .14);
+            border: 2px solid #00CDAA;
+            color: #FFFFFF;
+        }
+        /* Icon hover */
+        
+        .amb .chips label:hover {
+            border-color: #00D5B0;
+            transform: translateY(-2px);
+        }
+        /* =========================================
+   BLOOD QUANTITY STEPPER
+   ========================================= */
+        
+        .amb .amb-units-label {
+            display: block;
+            color: var(--text);
+            font-weight: 600;
+        }
+        
+        .amb .amb-quantity {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            height: 54px;
+            margin-top: 8px;
+            padding: 4px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 13px;
+        }
+        
+        .amb .amb-quantity input {
+            flex: 1;
+            width: 50px;
+            min-width: 0;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background: transparent;
+            border: 0;
+            box-shadow: none;
+            color: var(--text);
+            font-size: 18px;
+            font-weight: 700;
+            text-align: center;
+        }
+        /* Remove browser number arrows */
+        
+        .amb .amb-quantity input::-webkit-inner-spin-button,
+        .amb .amb-quantity input::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        
+        .amb .amb-quantity input[type="number"] {
+            appearance: textfield;
+            -moz-appearance: textfield;
+        }
+        
+        .amb .amb-quantity-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            flex-shrink: 0;
+            border: 0;
+            border-radius: 11px;
+            background: #7025E8;
+            color: #FFFFFF;
+            font-size: 27px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background .2s ease;
+        }
+        
+        .amb .amb-quantity-btn:hover {
+            background: #913FFF;
+        }
+        
+        .amb .amb-quantity-btn:disabled {
+            opacity: .4;
+            cursor: not-allowed;
+        }
+        /* =========================================
+   REAL AMBULANCE IMAGE
+   ========================================= */
+        
+        .amb .amb-hero-image {
+            width: 340px;
+            height: 180px;
+            max-width: 40%;
+            object-fit: contain;
+            object-position: center;
+        }
+        /* =========================================
+   MOBILE
+   ========================================= */
+        
+        @media (max-width: 650px) {
+            .amb .amb-ward-chips,
+            .amb .amb-service-chips {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+            .amb .amb-ward-chips label,
+            .amb .amb-service-chips label {
+                min-height: 95px;
+            }
+            .amb .amb-hero-image {
+                max-width: 100%;
+                width: 260px;
+            }
+        }
