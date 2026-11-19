@@ -11,8 +11,7 @@
 
     <div class="footer-inner">
 
-        <!-- 2. BRAND AND EMERGENCY SECTION
-            -->
+        <!-- 2. BRAND AND EMERGENCY SECTION -->
 
         <div class="footer-brand-section">
 
@@ -30,13 +29,13 @@
 
             <!-- BedLink tagline -->
             <h2 class="footer-tagline">
-                Connecting people to available care, faster.
+                <?= e(t('footer.tagline')) ?>
             </h2>
 
 
             <!-- Short description -->
             <p class="footer-description">
-                Supporting care coordination across Ghana.
+                <?= e(t('footer.sub')) ?>
             </p>
 
 
@@ -77,9 +76,9 @@
                 <!-- Emergency text -->
                 <span class="footer-emergency-text">
 
-                    <strong>Call 112</strong>
+                    <strong><?= e(t('footer.call')) ?> 112</strong>
 
-                    <span>Emergency assistance</span>
+                    <span><?= e(t('footer.emergency')) ?></span>
 
                 </span>
 
@@ -88,12 +87,12 @@
         </div>
 
 
-        <!--3. EXPLORE BEDLINK SECTION-->
+        <!-- 3. EXPLORE BEDLINK SECTION -->
 
         <div class="footer-explore-section">
 
             <h2 class="footer-explore-title">
-                Explore BedLink
+                <?= e(t('footer.explore')) ?>
             </h2>
 
 
@@ -132,9 +131,9 @@
                 <!-- Find a Bed text -->
                 <span class="footer-find-bed-text">
 
-                    <strong>Find a Bed</strong>
+                    <strong><?= e(t('nav.search')) ?></strong>
 
-                    <span>Search for available care</span>
+                    <span><?= e(t('footer.find_desc')) ?></span>
 
                 </span>
 
@@ -158,7 +157,7 @@
 </footer>
 
 
-<!--  5. CLOSE THE HTML DOCUMENT -->
+<!-- 5. CLOSE THE HTML DOCUMENT -->
 
 </body>
 </html>
