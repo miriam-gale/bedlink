@@ -8,8 +8,26 @@ function e(?string $s): string {                                   // escape any
 function isApi(): bool {
     return str_contains($_SERVER['SCRIPT_NAME'] ?? '', '/api/');
 }
-function jsonInput(): array {                                      // read a JSON request body
-    return json_decode(file_get_contents('php://input'), true) ?? [];
+
+// Read a JSON request body. No body = empty array. A body that is not valid JSON = 400.
+function jsonInput(): array {
+    $raw = file_get_contents('php://input');
+    if ($raw === false || trim($raw) === '') return [];
+    $data = json_decode($raw, true);
+    if (!is_array($data)) {                                        // broken JSON, or JSON that isn't an object/array
+        fail(400, 'Invalid JSON in request body', ['code' => 'BAD_JSON']);
+    }
+    return $data;
+}
+
+// Read one value from config/settings.json (loaded once per request). Falls back to $default.
+function setting(string $key, $default = null) {
+    static $cfg = null;
+    if ($cfg === null) {
+        $raw = @file_get_contents(__DIR__ . '/../config/settings.json');
+        $cfg = $raw !== false ? (json_decode($raw, true) ?: []) : [];
+    }
+    return $cfg[$key] ?? $default;
 }
 
 // ---------- One JSON shape everywhere (golden rule 3) ----------
@@ -66,19 +84,21 @@ function withRetry(PDO $pdo, callable $work) {
     }
 }
 
-// ---------- Where each role lands after login (used by login.php) ----------
-// NOTE: the cookbook points to "Spec Part 6.2" for this table, which isn't in the PDF.
-// These paths follow the folder tree in Section 1.2 — adjust them to match the Spec.
+// ---------- Where each of the 13 roles lands after login (used by login.php) ----------
+// Folders come from the tree in Section 1.2. Run the folder check from the chat to confirm they exist.
 function homeFor(string $role): string {
     return match ($role) {
         'ward_nurse', 'doctor', 'hospital_admin' => '/bedlink/staff/',
-        'ambulance_crew', 'community_driver'     => '/bedlink/ambulance/',
+        'ambulance_crew'                         => '/bedlink/ambulance/',
+        'community_driver'                       => '/bedlink/driver/',
+        'dispatcher'                             => '/bedlink/dispatch/',
         'midwife'                                => '/bedlink/midwife/',
         'blood_bank'                             => '/bedlink/bloodbank/',
         'coordinator'                            => '/bedlink/coordinator/',
         'nbs_officer'                            => '/bedlink/nbs/',
         'analyst'                                => '/bedlink/analytics/',
         'system_admin'                           => '/bedlink/admin/',
+        'registered_user'                        => '/bedlink/account/',
         default                                  => '/bedlink/',
     };
 }
