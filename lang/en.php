@@ -59,9 +59,13 @@ return [
   'amb.ward'            => 'Ward needed',
   'amb.needs'           => 'Needs',
   'amb.blood'           => 'Blood needed',
+<<<<<<< Updated upstream
 
   'amb.bloodty'       => 'Blood type',
 
+=======
+  'amb.bloodty'       => 'Blood type',
+>>>>>>> Stashed changes
   'amb.units'           => 'Units of blood',
   'amb.town'            => 'Town or landmark',
   'amb.need_location'   => 'We need your location to find a hospital.',
@@ -91,10 +95,13 @@ return [
   'amb.confirm_hold'    => 'Confirm hold',
   'amb.blood_hold'      => 'Also holding {units} units of {type} blood',
   'amb.no_match'        => 'No match within {km} km.',
+<<<<<<< Updated upstream
 
   'amb.no_blood'        => 'No blood needed',
   'amb.no_blood_nearby' => 'No blood of that type is available nearby.',
 
+=======
+>>>>>>> Stashed changes
   'amb.no_blood'        => 'No blood of that type is available nearby.',
   'amb.widen'           => 'Widen search',
   'amb.coordinator_told'=> 'The regional coordinator has been told.',
@@ -230,9 +237,14 @@ return [
   'blood.reserve'       => 'Reserve: {n}',
   'blood.saved'         => '{type} updated to {n}',
 
+<<<<<<< Updated upstream
 
 
 ];
+=======
+];
+
+>>>>>>> Stashed changes
 
   // === P3: Hariel — login, accounts, admin ===
 
