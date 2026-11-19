@@ -17,6 +17,14 @@ return [
   'nav.language'        => 'Language',
   'nav.login'           => 'Log in',
   'nav.logout'          => 'Log out',
+  'nav.find_bed'        => 'Find a bed',
+  'theme.toggle'        => 'Toggle dark mode',
+  'nav.menu'      => 'Main menu',
+  'nav.search'    => 'Find a bed',
+  'nav.ambulance' => 'Ambulance',
+  'nav.bedboard'  => 'Bed board',
+  'nav.incoming'  => 'Incoming',
+  'nav.theme'     => 'Switch light or dark mode',
 
   'conf.live'           => 'Live',
   'conf.recent'         => 'Recent',
@@ -31,6 +39,7 @@ return [
 
   'help.button'         => 'Get help now',
   'help.hold'           => 'Hold for 3 seconds',
+
 
   // === P2: Jeff — ambulance and staff ===
 
