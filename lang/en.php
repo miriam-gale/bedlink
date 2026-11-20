@@ -236,6 +236,7 @@ return [
   'login.err.bad'     => 'Wrong email or password.',
   'login.err.locked'  => 'Too many wrong passwords. This account is locked for a while.',
   'login.err.pending' => 'Your account is waiting for approval by an administrator.',
+  'login.err.inactive' => 'This account has been disabled. Please contact an administrator.',
 
   // === P4: Yaw — matching, trips, emergency ===
 

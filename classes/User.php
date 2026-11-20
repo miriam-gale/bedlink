@@ -70,10 +70,15 @@ class User
                 ->execute([password_hash($password, PASSWORD_DEFAULT), $u['user_id']]);
         }
 
-        // Work accounts wait for an admin (is_approved = 0). Only said AFTER the password is right.
+        // Disabled by an admin (is_active = 0), or still waiting for approval (is_approved = 0).
+        // Only said AFTER the password is right, so nobody can probe which emails exist.
+        if (!(int)$u['is_active']) {
+            return ['ok' => false, 'code' => 'INACTIVE'];
+        }
         if (!(int)$u['is_approved']) {
             return ['ok' => false, 'code' => 'PENDING'];
         }
+        $pdo->prepare('UPDATE users SET last_login_at = NOW() WHERE user_id = ?')->execute([$u['user_id']]);
 
         unset($u['password_hash'], $u['otp_hash'], $u['is_locked'], $u['lock_minutes']);   // never pass secrets around
         return ['ok' => true, 'user' => $u];

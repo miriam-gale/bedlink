@@ -29,6 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error = match ($result['code']) {
             'LOCKED'  => t('login.err.locked') . ' (' . (int)$result['minutes'] . ' min)',
             'PENDING' => t('login.err.pending'),
+            'INACTIVE' => t('login.err.inactive'),
             default   => t('login.err.bad'),
         };
     }
