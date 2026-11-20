@@ -1,0 +1,106 @@
+{
+  "ok": true,
+  "data": {
+    "results": [
+      {
+        "hospital_id": 1,
+        "name": "Pantang Hospital",
+        "town": "Pantang",
+        "phone": "0300000001",
+        "latitude": 5.7080,
+        "longitude": -0.1810,
+        "ownership": "government",
+        "accepts_nhis": true,
+        "distance_km": 6.2,
+        "eta_min": 15,
+        "beds": {
+          "emergency": 2,
+          "maternity": 1,
+          "children": 0,
+          "general": 4,
+          "icu": 0
+        },
+        "soon_free": 1,
+        "services": ["theatre", "blood_bank"],
+        "updated_min_ago": 3,
+        "confidence": "live"
+      },
+      {
+        "hospital_id": 2,
+        "name": "Legon Hospital",
+        "town": "Legon",
+        "phone": "0300000002",
+        "latitude": 5.6520,
+        "longitude": -0.1860,
+        "ownership": "government",
+        "accepts_nhis": true,
+        "distance_km": 12.5,
+        "eta_min": 28,
+        "beds": {
+          "emergency": 1,
+          "maternity": 0,
+          "children": 2,
+          "general": 3,
+          "icu": 1
+        },
+        "soon_free": 0,
+        "services": ["ct_scan", "theatre", "icu"],
+        "updated_min_ago": 18,
+        "confidence": "recent"
+      },
+      {
+        "hospital_id": 3,
+        "name": "Ridge Hospital",
+        "town": "Accra",
+        "phone": "0300000003",
+        "latitude": 5.5640,
+        "longitude": -0.1990,
+        "ownership": "government",
+        "accepts_nhis": true,
+        "distance_km": 22.0,
+        "eta_min": 45,
+        "beds": {
+          "emergency": 4,
+          "maternity": 2,
+          "children": 1,
+          "general": 6,
+          "icu": 2
+        },
+        "soon_free": 3,
+        "services": [
+          "ct_scan",
+          "theatre",
+          "trauma_surgery",
+          "blood_bank",
+          "icu",
+          "obstetrics"
+        ],
+        "updated_min_ago": 75,
+        "confidence": "uncertain"
+      },
+      {
+        "hospital_id": 4,
+        "name": "Hope Mission Clinic",
+        "town": "Adenta",
+        "phone": "0300000004",
+        "latitude": 5.7050,
+        "longitude": -0.1660,
+        "ownership": "private",
+        "accepts_nhis": false,
+        "distance_km": 9.8,
+        "eta_min": 22,
+        "beds": {
+          "emergency": 0,
+          "maternity": 0,
+          "children": 0,
+          "general": 0,
+          "icu": 0
+        },
+        "soon_free": 2,
+        "services": [],
+        "updated_min_ago": 5,
+        "confidence": "live"
+      }
+    ]
+  }
+}
