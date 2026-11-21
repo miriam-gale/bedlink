@@ -33,11 +33,21 @@ return [
   'conf.uncertain'      => 'Yɛnnim pɛpɛɛpɛ · frɛ kan',                               // CHECK
 
   // --- Public search page ---
-  'pub.search.title'    => 'Hwehwɛ mpa a ɛda hɔ wɔ wo nkyɛn',                        // CHECK
-  'pub.search.nhis_only'=> 'Aban ne NHIS nko ara',                                   // CHECK
+  'pub.search.title'    => 'Hwehwɛ mpa a ɛda hɔ wɔ wo nkyɛn', 
+    'pub.search.gps_wait' => 'Yɛrehwehwɛ baabi a wowɔ…',                               // CHECK
+  'pub.search.gps_ok'   => 'Yɛrekyerɛ ayaresabea a ɛbɛn wo',                         // CHECK
+  'pub.search.gps_fail' => 'Yɛanhu baabi a wowɔ. Kyerɛw wo kuro din:',               // CHECK
+  'pub.search.gps_town' => 'Yɛrekyerɛ ayaresabea a ɛbɛn {town}',                     // CHECK
+  'pub.search.town'     => 'Wo kuro',                                                // CHECK
+  'pub.search.ward'     => 'Ayaresa bɛn na wohia?',                                  // CHECK
+  'pub.search.service'  => 'Ɛsɛ sɛ ɛwɔ hɔ',                                          // CHECK
+  'pub.search.any'      => 'Biara',                                                  // CHECK                   // CHECK
+  'pub.search.nhis'=> 'Aban ne NHIS nko ara',                                   // CHECK
   'pub.search.none'     => 'Yɛanhu mpa biara a ɛda hɔ wɔ wo nkyɛn. Hwɛ dan foforɔ anaa frɛ 112.', // CHECK
   'pub.card.free.one'   => 'Mpa {n} da hɔ',                                          // CHECK
-  'pub.card.free.other' => 'Mpa {n} da hɔ',                                          // CHECK
+  'pub.card.free.other' => 'Mpa {n} da hɔ',
+    'pub.card.dist'       => 'Kilomita {km} · bɛyɛ simma {min}',                       // CHECK
+  'pub.card.soon'       => 'Mpa {n} betumi ada hɔ nnɔnhwerew 2 mu',                  // CHECK                                      // CHECK
   'pub.card.updated'    => 'Yɛsesaa no {time} a atwam',                              // CHECK
 
   // --- Get help ---
@@ -45,15 +55,17 @@ return [
   'help.hold'           => 'Mia so kɔsi sɛkɛn 3',                                    // CHECK
 
   // --- Wards and services ---
-  'ward.emergency'      => 'Ntɛmntɛm ayaresa',                                       // CHECK
+  'ward.emergency'      => 'Ntɛmntɛm ayaresa',                                   // CHECK
   'ward.maternity'      => 'Awodan',                                                 // CHECK
   'ward.children'       => 'Mmofra dan',                                             // CHECK
   'ward.general'        => 'Ayarefoɔ dan',                                           // CHECK
   'ward.icu'            => 'ICU',
   'svc.ct_scan'         => 'CT scan',
-  'svc.trauma_surgery'  => 'Trauma surgery',
-  'svc.theatre'         => 'Theatre',
+    'svc.trauma_surgery'  => 'Apirakuru oprehyɛn',                                     // CHECK
+  'svc.theatre'         => 'Oprehyɛn dan',                                           // CHECK
   'svc.icu'             => 'ICU',
+    'svc.blood_bank'      => 'Mogya korabea',                                          // CHECK
+  'svc.obstetrics'      => 'Awoɔ ho ayaresa',                                        // CHECK
 
   // --- Footer ---
   'footer.tagline'      => 'Yɛde nkurɔfoɔ ka ayaresa a ɛwɔ hɔ ho, ntɛm.',            // CHECK
