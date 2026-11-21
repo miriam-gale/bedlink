@@ -35,10 +35,20 @@ $words = [
 
   // --- Public search page ---
   'pub.search.title'      => 'Di aba si te ɖe ŋuwò femaxee',   // EN: Find a free bed near you
-  'pub.search.nhis_only'  => 'Dziɖuɖu & NHIS ɖeɖeko',   // EN: Government & NHIS only
+    'pub.search.gps_wait'   => 'Afisi nèle didi...',   // EN: Finding where you are...
+  'pub.search.gps_ok'     => 'Kɔdzi siwo te ɖe ŋuwò ɖeɖefia',   // EN: Showing hospitals near you
+  'pub.search.gps_fail'   => 'Míete ŋu ke ɖe afi si nèle ŋu o. Ŋlɔ wò du la ɖe agbalẽ me:',   // EN: We could not find your location. Type your town:
+  'pub.search.gps_town'   => 'Wole kɔdzi siwo te ɖe {town} ŋu fia.',   // EN: Showing hospitals near {town}
+    'pub.search.town'       => 'Wò du',   // EN: Your town
+  'pub.search.ward'       => 'Beléle ka ƒomevie?',   // EN: What kind of care?
+  'pub.search.service'    => 'Ele be wòanɔ esi',   // EN: Must have
+  'pub.search.any'        => 'Nu sia nu',   // EN: Anything
+  'pub.search.nhis'  => 'Dziɖuɖu & NHIS ɖeɖeko',   // EN: Government & NHIS only
   'pub.search.none'       => 'Womekpɔ aba femaxee aɖeke le teƒe si te ɖe afima ŋu o. Te kɔdzi bubu kpɔ alo nàƒo ka na 112',   // EN: No free beds found nearby. Try another ward or call 112.
   'pub.card.free.one'     => '{n} aba femaxee',   // EN: {n} free bed
   'pub.card.free.other'   => '{n} abadzivɔwo femaxee',   // EN: {n} free beds
+    'pub.card.dist'         => '{km} km · abe {min} min',   // EN: {km} km · about {min} min
+  'pub.card.soon'         => '{n} ateŋu anye ablɔɖe le gaƒoƒo 2 me',   // EN: {n} may be free within 2 hours
   'pub.card.updated'      => 'Wowɔ asitɔtrɔ le eŋu {time} si va yi',   // EN: Updated {time} ago
 
   // --- Get help ---
@@ -50,6 +60,15 @@ $words = [
   'ward.maternity'        => 'Vidzidzi',   // EN: Maternity
   'ward.children'         => 'Ðeviwo tɔ',   // EN: Children's
   'ward.general'          => 'Gbadza',   // EN: General
+    'ward.icu'              => 'ICU',   // EN: ICU
+
+  // --- Services ---
+  'svc.ct_scan'           => 'CT scan',   // EN: CT scan
+  'svc.icu'               => 'ICU',       // EN: ICU
+  'svc.trauma_surgery'    => 'Amekoko si wowɔna na nuveviwɔame',   // EN: Trauma surgery
+  'svc.theatre'           => 'Amekokoxɔ',   // EN: Theatre (operating room)
+  'svc.blood_bank'        => 'Ʋudzraɖoƒe',   // EN: Blood bank
+  'svc.obstetrics'        => 'Vidzidziŋutinunya',   // EN: Obstetrics (pregnancy and birth care)
 
   // --- Footer ---
   'footer.tagline'        => 'Amewo ƒe kadodo kple beléle si li, kabakaba wu.',   // EN: Connecting people to available care, faster.

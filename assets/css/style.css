@@ -2782,7 +2782,10 @@ body.dark .incoming--alarm {
     border-color: var(--blue);
 }
 
-*=========================================================BEDLINK — AMBULANCE CREW PAGE Additional styling for the ambulance hospital finder Uses existing BedLink CSS variables=========================================================*/
+
+/*=========================================================BEDLINK — AMBULANCE CREW PAGE Additional styling for the ambulance hospital finder Uses existing BedLink CSS variables=========================================================*/
+
+
 /* Main ambulance container */
 
 .amb {
@@ -3636,4 +3639,35 @@ body.dark .amb .gps {
         max-width: 100%;
         width: 260px;
     }
+}
+
+
+/* ==========================================================
+   AMBULANCE LIGHT-MODE CONTRAST FIXES
+   Appended overrides only — existing styles remain unchanged.
+   ========================================================== */
+
+
+/* Light mode: use dark purple text on the selected ward card. */
+
+body:not(.dark) .amb .amb-ward-chips label:has(input:checked) {
+    color: #32105F;
+}
+
+
+/* Light mode: make the GPS status / No GPS message easier to read. */
+
+body:not(.dark) .amb .gps {
+    color: #14532D;
+}
+
+
+/* Dark mode: retain the existing light text colours and contrast. */
+
+body.dark .amb .amb-ward-chips label:has(input:checked) {
+    color: #FFFFFF;
+}
+
+body.dark .amb .gps {
+    color: #10DDB5;
 }

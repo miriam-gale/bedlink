@@ -66,9 +66,8 @@ townIn.addEventListener('change', () => {
     latEl.value = position[0];
     lngEl.value = position[1];
 
-    gpsLine.textContent = t('amb.gps_town', {
-        town: townIn.value,
-    });
+    // Replace {town} with the selected town name.
+    gpsLine.textContent = `Using ${townIn.value}`;
 });
 
 form.addEventListener('submit', (event) => {
@@ -94,14 +93,25 @@ form.addEventListener('submit', (event) => {
     window.location.href = 'results.php?' + query;
 });
 
-
 const units = document.getElementById('units-input');
 const minus = document.getElementById('units-minus');
 const plus = document.getElementById('units-plus');
+const bloodSelect = form.querySelector('[name="blood"]');
 
-if (units && minus && plus) {
+if (units && minus && plus && bloodSelect) {
 
     function updateUnits(value) {
+        // No blood type selected means zero units.
+        if (!bloodSelect.value) {
+            units.value = 0;
+            units.disabled = true;
+            minus.disabled = true;
+            plus.disabled = true;
+            return;
+        }
+
+        units.disabled = false;
+
         const amount = Number.parseInt(value, 10);
         const safeAmount = Number.isFinite(amount) ? amount : 0;
 
@@ -121,6 +131,14 @@ if (units && minus && plus) {
 
     units.addEventListener('change', function() {
         updateUnits(units.value);
+    });
+
+    bloodSelect.addEventListener('change', function() {
+        if (!bloodSelect.value) {
+            updateUnits(0);
+        } else {
+            updateUnits(units.value);
+        }
     });
 
     updateUnits(units.value);

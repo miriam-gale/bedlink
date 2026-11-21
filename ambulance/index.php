@@ -1,4 +1,3 @@
-
 <?php
 require_once __DIR__ . '/../includes/auth.php';
 // requireRole(['ambulance_crew', 'community_driver']);
@@ -15,13 +14,13 @@ require __DIR__ . '/../includes/header.php';
     <section class="amb-hero">
 
         <div class="amb-hero__content">
-            <h1>Find the best hospital</h1>
-            <p>Choose what your patient needs.</p>
+            <h1><?= t('amb.title') ?></h1>
+            <p><?= t('amb.subtitle') ?></p>
         </div>
 
         <img
             src="/bedlink/assets/img/ambulance-hero.png"
-            alt="BedLink emergency ambulance"
+            alt="<?= t('amb.hero_alt') ?>"
             class="amb-hero-image"
         >
 
@@ -33,14 +32,16 @@ require __DIR__ . '/../includes/header.php';
         <?= t('amb.gps_wait') ?>
     </p>
 
-    <label id="town-box" hidden>
-        <?= t('amb.town') ?>
+    <label for="town">
+    <?= t('amb.choose_town') ?>
+</label>
 
         <input
             id="town"
             type="text"
             list="towns"
             autocomplete="off"
+            placeholder="<?= t('amb.town') ?>"
         >
 
         <datalist id="towns"></datalist>
@@ -60,12 +61,7 @@ require __DIR__ . '/../includes/header.php';
             <legend><?= t('amb.ward') ?></legend>
 
             <label>
-                <input
-                    type="radio"
-                    name="ward"
-                    value="emergency"
-                    checked
-                >
+                <input type="radio" name="ward" value="emergency" checked>
 
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M3 20V8h3v8h15v4H3Z"/>
@@ -77,11 +73,7 @@ require __DIR__ . '/../includes/header.php';
 
 
             <label>
-                <input
-                    type="radio"
-                    name="ward"
-                    value="maternity"
-                >
+                <input type="radio" name="ward" value="maternity">
 
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                     <circle cx="12" cy="5" r="3"/>
@@ -95,11 +87,7 @@ require __DIR__ . '/../includes/header.php';
 
 
             <label>
-                <input
-                    type="radio"
-                    name="ward"
-                    value="icu"
-                >
+                <input type="radio" name="ward" value="icu">
 
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                     <rect x="2" y="3" width="20" height="18" rx="2"/>
@@ -111,11 +99,7 @@ require __DIR__ . '/../includes/header.php';
 
 
             <label>
-                <input
-                    type="radio"
-                    name="ward"
-                    value="children"
-                >
+                <input type="radio" name="ward" value="children">
 
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                     <circle cx="8" cy="7" r="3"/>
@@ -130,17 +114,13 @@ require __DIR__ . '/../includes/header.php';
         </fieldset>
 
 
-        <!-- SERVICES NEEDED -->
+        <!-- SERVICES NEEDED (ICU removed: it is only a ward) -->
         <fieldset class="chips amb-service-chips">
 
             <legend><?= t('amb.needs') ?></legend>
 
             <label>
-                <input
-                    type="checkbox"
-                    name="svc"
-                    value="ct_scan"
-                >
+                <input type="checkbox" name="svc" value="ct_scan">
 
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                     <circle cx="12" cy="12" r="9"/>
@@ -153,11 +133,7 @@ require __DIR__ . '/../includes/header.php';
 
 
             <label>
-                <input
-                    type="checkbox"
-                    name="svc"
-                    value="trauma_surgery"
-                >
+                <input type="checkbox" name="svc" value="trauma_surgery">
 
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/>
@@ -169,11 +145,7 @@ require __DIR__ . '/../includes/header.php';
 
 
             <label>
-                <input
-                    type="checkbox"
-                    name="svc"
-                    value="theatre"
-                >
+                <input type="checkbox" name="svc" value="theatre">
 
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M3 21h18M5 17h14M7 17v4M17 17v4"/>
@@ -182,22 +154,6 @@ require __DIR__ . '/../includes/header.php';
                 </svg>
 
                 <span><?= t('svc.theatre') ?></span>
-            </label>
-
-
-            <label>
-                <input
-                    type="checkbox"
-                    name="svc"
-                    value="icu"
-                >
-
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <rect x="2" y="3" width="20" height="16" rx="2"/>
-                    <path d="M4 11h4l2-4 3 8 2-4h5M8 22h8M12 19v3"/>
-                </svg>
-
-                <span><?= t('svc.icu') ?></span>
             </label>
 
         </fieldset>
@@ -212,9 +168,9 @@ require __DIR__ . '/../includes/header.php';
 
                 <!-- BLOOD TYPE -->
                 <label>
-                    <?= t('amb.bloodty') ?>
+                    <?= t('amb.blood_type') ?>
 
-                    <select name="blood">
+                    <select name="blood" id="blood-type">
 
                         <option value="">
                             <?= t('amb.no_blood') ?>
@@ -243,7 +199,7 @@ require __DIR__ . '/../includes/header.php';
                             type="button"
                             class="amb-quantity-btn"
                             id="units-minus"
-                            aria-label="Decrease blood units"
+                            aria-label="<?= t('amb.units_less') ?>"
                         >−</button>
 
 
@@ -263,7 +219,7 @@ require __DIR__ . '/../includes/header.php';
                             type="button"
                             class="amb-quantity-btn"
                             id="units-plus"
-                            aria-label="Increase blood units"
+                            aria-label="<?= t('amb.units_more') ?>"
                         >+</button>
 
                     </div>
@@ -294,3 +250,4 @@ require __DIR__ . '/../includes/header.php';
 
 <!-- EXISTING FOOTER -->
 <?php require __DIR__ . '/../includes/footer.php'; ?>
+
