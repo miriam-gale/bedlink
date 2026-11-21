@@ -43,7 +43,7 @@ $words = [
   'pub.search.town'       => 'Omaŋ lɛ',   // EN: Your town
   'pub.search.ward'       => 'Mɛɛ kwɛmɔ nɛkɛ?',   // EN: What kind of care?
   'pub.search.service'    => 'Esa akɛ ená',   // EN: Must have
-  'pub.search.any'        => ' Anything',   // EN: Anything
+  'pub.search.any'        => ' Fɛɛ eko',   // EN: Anything
 
   'pub.search.nhis'  => 'Nɔyeli & NHIS pɛ',   // EN: Government & NHIS only
 
