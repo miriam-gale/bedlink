@@ -1,0 +1,8 @@
+{
+    "ok": true,
+    "data": {
+        "radius_km": 20,
+        "coordinator_told": true,
+        "results": []
+    }
+}
