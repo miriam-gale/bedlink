@@ -3671,3 +3671,928 @@ body.dark .amb .amb-ward-chips label:has(input:checked) {
 body.dark .amb .gps {
     color: #10DDB5;
 }
+
+.page-amb-results .amb-results {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+
+/* Hero */
+
+.page-amb-results .amb-results__hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 12px;
+    padding: 10px 0 30px;
+    overflow: hidden;
+}
+
+.page-amb-results .amb-results__ambulance {
+    display: block;
+    width: 220px;
+    max-width: 100%;
+    height: 130px;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+.page-amb-results .amb-results__hero-text h1 {
+    margin: 0;
+    color: var(--text);
+}
+
+
+/* Hospital results list */
+
+.page-amb-results .amb-results__list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+}
+
+
+/* Hospital card */
+
+.page-amb-results .amb-card {
+    display: grid;
+    grid-template-columns: 200px minmax(0, 1fr) 150px;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 16px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    color: var(--text);
+}
+
+
+/* Hospital photo */
+
+.page-amb-results .amb-card__photo-wrap {
+    width: 200px;
+    height: 140px;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.page-amb-results .amb-card__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* Hospital information */
+
+.page-amb-results .amb-card__info {
+    min-width: 0;
+    color: var(--text);
+}
+
+.page-amb-results .amb-card__name {
+    margin: 0 0 12px;
+    color: var(--text);
+    overflow-wrap: anywhere;
+}
+
+.page-amb-results .amb-card__info p {
+    margin: 7px 0;
+    color: var(--text);
+}
+
+
+/* Action buttons */
+
+.page-amb-results .amb-card__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 0;
+}
+
+.page-amb-results .amb-card__actions .btn {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+
+/* Empty state */
+
+.page-amb-results .amb-results__empty {
+    text-align: center;
+    padding: 30px 20px;
+    color: var(--text);
+}
+
+
+/* Mobile layout */
+
+@media (max-width: 700px) {
+    .page-amb-results .amb-results {
+        padding: 16px;
+    }
+    .page-amb-results .amb-results__ambulance {
+        width: 170px;
+        height: 100px;
+    }
+    .page-amb-results .amb-results__hero-text h1 {
+        font-size: 1.5rem;
+    }
+    .page-amb-results .amb-card {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 16px;
+    }
+    .page-amb-results .amb-card__photo-wrap {
+        width: 100%;
+        height: 190px;
+    }
+    .page-amb-results .amb-card__actions {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .page-amb-results .amb-card__actions .btn {
+        flex: 1 1 100px;
+    }
+    .page-amb-results .amb-card__name {
+        font-size: 1.1rem;
+    }
+}
+
+.page-amb-results {
+    --amb-dash-bg: #101525;
+    --amb-dash-panel: #1a2032;
+    --amb-dash-panel2: #20263a;
+    --amb-dash-border: #343d59;
+    --amb-dash-text: #f2f4fb;
+    --amb-dash-muted: #b5c0dc;
+    --amb-dash-red: #ed1744;
+    --amb-dash-green: #20c66a;
+    background: var(--amb-dash-bg);
+    color: var(--amb-dash-text);
+    min-height: 100vh;
+    margin: 0;
+    font-family: var(--font, Inter, system-ui, sans-serif);
+}
+
+.page-amb-results * {
+    box-sizing: border-box;
+}
+
+.page-amb-results a,
+.page-amb-results button,
+.page-amb-results .amb-dash-nav__link,
+.page-amb-results .amb-card__name {
+    transition: color .18s ease, border-color .18s ease, background .18s ease;
+}
+
+.page-amb-results a:hover,
+.page-amb-results button:hover,
+.page-amb-results .amb-dash-nav__link:hover,
+.page-amb-results .amb-card__name:hover {
+    color: var(--amb-dash-green) !important;
+}
+
+.amb-dash {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 248px minmax(0, 1fr);
+}
+
+.amb-dash__sidebar {
+    background: #151a2b;
+    border-right: 1px solid #242c42;
+    padding: 28px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+
+.amb-dash__brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 8px 22px;
+    border-bottom: 1px solid #2b334b;
+    color: #fff;
+    font-weight: 800;
+    font-size: 26px;
+    text-decoration: none;
+}
+
+.amb-dash__brand img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.amb-dash__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.amb-dash-nav__link {
+    color: var(--amb-dash-muted);
+    text-decoration: none;
+    border-radius: 12px;
+    padding: 13px 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+}
+
+.amb-dash-nav__link:hover {
+    background: #222b40;
+}
+
+.amb-dash-nav__link.is-active {
+    color: #fff;
+    background: linear-gradient(110deg, #ed1744, #a71338);
+}
+
+.amb-dash__main {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.amb-dash__topbar {
+    height: 84px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 22px;
+    padding: 0 32px;
+    background: #171d2e;
+    border-bottom: 1px solid #2b334b;
+}
+
+.amb-dash__notification {
+    border: 0;
+    background: transparent;
+    color: #b5c0dc;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.amb-dash__crew {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #f2f4fb;
+    font-weight: 600;
+}
+
+.amb-dash__avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #65718e;
+    display: grid;
+    place-items: center;
+    color: #e8edff;
+    font-size: 20px;
+}
+
+.amb-dash__content {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 30px 32px 24px;
+    flex: 1;
+}
+
+.amb-dash__hero {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin: 0 0 24px;
+}
+
+.amb-dash__ambulance {
+    width: 220px;
+    height: 150px;
+    object-fit: contain;
+    flex: 0 0 auto;
+}
+
+.amb-dash__hero h1 {
+    font-size: clamp(28px, 3.4vw, 46px);
+    line-height: 1.12;
+    margin: 0 0 8px;
+    color: #f2f4fb;
+}
+
+.amb-dash__hero h1 span {
+    color: var(--amb-dash-red);
+}
+
+.amb-dash__subtitle {
+    color: var(--amb-dash-muted);
+    font-size: 18px;
+    margin: 0;
+}
+
+.amb-dash__summary {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.6fr 1fr;
+    background: linear-gradient(120deg, #1a2032, #1b2030);
+    border: 1px solid #343d59;
+    border-radius: 16px;
+    margin-bottom: 24px;
+    overflow: hidden;
+}
+
+.amb-dash__summary-item {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 22px;
+    border-right: 1px solid #414a66;
+}
+
+.amb-dash__summary-item:last-child {
+    border-right: 0;
+}
+
+.amb-dash__summary-icon {
+    color: var(--amb-dash-red);
+    font-size: 26px;
+    flex: 0 0 auto;
+}
+
+.amb-dash__summary-label {
+    color: var(--amb-dash-muted);
+    font-size: 14px;
+    display: block;
+}
+
+.amb-dash__summary-value {
+    color: #f2f4fb;
+    font-size: 16px;
+    display: block;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+.amb-results__list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.amb-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: 190px minmax(220px, 1fr) minmax(145px, 0.7fr) minmax(215px, auto);
+    align-items: center;
+    gap: 20px;
+    background: linear-gradient(115deg, #1a2032, #1b2030);
+    border: 1px solid #343d59;
+    border-radius: 16px;
+    padding: 18px;
+    color: var(--amb-dash-text);
+}
+
+.amb-card:first-child {
+    border: 1.5px solid var(--amb-dash-red);
+}
+
+.amb-card__photo-wrap {
+    width: 190px;
+    height: 130px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.amb-card__image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.amb-card__info {
+    min-width: 0;
+}
+
+.amb-card__name {
+    color: #f2f4fb;
+    font-size: 20px;
+    margin: 0 0 8px;
+}
+
+.amb-card__town,
+.amb-card__eta,
+.amb-card__beds,
+.amb-card__updated {
+    color: var(--amb-dash-muted);
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.amb-card__eta::before {
+    content: '◷  ';
+}
+
+.amb-card__beds {
+    color: var(--amb-dash-green);
+    font-weight: 600;
+}
+
+.amb-card__updated {
+    font-size: 13px;
+}
+
+.amb-card__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px;
+    align-items: center;
+}
+
+.amb-card__actions .btn {
+    min-height: 44px;
+    padding: 9px 12px;
+    border: 1px solid #596583;
+    border-radius: 11px;
+    background: #151b2b;
+    color: #f2f4fb;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.amb-card__actions .amb-card__hold {
+    background: var(--amb-dash-red);
+    border-color: var(--amb-dash-red);
+    color: #fff;
+    max-width: 155px;
+}
+
+.amb-card__actions .btn:hover {
+    background: #222c41;
+    color: var(--amb-dash-green) !important;
+    border-color: var(--amb-dash-green);
+}
+
+.amb-card__actions .amb-card__hold:hover {
+    background: #b91337;
+    color: #fff !important;
+}
+
+.amb-results__empty {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 20px;
+    border: 1px solid #343d59;
+    border-radius: 15px;
+    background: #1a2032;
+    color: var(--amb-dash-muted);
+    margin-top: 20px;
+}
+
+.amb-results__empty p {
+    margin: 0;
+}
+
+#amb-coordinator {
+    margin-left: auto;
+}
+
+#amb-widen {
+    background: transparent;
+    border: 1px solid #42aaff;
+    color: #42aaff;
+    border-radius: 10px;
+    min-height: 44px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+#amb-widen:hover {
+    color: var(--amb-dash-green) !important;
+    border-color: var(--amb-dash-green);
+}
+
+.amb-dash__footer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-top: 1px solid #293149;
+    padding: 18px 32px;
+    color: var(--amb-dash-muted);
+    font-size: 14px;
+}
+
+.amb-dash__footer strong {
+    color: #f2f4fb;
+    font-size: 18px;
+}
+
+@media(max-width:1150px) {
+    .amb-card {
+        grid-template-columns: 160px minmax(0, 1fr) minmax(170px, auto);
+    }
+    .amb-card__photo-wrap {
+        width: 160px;
+        height: 120px;
+    }
+    .amb-card__actions {
+        grid-column: 2 / -1;
+        justify-content: flex-start;
+    }
+    .amb-dash__summary {
+        grid-template-columns: 1fr 1fr;
+    }
+    .amb-dash__summary-item:nth-child(2) {
+        border-right: 0;
+    }
+    .amb-dash__summary-item:nth-child(-n+2) {
+        border-bottom: 1px solid #414a66;
+    }
+}
+
+@media(max-width:780px) {
+    .amb-dash {
+        grid-template-columns: 1fr;
+    }
+    .amb-dash__sidebar {
+        padding: 12px 16px;
+        gap: 12px;
+        border-right: 0;
+        border-bottom: 1px solid #242c42;
+    }
+    .amb-dash__brand {
+        padding: 4px 0 10px;
+        border-bottom: 0;
+        font-size: 22px;
+    }
+    .amb-dash__brand img {
+        width: 36px;
+        height: 36px;
+    }
+    .amb-dash__nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .amb-dash-nav__link {
+        padding: 10px 12px;
+    }
+    .amb-dash__topbar {
+        height: 64px;
+        padding: 0 18px;
+    }
+    .amb-dash__content {
+        padding: 20px 16px;
+    }
+    .amb-dash__hero {
+        gap: 12px;
+        align-items: center;
+    }
+    .amb-dash__ambulance {
+        width: 130px;
+        height: 105px;
+    }
+    .amb-dash__hero h1 {
+        font-size: 28px;
+    }
+    .amb-dash__subtitle {
+        font-size: 15px;
+    }
+    .amb-dash__summary {
+        grid-template-columns: 1fr 1fr;
+    }
+    .amb-dash__summary-item {
+        padding: 12px;
+        gap: 10px;
+    }
+    .amb-card {
+        grid-template-columns: 110px minmax(0, 1fr);
+        gap: 12px;
+        padding: 14px;
+    }
+    .amb-card__photo-wrap {
+        width: 110px;
+        height: 105px;
+    }
+    .amb-card__actions {
+        grid-column: 1 / -1;
+        justify-content: flex-start;
+    }
+    .amb-card__name {
+        font-size: 17px;
+    }
+    .amb-card__actions .btn {
+        flex: 1 1 95px;
+    }
+    .amb-results__empty {
+        align-items: flex-start;
+    }
+    #amb-coordinator {
+        margin-left: 0;
+    }
+    .amb-dash__footer {
+        padding: 14px 18px;
+    }
+}
+
+@media(max-width:450px) {
+    .amb-dash__hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    .amb-dash__ambulance {
+        width: 145px;
+        height: 90px;
+    }
+    .amb-dash__summary {
+        grid-template-columns: 1fr;
+    }
+    .amb-dash__summary-item {
+        border-right: 0 !important;
+        border-bottom: 1px solid #414a66;
+    }
+    .amb-dash__summary-item:last-child {
+        border-bottom: 0;
+    }
+    .amb-card {
+        grid-template-columns: 1fr;
+    }
+    .amb-card__photo-wrap {
+        width: 100%;
+        height: 170px;
+    }
+    .amb-card__actions {
+        grid-column: auto;
+    }
+}
+
+
+/* ==========================================================
+   AMBULANCE RESULTS PAGE — SEPARATE STYLESHEET
+   ========================================================== */
+
+.amb-results {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.amb-results__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.amb-results__header h1 {
+    margin: 0;
+}
+
+.amb-results__radius {
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.amb-results__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.amb-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.amb-card__body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.amb-card__name {
+    margin: 0;
+    font-size: 20px;
+}
+
+.amb-card__town {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.amb-card__metrics {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    margin: 8px 0 0;
+}
+
+.amb-card__metrics>div {
+    padding: 10px;
+    border-radius: 10px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+}
+
+.amb-card__metrics dt {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+}
+
+.amb-card__metrics dd {
+    margin: 2px 0 0;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.amb-card__actions {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 8px;
+}
+
+.amb-results__empty {
+    padding: 24px;
+    text-align: center;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+@media (max-width: 820px) {
+    .amb-results__list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 540px) {
+    .amb-card__metrics {
+        grid-template-columns: 1fr;
+    }
+    .amb-card__actions {
+        grid-template-columns: 1fr;
+    }
+}
+
+body.dark {
+    background: var(--bg);
+    color: var(--text);
+}
+
+.amb-results__hero-img--dark {
+    display: none;
+}
+
+body.dark .amb-results__hero-img--light {
+    display: none;
+}
+
+body.dark .amb-results__hero-img--dark {
+    display: block;
+}
+
+
+/* ==========================================================
+   AMBULANCE RESULTS — SINGLE TOP-LEFT IMAGE & BODY THEME
+   ========================================================== */
+
+body.dark {
+    background: var(--bg);
+    color: var(--text);
+}
+
+.amb-results__title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.amb-results__hero-img {
+    width: 76px;
+    height: 48px;
+    max-width: 76px;
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.amb-results__hero-img--light,
+.amb-results__hero-img--dark {
+    display: block;
+}
+
+
+/* ==========================================================
+   FULL-BODY LIGHT / DARK CONSISTENCY FOR AMBULANCE RESULTS
+   ========================================================== */
+
+body:not(.dark) {
+    background: var(--bg, #F4F0FF);
+    color: var(--text, #171329);
+}
+
+body.dark {
+    background: var(--bg, #111827);
+    color: var(--text, #F8FAFC);
+}
+
+body:not(.dark) .amb-results,
+body:not(.dark) .amb-card,
+body:not(.dark) .amb-results__radius,
+body:not(.dark) .amb-results__empty,
+body:not(.dark) .amb-card__metrics>div {
+    background: var(--card, #FFFFFF);
+    color: var(--text, #171329);
+    border-color: var(--border, #E5DDF2);
+}
+
+body:not(.dark) .amb-card__metrics>div {
+    background: var(--bg, #F4F0FF);
+}
+
+body:not(.dark) .amb-card__town,
+body:not(.dark) .amb-results__radius,
+body:not(.dark) .amb-card__metrics dt {
+    color: var(--muted, #625B73);
+}
+
+
+/* Remove red border on hospital result cards */
+
+.amb-card,
+.amb-card--urgent,
+.amb-card--alert,
+.amb-card.is-urgent {
+    border-color: var(--border);
+    outline: none;
+}
+
+
+/* ==========================================================
+   LIGHT MODE VISIBILITY FOR BED COUNTS & ALERT BADGES
+   ========================================================== */
+
+body:not(.dark) .amb-card__beds,
+body:not(.dark) [class*="amb-card__bed"],
+body:not(.dark) [class*="amb-result__bed"],
+body:not(.dark) [class*="bed-count"] {
+    color: var(--text, #171329);
+    background: var(--bg, #F4F0FF);
+    border: 1px solid var(--border, #D8CFE8);
+}
+
+body:not(.dark) .amb-card__alert,
+body:not(.dark) [class*="amb-card__alert"],
+body:not(.dark) [class*="amb-result__alert"],
+body:not(.dark) [class*="alert-badge"],
+body:not(.dark) [class*="coordinator"] {
+    color: #8A1538;
+    background: #FFE4EC;
+    border: 1px solid #F7B2C6;
+}
+
+.amb-card__eta::before {
+    content: none;
+    display: none;
+}

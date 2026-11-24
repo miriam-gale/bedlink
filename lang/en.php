@@ -73,7 +73,11 @@ return [
   'amb.find'           => 'Find best hospital',
   'amb.hero_alt'        => 'Bedlink emergency ambulance',
   'amb.units_less'        => 'Decrease blood units',
-  'amb.units_more'        => 'Increase blood units',
+  'amb.units_more'        => 'Increase blood units', 
+  'amb.results_title' => 'Nearby & best hospitals',
+  'amb.confirm_hold'  => 'Confirm bed hold',
+
+
 
   'ward.emergency'      => 'Emergency',
   'ward.maternity'      => 'Maternity',
@@ -86,13 +90,11 @@ return [
   'svc.icu'             => 'ICU',
 
   // --- Matches + Confirm hold (AMB-02) ---
-  'amb.results_title'   => 'Best hospitals for you',
   'amb.eta'             => '{min} min away',
   'amb.beds.one'        => '1 free bed',
   'amb.beds.other'      => '{n} free beds',
   'amb.updated'         => 'updated {min} min ago',
   'amb.hold'            => 'Hold bed & alert hospital',
-  'amb.confirm_hold'    => 'Confirm hold',
   'amb.blood_hold'      => 'Also holding {units} units of {type} blood',
   'amb.no_match'        => 'No match within {km} km.',
   'amb.no_blood'        => 'No blood needed',

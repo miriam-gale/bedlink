@@ -1,0 +1,56 @@
+{
+    "ok": true,
+    "data": {
+        "radius_km": 20,
+        "coordinator_told": false,
+        "results": [{
+                "hospital_id": 1,
+                "name": "Ridge General Hospital (Demo)",
+                "town": "Ridge, Accra",
+                "eta_min": 15,
+                "free_beds": 3,
+                "updated_min_ago": 4,
+                "phone": "+233302000001",
+                "latitude": 5.5601,
+                "longitude": -0.2057,
+                "image": "/bedlink/assets/img/hospital-ridge.png"
+            },
+            {
+                "hospital_id": 2,
+                "name": "Korle Bu Teaching Hospital (Demo)",
+                "town": "Korle Bu, Accra",
+                "eta_min": 22,
+                "free_beds": 5,
+                "updated_min_ago": 3,
+                "phone": "+233302000002",
+                "latitude": 5.5351,
+                "longitude": -0.2268,
+                "image": "/bedlink/assets/img/hospital-korle-bu.png"
+            },
+            {
+                "hospital_id": 3,
+                "name": "37 Military Hospital (Demo)",
+                "town": "Airport, Accra",
+                "eta_min": 18,
+                "free_beds": 2,
+                "updated_min_ago": 6,
+                "phone": "+233302000003",
+                "latitude": 5.5813,
+                "longitude": -0.1763,
+                "image": "/bedlink/assets/img/hospital-military.png"
+            },
+            {
+                "hospital_id": 4,
+                "name": "City Emergency Hospital (Demo)",
+                "town": "Accra",
+                "eta_min": 27,
+                "free_beds": 4,
+                "updated_min_ago": 5,
+                "phone": "+233302000004",
+                "latitude": 5.6037,
+                "longitude": -0.1870,
+                "image": "/bedlink/assets/img/hospital-ridge.png"
+            }
+        ]
+    }
+}
