@@ -3705,3 +3705,12 @@ body.dark.login-page .login-register a { color: #C4B5FD; }
 
 /* --- 403.php --- */
 body.dark.error-403-page .error-page p a { color: #C4B5FD; }
+
+/* --- ambulance/index.php --- */
+@media (max-width: 650px) {
+    .amb .amb-hero-image {
+        width: 160px;          /* smaller picture: the crew needs the form first */
+        height: 90px;
+    }
+        .amb #town { margin-bottom: 16px; }  /* space before "Ward needed" */
+}
