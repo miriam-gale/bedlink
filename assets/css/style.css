@@ -4991,3 +4991,19 @@ body.dark .nhis-badge {
     filter: none !important;
     font-weight: 800 !important;
 }
+
+/* ===== HOMEPAGE: PHONE FIXES ===== */
+@media (max-width: 700px) {
+    .home-page .home-emergency-alert { margin: 14px 0 6px; }
+    .home-page .emergency-link {
+        width: 100%;
+        justify-content: center;
+        padding: 8px 12px;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+    .home-page .homepage-hero-art { min-height: 170px; }
+    .home-page .hero-healthcare-image { max-height: 180px; }
+
+        .home-page .homepage-hero h1 { font-size: 32px; }
+}
