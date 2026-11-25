@@ -5,14 +5,14 @@
 
 // Load authentication, session and shared helper functions.
 require_once __DIR__ . '/includes/auth.php';
+require_once __DIR__ . '/includes/i18n.php';
 
 // Tell the browser that this page is a Forbidden (403) response.
 http_response_code(403);
 
 // Set the shared page title and styling class.
-$pageTitle = 'Access Denied';
+$pageTitle = t('err.403.title');
 $bodyClass = 'error-403-page';
-
 
 // Load the shared header.
 require __DIR__ . '/includes/header.php';
@@ -30,29 +30,16 @@ require __DIR__ . '/includes/header.php';
         <p class="error-code">403</p>
 
         <!-- Main heading -->
-        <h1>Access Denied</h1>
+        <h1><?= e(t('err.403.title')) ?></h1>
 
         <!-- Friendly explanation -->
-        <p>
-            You do not have permission to access this page.
-        </p>
-
-        <p>
-            If you believe this is a mistake, please contact
-            the appropriate administrator.
-        </p>
+        <p><?= e(t('err.403.text')) ?></p>
 
         <!-- Return to the homepage -->
-        <a href="/bedlink/" class="btn btn-primary">
-            Return to BedLink
-        </a>
+        <a href="/bedlink/" class="btn btn-primary"><?= e(t('err.403.home')) ?></a>
 
         <!-- Login option -->
-        <p>
-            <a href="/bedlink/login.php">
-                Log in with another account
-            </a>
-        </p>
+        <p><a href="/bedlink/login.php"><?= e(t('err.403.login')) ?></a></p>
 
     </section>
 

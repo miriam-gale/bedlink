@@ -14,13 +14,13 @@ require __DIR__ . '/../includes/header.php';
     <section class="amb-hero">
 
         <div class="amb-hero__content">
-            <h1><?= t('amb.title') ?></h1>
-            <p><?= t('amb.subtitle') ?></p>
+            <h1><?= e(t('amb.title')) ?></h1>
+            <p><?= e(t('amb.subtitle')) ?></p>
         </div>
 
         <img
             src="/bedlink/assets/img/ambulance-hero.png"
-            alt="<?= t('amb.hero_alt') ?>"
+            alt="<?= e(t('amb.hero_alt')) ?>"
             class="amb-hero-image"
         >
 
@@ -29,11 +29,11 @@ require __DIR__ . '/../includes/header.php';
 
     <!-- GPS LOCATION -->
     <p id="gps-line" class="gps" aria-live="polite">
-        <?= t('amb.gps_wait') ?>
+        <?= e(t('amb.gps_wait')) ?>
     </p>
 
     <label for="town">
-    <?= t('amb.choose_town') ?>
+        <?= e(t('amb.choose_town')) ?>
 </label>
 
         <input
@@ -41,11 +41,11 @@ require __DIR__ . '/../includes/header.php';
             type="text"
             list="towns"
             autocomplete="off"
-            placeholder="<?= t('amb.town') ?>"
+                        placeholder="<?= e(t('amb.town')) ?>"
         >
 
         <datalist id="towns"></datalist>
-    </label>
+    
 
 
     <!-- HOSPITAL SEARCH FORM -->
@@ -58,7 +58,7 @@ require __DIR__ . '/../includes/header.php';
         <!-- WARD SELECTION -->
         <fieldset class="chips amb-ward-chips">
 
-            <legend><?= t('amb.ward') ?></legend>
+            <legend><?= e(t('amb.ward')) ?></legend>
 
             <label>
                 <input type="radio" name="ward" value="emergency" checked>
@@ -68,7 +68,7 @@ require __DIR__ . '/../includes/header.php';
                     <path d="M7 12h14M7 8h14M12 4h4M14 2v4"/>
                 </svg>
 
-                <span><?= t('ward.emergency') ?></span>
+                <span><?= e(t('ward.emergency')) ?></span>
             </label>
 
 
@@ -82,7 +82,7 @@ require __DIR__ . '/../includes/header.php';
                     <path d="M17 8c2 0 3 1 3 3"/>
                 </svg>
 
-                <span><?= t('ward.maternity') ?></span>
+                <span><?= e(t('ward.maternity')) ?></span>
             </label>
 
 
@@ -94,7 +94,7 @@ require __DIR__ . '/../includes/header.php';
                     <path d="M4 12h4l2-4 3 8 2-4h5"/>
                 </svg>
 
-                <span><?= t('ward.icu') ?></span>
+                <span><?= e(t('ward.icu')) ?></span>
             </label>
 
 
@@ -108,7 +108,7 @@ require __DIR__ . '/../includes/header.php';
                     <path d="M14 14a6 6 0 0 1 8 5v2"/>
                 </svg>
 
-                <span><?= t('ward.children') ?></span>
+                <span><?= e(t('ward.children')) ?></span>
             </label>
 
         </fieldset>
@@ -117,7 +117,7 @@ require __DIR__ . '/../includes/header.php';
         <!-- SERVICES NEEDED (ICU removed: it is only a ward) -->
         <fieldset class="chips amb-service-chips">
 
-            <legend><?= t('amb.needs') ?></legend>
+            <legend><?= e(t('amb.needs')) ?></legend>
 
             <label>
                 <input type="checkbox" name="svc" value="ct_scan">
@@ -128,7 +128,7 @@ require __DIR__ . '/../includes/header.php';
                     <path d="M12 3v2M12 19v2M3 12h2M19 12h2"/>
                 </svg>
 
-                <span><?= t('svc.ct_scan') ?></span>
+                <span><?= e(t('svc.ct_scan')) ?></span>
             </label>
 
 
@@ -140,7 +140,7 @@ require __DIR__ . '/../includes/header.php';
                     <path d="M12 7v8M8 11h8"/>
                 </svg>
 
-                <span><?= t('svc.trauma_surgery') ?></span>
+                <span><?= e(t('svc.trauma_surgery')) ?></span>
             </label>
 
 
@@ -153,7 +153,7 @@ require __DIR__ . '/../includes/header.php';
                     <circle cx="12" cy="11" r="2"/>
                 </svg>
 
-                <span><?= t('svc.theatre') ?></span>
+                <span><?= e(t('svc.theatre')) ?></span>
             </label>
 
         </fieldset>
@@ -162,18 +162,18 @@ require __DIR__ . '/../includes/header.php';
         <!-- BLOOD REQUIREMENTS -->
         <fieldset>
 
-            <legend><?= t('amb.blood') ?></legend>
+            <legend><?= e(t('amb.blood')) ?></legend>
 
             <div class="grid-2">
 
                 <!-- BLOOD TYPE -->
                 <label>
-                    <?= t('amb.blood_type') ?>
+                    <?= e(t('amb.blood_type')) ?>
 
                     <select name="blood" id="blood-type">
 
                         <option value="">
-                            <?= t('amb.no_blood') ?>
+                            <?= e(t('amb.no_blood')) ?>
                         </option>
 
                         <?php foreach (BLOOD_TYPES as $bt): ?>
@@ -191,7 +191,7 @@ require __DIR__ . '/../includes/header.php';
                 <!-- BLOOD QUANTITY -->
                 <label class="amb-units-label">
 
-                    <?= t('amb.units') ?>
+                    <?= e(t('amb.units')) ?>
 
                     <div class="amb-quantity">
 
@@ -199,7 +199,7 @@ require __DIR__ . '/../includes/header.php';
                             type="button"
                             class="amb-quantity-btn"
                             id="units-minus"
-                            aria-label="<?= t('amb.units_less') ?>"
+                            aria-label="<?= e(t('amb.units_less')) ?>"
                         >−</button>
 
 
@@ -211,7 +211,7 @@ require __DIR__ . '/../includes/header.php';
                             max="10"
                             value="0"
                             inputmode="numeric"
-                            aria-label="<?= t('amb.units') ?>"
+                            aria-label="<?= e(t('amb.units')) ?>"
                         >
 
 
@@ -219,7 +219,7 @@ require __DIR__ . '/../includes/header.php';
                             type="button"
                             class="amb-quantity-btn"
                             id="units-plus"
-                            aria-label="<?= t('amb.units_more') ?>"
+                            aria-label="<?= e(t('amb.units_more')) ?>"
                         >+</button>
 
                     </div>
@@ -236,7 +236,7 @@ require __DIR__ . '/../includes/header.php';
             class="btn btn-big btn--primary"
             type="submit"
         >
-            <?= t('amb.find') ?>
+            <?= e(t('amb.find')) ?>
         </button>
 
     </form>

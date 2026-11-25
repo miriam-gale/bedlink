@@ -82,5 +82,6 @@ $words = [
   'err.403.title'         => 'Màte ŋu aʋu axa sia o',   // EN: You can't open this page
   'err.403.text'          => 'Axa sia nye zãla ƒomevi bubu tɔ. Ne èsusu be vodadae nye esia la, te ɖe wò kɔdzidzikpɔla ŋu.',   // EN: This page is for a different kind of user. If you think this is a mistake, contact your hospital admin.
   'err.403.home'          => 'Yi ɖadi aba',   // EN: Go to Find a bed
+    'err.403.login'         => 'Ge ɖe eme kple akɔnta bubu',   // EN: Log in with another account
 ];
 return array_filter($words, fn($w) => $w !== '');   // skip the ones not translated yet

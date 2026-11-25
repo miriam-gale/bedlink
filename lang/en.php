@@ -52,6 +52,7 @@ return [
   'err.403.title'       => 'You can\'t open this page',
   'err.403.text'        => 'This page is for a different kind of user. If you think this is a mistake, contact your hospital admin.',
   'err.403.home'        => 'Go to Find a bed',
+    'err.403.login'       => 'Log in with another account',
 
 
   // === P2: Jeff — ambulance and staff ===

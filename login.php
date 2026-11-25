@@ -37,30 +37,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 $pageTitle = t('login.title');
-$bodyClass = '';
+$bodyClass = 'login-page';
 require __DIR__ . '/includes/header.php';
 ?>
+
 <main class="container">
-    <h1><?= e(t('login.title')) ?></h1>
+    <div class="card login-card">
+        <h1><?= e(t('login.title')) ?></h1>
 
-    <?php if (!empty($_GET['expired'])): ?>
-        <p class="banner" role="status"><?= e(t('login.expired')) ?></p>
-    <?php endif; ?>
-    <?php if ($error !== ''): ?>
-        <p class="banner banner--error" role="alert"><?= e($error) ?></p>
-    <?php endif; ?>
+        <?php if (!empty($_GET['expired'])): ?>
+            <p class="banner banner--warn" role="status"><?= e(t('login.expired')) ?></p>
+        <?php endif; ?>
+        <?php if ($error !== ''): ?>
+            <p class="banner banner--danger" role="alert"><?= e($error) ?></p>
+        <?php endif; ?>
 
-    <form method="post" action="/bedlink/login.php" autocomplete="on">
-        <?= csrfField() ?>
-        <label for="email"><?= e(t('login.email')) ?></label>
-        <input id="email" name="email" type="email" value="<?= e($email) ?>" required autocomplete="username">
+        <form method="post" action="/bedlink/login.php" autocomplete="on" class="login-form">
+            <?= csrfField() ?>
+            <label for="email"><?= e(t('login.email')) ?></label>
+            <input id="email" name="email" type="email" value="<?= e($email) ?>" required autocomplete="username">
 
-        <label for="password"><?= e(t('login.password')) ?></label>
-        <input id="password" name="password" type="password" required autocomplete="current-password">
+            <label for="password"><?= e(t('login.password')) ?></label>
+            <input id="password" name="password" type="password" required autocomplete="current-password">
 
-        <button type="submit" class="btn btn--primary"><?= e(t('login.submit')) ?></button>
-    </form>
+            <button type="submit" class="btn btn--primary btn-big"><?= e(t('login.submit')) ?></button>
+        </form>
 
-    <p><a href="/bedlink/register.php"><?= e(t('login.register')) ?></a></p>
+        <p class="login-register"><a href="/bedlink/register.php"><?= e(t('login.register')) ?></a></p>
+    </div>
 </main>
 <?php require __DIR__ . '/includes/footer.php'; ?>
