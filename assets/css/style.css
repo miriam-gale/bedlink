@@ -3702,3 +3702,6 @@ body.dark .amb .gps {
 }
 
 body.dark.login-page .login-register a { color: #C4B5FD; }
+
+/* --- 403.php --- */
+body.dark.error-403-page .error-page p a { color: #C4B5FD; }

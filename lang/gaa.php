@@ -91,6 +91,7 @@ $words = [
   'err.403.text'          => 'Baafa nɛɛ ji kɛha mɔ kroko ni kɛtsuɔ nii. Kɛji osusuɔ akɛ enɛ ji tɔmɔ lɛ, na ohelatsamɔhe nɔkwɛlɔ lɛ.',   // EN: This page is for a different kind of user. If you think this is a mistake, contact your hospital admin.
 
   'err.403.home'          => 'Yaa Taomɔ saatso',   // EN: Go to Find a bed
+    'err.403.login'         => 'Kɛ akawnt kroko botemɔ mli',   // EN: Log in with another account
 ];
 
 return array_filter($words, fn($w) => $w !== '');   // skip the ones not translated yet
