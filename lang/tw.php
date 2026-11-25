@@ -78,7 +78,6 @@ return [
   // --- Not allowed page ---
   'err.403.title'       => 'Wontumi mmue krataafa yi',                               // CHECK
   'err.403.text'        => 'Krataafa yi yɛ ma obi foforɔ. Sɛ wosusu sɛ mfomsoɔ wɔ mu a, ka kyerɛ wo ayaresabea panin.', // CHECK
-  'err.403.home'        => 'Kɔ "Hwehwɛ mpa"',
-                                          // CHECK
-    'err.403.login'       => 'Fa akawnt foforɔ wura mu',
+    'err.403.home'        => 'Kɔ "Hwehwɛ mpa"',                                        // CHECK
+  'err.403.login'       => 'Fa akawnt foforɔ wura mu',                               // CHECK
 ];
