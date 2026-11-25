@@ -233,6 +233,17 @@ return [
 
 
   // === P3: Hariel — login, accounts, admin ===
+  'login.title'       => 'Log in',
+  'login.email'       => 'Email',
+  'login.password'    => 'Password',
+  'login.submit'      => 'Log in',
+  'login.register'    => 'Create an account',
+  'login.expired'     => 'You were logged out because you were inactive. Please log in again.',
+  'login.err.empty'   => 'Enter your email and password.',
+  'login.err.bad'     => 'Wrong email or password.',
+  'login.err.locked'  => 'Too many wrong passwords. This account is locked for a while.',
+  'login.err.pending' => 'Your account is waiting for approval by an administrator.',
+  'login.err.inactive' => 'This account has been disabled. Please contact an administrator.',
 
   // === P4: Yaw — matching, trips, emergency ===
 
