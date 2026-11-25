@@ -4466,3 +4466,528 @@ body.dark .amb .gps {
     max-width: 42px !important;
     max-height: 42px !important;
 }
+
+
+
+/* ==========================================================
+   BEDLINK HOMEPAGE — FULL DARK MODE
+   Scoped only to the homepage. Header/footer are untouched.
+   ========================================================== */
+
+body.dark.home-page {
+    background: #151122 !important;
+    color: #F5F0FF;
+}
+
+body.dark.home-page .homepage {
+    background: transparent;
+}
+
+/* Hero text */
+body.dark.home-page .homepage-hero h1 {
+    color: #F5F0FF;
+}
+
+body.dark.home-page .hero-highlight {
+    color: #C4A1FF;
+}
+
+body.dark.home-page .hero-description {
+    color: #C8BEDF;
+}
+
+/* Hero artwork background */
+body.dark.home-page .hero-art-background {
+    background: linear-gradient(
+        140deg,
+        #30204D 0%,
+        #402765 48%,
+        #241834 100%
+    );
+}
+
+/* Location status */
+body.dark.home-page .location-status {
+    background: #153D37;
+    color: #B9F4E3;
+}
+
+body.dark.home-page .location-status svg {
+    color: #34D3B0;
+}
+
+/* Search card */
+body.dark.home-page .bed-search-card {
+    background: #211931;
+    border-color: #44345F;
+    box-shadow: 0 12px 30px rgba(0,0,0,.25);
+}
+
+body.dark.home-page .care-type-field h2 {
+    color: #F5F0FF;
+}
+
+/* Care selection buttons */
+body.dark.home-page .care-chip {
+    background: #2B2140;
+    color: #EDE5FF;
+    border-color: #554173;
+}
+
+body.dark.home-page .care-chip:hover {
+    border-color: #B794F4;
+}
+
+body.dark.home-page .care-chip.active {
+    background: #0F9B88;
+    color: #FFFFFF;
+    border-color: #0F9B88;
+}
+
+/* Search labels */
+body.dark.home-page .search-control label {
+    color: #EDE5FF;
+}
+
+/* Input fields and dropdowns */
+body.dark.home-page .control-input-wrapper input,
+body.dark.home-page .control-input-wrapper select {
+    background: #181324;
+    color: #F5F0FF;
+    border-color: #554173;
+}
+
+body.dark.home-page .control-input-wrapper input::placeholder {
+    color: #A99ABD;
+}
+
+body.dark.home-page .control-input-wrapper svg {
+    color: #C4A1FF;
+}
+
+/* NHIS checkbox */
+body.dark.home-page .nhis-label-text {
+    color: #EDE5FF;
+}
+
+body.dark.home-page .nhis-checkbox-label input {
+    accent-color: #A78BFA;
+}
+
+/* Search button */
+body.dark.home-page .find-bed-button {
+    background: linear-gradient(90deg, #6D28D9, #5100A8);
+}
+
+/* Feature section */
+body.dark.home-page .homepage-features {
+    color: #F5F0FF;
+}
+
+body.dark.home-page .homepage-feature {
+    color: #F5F0FF;
+}
+
+body.dark.home-page .feature-text h3 {
+    color: #F5F0FF;
+}
+
+body.dark.home-page .feature-text p {
+    color: #C8BEDF;
+}
+
+body.dark.home-page .homepage-feature:not(:last-child)::after {
+    background: #554173;
+}
+
+body.dark.home-page .feature-purple {
+    background: #3A2855;
+    color: #D8B4FE;
+}
+
+body.dark.home-page .feature-teal {
+    background: #153D37;
+    color: #6EE7C8;
+}
+
+/* Hospital results area */
+body.dark.home-page .hospital-results-section {
+    color: #F5F0FF;
+}
+
+/* Hospital cards, if rendered */
+body.dark.home-page .hospital-card {
+    background: #211931;
+    color: #F5F0FF;
+    border-color: #44345F;
+}
+
+body.dark.home-page .hospital-card h3,
+body.dark.home-page .hospital-card h4 {
+    color: #F5F0FF;
+}
+
+body.dark.home-page .hospital-card p,
+body.dark.home-page .hospital-card-meta {
+    color: #C8BEDF;
+}
+
+/* Empty results */
+body.dark.home-page .empty-results {
+    background: #211931;
+    color: #F5F0FF;
+    border-color: #44345F;
+}
+
+/* Homepage links */
+body.dark.home-page a:not(.emergency-link):not(.find-bed-button) {
+    color: #C4A1FF;
+}
+
+/* Emergency banner stays recognisable */
+body.dark.home-page .emergency-link {
+    background: #2B1720;
+    color: #FF7070;
+    border-color: #7F333C;
+}
+
+/* ==========================================================
+   BEDLINK HOMEPAGE — COMPLETE DARK MODE FIX
+   ========================================================== */
+
+body.dark.home-page {
+    background: #111827 !important;
+    color: #F1F5F9 !important;
+}
+
+body.dark.home-page .homepage,
+body.dark.home-page main,
+body.dark.home-page .homepage-hero,
+body.dark.home-page .homepage-hero-content,
+body.dark.home-page .hospital-results-section {
+    background: transparent !important;
+    color: #F1F5F9 !important;
+}
+
+/* Main hero text */
+body.dark.home-page h1,
+body.dark.home-page h2,
+body.dark.home-page h3,
+body.dark.home-page .care-type-field h2,
+body.dark.home-page .feature-text h3 {
+    color: #F1F5F9 !important;
+}
+
+/* Hero description */
+body.dark.home-page .hero-description,
+body.dark.home-page .feature-text p {
+    color: #CBD5E1 !important;
+}
+
+/* Search panel */
+body.dark.home-page .bed-search-card {
+    background: #1E293B !important;
+    border-color: #334155 !important;
+    color: #F1F5F9 !important;
+}
+
+/* Search labels */
+body.dark.home-page .search-control label,
+body.dark.home-page .nhis-label-text {
+    color: #E2E8F0 !important;
+}
+
+/* Search input fields */
+body.dark.home-page .control-input-wrapper input,
+body.dark.home-page .control-input-wrapper select {
+    background: #0F172A !important;
+    color: #F1F5F9 !important;
+    border-color: #475569 !important;
+}
+
+/* Input placeholders */
+body.dark.home-page .control-input-wrapper input::placeholder {
+    color: #94A3B8 !important;
+}
+
+/* Care buttons */
+body.dark.home-page .care-chip {
+    background: #293548 !important;
+    color: #E2E8F0 !important;
+    border-color: #475569 !important;
+}
+
+body.dark.home-page .care-chip.active {
+    background: #0F9B88 !important;
+    color: #FFFFFF !important;
+    border-color: #0F9B88 !important;
+}
+
+/* Feature section */
+body.dark.home-page .homepage-features {
+    background: transparent !important;
+}
+
+body.dark.home-page .feature-purple {
+    background: #352454 !important;
+    color: #C4B5FD !important;
+}
+
+body.dark.home-page .feature-teal {
+    background: #123D3B !important;
+    color: #5EEAD4 !important;
+}
+
+/* Hospital cards */
+body.dark.home-page .hospital-card {
+    background: #1E293B !important;
+    color: #F1F5F9 !important;
+    border-color: #334155 !important;
+}
+
+/* Hospital card text */
+body.dark.home-page .hospital-card p,
+body.dark.home-page .hospital-card span,
+body.dark.home-page .hospital-card h3 {
+    color: #E2E8F0 !important;
+}
+
+/* Empty results */
+body.dark.home-page .empty-results {
+    background: #1E293B !important;
+    color: #F1F5F9 !important;
+}
+
+/* Emergency banner remains recognizable */
+body.dark.home-page .emergency-link {
+    background: #1F2937 !important;
+    color: #F87171 !important;
+    border-color: #7F1D1D !important;
+}
+
+/* Location indicator */
+body.dark.home-page .location-status {
+    background: #123D3B !important;
+    color: #99F6E4 !important;
+}
+
+/* Decorative hero background */
+body.dark.home-page .hero-art-background {
+    background: linear-gradient(
+        140deg,
+        #312454 0%,
+        #3D2C70 48%,
+        #252044 100%
+    ) !important;
+}
+
+/* Separators */
+body.dark.home-page .homepage-feature::after,
+body.dark.home-page .search-control::after {
+    background: #475569 !important;
+}
+
+/* Smooth transition */
+body.home-page,
+body.home-page .bed-search-card,
+body.home-page .care-chip,
+body.home-page .hospital-card {
+    transition: background-color .25s ease,
+                color .25s ease,
+                border-color .25s ease;
+}
+
+/* ==========================================================
+   HOMEPAGE HOSPITAL BED COUNT — TEXT CONTRAST FIX
+   ========================================================== */
+
+.home-page .hc-beds,
+.home-page .hospital-bed-count,
+.home-page .bed-count-number,
+.home-page .bed-count-label {
+    color: #24105B !important;
+    opacity: 1 !important;
+}
+
+/* Keep bed availability readable in dark mode */
+body.dark .home-page .hc-beds,
+body.dark .home-page .hospital-bed-count,
+body.dark .home-page .bed-count-number,
+body.dark .home-page .bed-count-label {
+    color: #FFFFFF !important;
+    opacity: 1 !important;
+}
+
+/* Dark mode availability box */
+body.dark .home-page .hc-beds,
+body.dark .home-page .hospital-bed-count {
+    background: #334155 !important;
+}
+
+
+/* Dark mode — purple glowing bed-count text */
+body.dark .home-page .bed-count-number.hc-beds {
+    color: #6B00B8 !important;
+    text-shadow:
+        0 0 5px rgba(168, 85, 247, 0.8),
+        0 0 12px rgba(147, 51, 234, 0.7),
+        0 0 22px rgba(126, 34, 206, 0.5) !important;
+}
+
+
+/* ==========================================================
+   BEDLINK — HOSPITAL CARDS FINAL VISUAL REFINEMENT
+   ========================================================== */
+
+/* Card spacing and structure */
+.home-page .hospital-card {
+    gap: 16px !important;
+    padding: 22px !important;
+    border-radius: 20px !important;
+}
+
+/* NHIS badge — readable in both themes */
+.home-page .nhis-badge {
+    background: #DDF8EF !important;
+    color: #087C66 !important;
+    opacity: 1 !important;
+    font-weight: 700 !important;
+}
+
+/* Bed availability box */
+.home-page .hospital-card-bed-info {
+    background: linear-gradient(
+        135deg,
+        #F3E8FF,
+        #E9D5FF
+    ) !important;
+    border-radius: 16px !important;
+    padding: 18px 22px !important;
+    opacity: 1 !important;
+}
+
+/* Bed count layout */
+.home-page .hospital-bed-count {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    opacity: 1 !important;
+}
+
+/* Bed count text — light mode */
+.home-page .bed-count-number,
+.home-page .bed-count-number.hc-beds {
+    color: #6B21A8 !important;
+    font-weight: 800 !important;
+    opacity: 1 !important;
+    text-shadow: 0 2px 8px rgba(107, 33, 168, 0.18) !important;
+}
+
+/* Bed count label */
+.home-page .bed-count-label {
+    color: #59466F !important;
+    opacity: 1 !important;
+}
+
+/* Hospital metadata */
+.home-page .hospital-card-meta {
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+    gap: 8px 14px !important;
+    margin-top: 2px !important;
+    font-size: 14px !important;
+}
+
+/* Metadata items */
+.home-page .hospital-card-meta span {
+    white-space: nowrap !important;
+}
+
+/* Call button */
+.home-page .hospital-call-button {
+    min-height: 50px !important;
+    border-radius: 14px !important;
+    background: #4B168C !important;
+}
+
+/* ==========================================================
+   DARK MODE
+   ========================================================== */
+
+body.dark.home-page .hospital-card {
+    background: #1E293B !important;
+    border-color: #334155 !important;
+}
+
+/* Keep the bed-count box lavender in dark mode too */
+body.dark.home-page .hospital-card-bed-info {
+    background: linear-gradient(
+        135deg,
+        #F3E8FF,
+        #E9D5FF
+    ) !important;
+}
+
+/* Purple bed-count text in dark mode too */
+body.dark.home-page .bed-count-number,
+body.dark.home-page .bed-count-number.hc-beds {
+    color: #6B21A8 !important;
+    opacity: 1 !important;
+    text-shadow:
+        0 2px 5px rgba(107, 33, 168, 0.25),
+        0 0 10px rgba(147, 51, 234, 0.18) !important;
+}
+
+/* Bed-count label in dark mode */
+body.dark.home-page .bed-count-label {
+    color: #59466F !important;
+    opacity: 1 !important;
+}
+
+/* NHIS badge in dark mode */
+body.dark.home-page .nhis-badge {
+    background: #DDF8EF !important;
+    color: #087C66 !important;
+    opacity: 1 !important;
+}
+
+/* ==========================================================
+   SMALL SCREEN ADJUSTMENTS
+   ========================================================== */
+
+@media (max-width: 768px) {
+
+    .home-page .hospital-card {
+        padding: 20px !important;
+    }
+
+    .home-page .hospital-card-meta {
+        flex-wrap: wrap !important;
+    }
+
+    .home-page .hospital-card-meta span {
+        white-space: normal !important;
+    }
+
+    .home-page .bed-count-number {
+        font-size: 30px !important;
+    }
+}
+
+/* ==================================================
+   NHIS BADGE — FORCE TEXT CONTRAST
+   ================================================== */
+
+body.dark .home-page .hospital-card .nhis-badge,
+body.dark .home-page span.nhis-badge,
+body.dark .nhis-badge {
+    color: #087C66 !important;
+    -webkit-text-fill-color: #087C66 !important;
+    background-color: #DDF8EF !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    text-shadow: none !important;
+    filter: none !important;
+    font-weight: 800 !important;
+}
