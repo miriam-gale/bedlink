@@ -63,6 +63,25 @@ return [
   'err.403.text'        => 'This page is for a different kind of user. If you think this is a mistake, contact your hospital admin.',
   'err.403.home'        => 'Go to Find a bed',
 
+    'pub.hero.eyebrow' => 'Healthcare, made easier',
+  'pub.hero.title'   => 'Find a free hospital bed',
+  'pub.hero.near'    => 'near you',
+  'pub.hero.sub'     => 'Check hospital bed availability near you and find the care you need, faster.',
+
+    'pub.search.town_ph'   => 'Enter your town',
+  'pub.feat.live.title'  => 'Real-time availability',
+  'pub.feat.live.desc'   => 'Find available beds across hospitals.',
+  'pub.feat.trust.title' => 'Trusted hospitals',
+  'pub.feat.trust.desc'  => 'Government and NHIS facilities included.',
+  'pub.feat.fast.title'  => 'Faster care',
+  'pub.feat.fast.desc'   => 'Find the right bed and get treated sooner.',
+
+  'pub.hero.img_alt'  => 'Ghanaian health worker standing beside a hospital',
+  'pub.results.title' => 'Available hospitals',
+  'pub.results.sub'   => 'Hospitals matching your search',
+  'pub.results.start' => 'Search for hospitals to see available beds.',
+  'pub.card.nhis'     => 'NHIS',
+  'pub.card.call'     => 'Call hospital',
 
   // === P2: Jeff — ambulance and staff ===
   // --- Ambulance home (AMB-01) ---

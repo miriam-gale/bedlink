@@ -2859,6 +2859,7 @@ body.error-403-page {
 
 .town-field[hidden] { display: none; }
 
+
 /* =========================================
    SECTION 8: JEFF'S COMPONENTS
    Ambulance and hospital staff screens  
@@ -4150,4 +4151,318 @@ body.dark .amb .amb-ward-chips label:has(input:checked) {
 
 body.dark .amb .gps {
     color: #10DDB5;
+}
+/* ==========================================================
+   BEDLINK HOMEPAGE — REFERENCE MATCH OVERRIDES
+   Added at the end of the shared stylesheet. Does not alter
+   the ambulance or other page sections.
+   ========================================================== */
+.home-page {
+    --home-lavender: #F4ECFF;
+    --home-purple: #4B168C;
+    --home-deep: #24105B;
+    --home-teal: #0F9B88;
+}
+.home-page body, body.home-page { background: var(--home-lavender); }
+.home-page .homepage {
+    width: 100%; max-width: 1440px; margin: 0 auto;
+    padding: 0 5.8% 0; position: relative;
+}
+.home-page .home-emergency-alert { position: relative; z-index: 3; margin: 18px 0 8px 8%; }
+.home-page .emergency-link {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 9px 16px; border: 1px solid #FFB6B6; border-radius: 999px;
+    background: rgba(255,255,255,.92); color: #D71920;
+    text-decoration: none; font-weight: 700; font-size: 16px;
+    box-shadow: 0 1px 3px rgba(40,20,70,.04);
+}
+.home-page .emergency-icon { display: inline-flex; width: 22px; height: 22px; }
+.home-page .emergency-icon svg { width: 100%; height: 100%; fill: currentColor; }
+.home-page .emergency-separator { margin: 0 4px; }
+.home-page .emergency-pulse { width: 10px; height: 10px; border-radius: 50%; background: #E11D48; box-shadow: 0 0 0 7px #FBCAD4, 0 0 0 12px #FBE1E8; margin-left: 8px; }
+.home-page .homepage-hero {
+    min-height: 280px; display: grid; grid-template-columns: 44% 56%;
+    position: relative; align-items: center; overflow: visible; margin-top: -4px;
+}
+.home-page .homepage-hero-content { position: relative; z-index: 2; padding: 8px 0 32px 8%; }
+.home-page .hero-eyebrow { display: none; }
+.home-page .homepage-hero h1 {
+    max-width: 620px; margin: 8px 0 18px; color: var(--home-deep);
+    font-family: var(--display); font-size: clamp(36px,3.3vw,52px);
+    font-weight: 800; line-height: 1.05; letter-spacing: -1.5px;
+}
+.home-page .hero-highlight { color: var(--home-purple); font-style: italic; position: relative; white-space: nowrap; }
+.home-page .hero-highlight::after { content: ''; position: absolute; height: 5px; border-radius: 99px; background: #0F9B88; left: 12%; right: 10%; bottom: -7px; transform: rotate(-2deg); }
+.home-page .hero-description { max-width: 480px; margin: 0 0 14px; color: #4E4A70; font-size: 17px; line-height: 1.45; }
+.home-page .location-status {
+    display: inline-flex; align-items: center; gap: 10px; padding: 9px 14px;
+    background: #D2F8EB; color: #064F46; border-radius: 999px;
+    font-weight: 600; font-size: 14px; min-height: 38px;
+}
+.home-page .location-status svg { width: 20px; height: 20px; flex-shrink: 0; color: #0F9B88; }
+.home-page .location-dots { display: inline-flex; gap: 4px; }
+.home-page .location-dots span { width: 12px; height: 12px; background: #16A34A; border-radius: 50%; }
+.home-page .homepage-hero-art { position: relative; min-height: 310px; align-self: stretch; z-index: 1; }
+.home-page .hero-art-background { position: absolute; inset: 10px 0 0; background: linear-gradient(140deg,#E9D8FF 0%,#D9C9FF 48%,#F1E6FF 100%); clip-path: ellipse(73% 67% at 56% 60%); }
+.home-page .hero-healthcare-image {
+    position: absolute; right: -2%; bottom: 0; width: 100%; height: 100%;
+    max-height: 340px; object-fit: contain; object-position: center bottom;
+}
+.home-page .hero-floating-decoration { position: absolute; color: var(--home-purple); font-size: 40px; font-weight: 700; z-index: 2; }
+.home-page .hero-decoration-one { left: 5%; top: 8%; transform: rotate(-22deg); }
+.home-page .hero-decoration-two { left: 9%; top: 19%; transform: rotate(18deg); }
+.home-page .bed-search-card {
+    position: relative; z-index: 5; width: 100%; margin: -3px auto 18px;
+    padding: 12px 22px 20px; background: rgba(255,255,255,.96);
+    border: 1px solid #E9DDFB; border-radius: 28px;
+    box-shadow: 0 12px 30px rgba(61,27,110,.12);
+}
+.home-page .care-type-field h2 { margin: 0 0 10px; font-size: 19px; color: #171329; }
+.home-page .care-type-options { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 12px; }
+.home-page .care-chip {
+    min-height: 46px; min-width: 140px; display: inline-flex; flex-direction: row;
+    align-items: center; justify-content: center; gap: 10px; padding: 8px 18px;
+    border-radius: 999px; border: 1px solid #E4D4FF; background: #FAF8FF;
+    color: #171329; font: 600 15px var(--font); cursor: pointer;
+    transition: .18s ease;
+}
+.home-page .care-chip svg { width: 23px; height: 23px; flex-shrink: 0; }
+.home-page .care-chip:hover { border-color: #A78BFA; transform: translateY(-1px); }
+.home-page .care-chip.active { background: #0F9B88; color: white; border-color: #0F9B88; box-shadow: none; }
+.home-page .search-controls { display: grid; grid-template-columns: 1.35fr 1.15fr 1fr 190px; align-items: end; gap: 20px; }
+.home-page .search-control { min-width: 0; position: relative; }
+.home-page .search-control:not(.button-control)::after { content: ''; position: absolute; right: -11px; bottom: 0; height: 46px; width: 1px; background: #E4D4FF; }
+.home-page .search-control label { display: block; margin: 0 0 5px; color: #171329; font-weight: 600; font-size: 14px; }
+.home-page .control-input-wrapper { display: flex; align-items: center; position: relative; }
+.home-page .control-input-wrapper svg { position: absolute; left: 14px; width: 22px; height: 22px; color: #24105B; pointer-events: none; }
+.home-page .control-input-wrapper input, .home-page .control-input-wrapper select { padding-left: 46px; width: 100%; min-height: 44px; border: 1px solid #DCCBFA; border-radius: 13px; background: #fff; color: #24105B; }
+.home-page .nhis-checkbox-label { display: flex !important; align-items: center; gap: 10px; cursor: pointer; min-height: 44px; }
+.home-page .nhis-checkbox-label input { width: 20px; height: 20px; flex-shrink: 0; accent-color: var(--home-purple); }
+.home-page .custom-checkbox { display: none; }
+.home-page .nhis-label-text { color: #171329; font-weight: 500; font-size: 13px; }
+.home-page .find-bed-button { width: 100%; min-height: 46px; display: flex; align-items: center; justify-content: center; gap: 10px; border: 0; border-radius: 16px; background: linear-gradient(90deg,#4B168C,#5B00A8); color: #fff; font: 700 15px var(--font); cursor: pointer; }
+.home-page .find-bed-button svg { width: 20px; height: 20px; }
+.home-page .homepage-features { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; padding: 0 3% 22px; }
+.home-page .homepage-feature { display: flex; align-items: center; gap: 16px; min-width: 0; position: relative; padding: 2px 12px; }
+.home-page .homepage-feature:not(:last-child)::after { content: ''; position: absolute; right: -12px; height: 60%; width: 1px; background: #DCCBFA; }
+.home-page .feature-icon { width: 58px; height: 58px; border-radius: 20px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.home-page .feature-icon svg { width: 32px; height: 32px; }
+.home-page .feature-purple { background: #E8D3FF; color: #4B168C; }
+.home-page .feature-teal { background: #D2F8EB; color: #0F766E; }
+.home-page .feature-text h3 { margin: 0 0 4px; color: #171329; font-size: 15px; }
+.home-page .feature-text p { margin: 0; color: #4E4A70; font-size: 13px; line-height: 1.4; }
+.home-page .hospital-results-section { padding: 0 3%; }
+@media(max-width:1000px) {
+    .home-page .homepage { padding: 0 3%; }
+    .home-page .homepage-hero { grid-template-columns: 50% 50%; }
+    .home-page .homepage-hero-content { padding-left: 2%; }
+    .home-page .search-controls { grid-template-columns: 1fr 1fr; gap: 14px; }
+    .home-page .search-control::after { display:none; }
+}
+@media(max-width:700px) {
+    .home-page .homepage-hero { grid-template-columns: 1fr; }
+    .home-page .homepage-hero-content { padding: 14px 3% 8px; }
+    .home-page .homepage-hero h1 { font-size: 38px; }
+    .home-page .homepage-hero-art { min-height: 220px; }
+    .home-page .hero-healthcare-image { max-height: 250px; }
+    .home-page .bed-search-card { margin-top: 12px; padding: 16px; border-radius: 22px; }
+    .home-page .care-type-options { gap: 8px; }
+    .home-page .care-chip { min-width: calc(50% - 4px); }
+    .home-page .search-controls { grid-template-columns: 1fr; }
+    .home-page .homepage-features { grid-template-columns: 1fr; gap: 12px; padding: 8px 2% 20px; }
+    .home-page .homepage-feature:not(:last-child)::after { display:none; }
+}
+
+
+/* =========================================
+   BEDLINK HOMEPAGE — HOSPITAL RESULT CARDS
+========================================= */
+
+.home-page .hospital-results-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 24px;
+}
+
+.home-page .results-heading {
+    margin-bottom: 24px;
+}
+
+.home-page .results-heading h2 {
+    color: var(--text);
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.home-page .results-heading p {
+    color: var(--muted);
+}
+
+.home-page .hospital-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    width: 100%;
+}
+
+/* Hospital card */
+.home-page .hospital-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 0;
+    padding: 26px;
+    border: 1px solid #E5D8FA;
+    border-radius: 22px;
+    background: #FFFFFF;
+    box-shadow: 0 8px 28px rgba(75, 22, 140, 0.08);
+    color: #32105F;
+}
+
+/* Card header */
+.home-page .hospital-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.home-page .hc-name {
+    margin: 0 0 8px;
+    font-size: 22px;
+    font-weight: 700;
+    color: #32105F;
+}
+
+.home-page .hc-town {
+    margin: 0;
+    font-size: 15px;
+    color: #716482;
+}
+
+/* NHIS badge */
+.home-page .nhis-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 12px;
+    border-radius: 999px;
+    background: #DDF8EF;
+    color: #087C66;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* Bed availability */
+.home-page .hospital-card-bed-info {
+    padding: 18px;
+    border-radius: 16px;
+    background: #F5F0FF;
+}
+
+.home-page .hospital-bed-count {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.home-page .bed-count-number {
+    font-size: 36px;
+    font-weight: 800;
+    color: #4B168C;
+}
+
+.home-page .bed-count-label {
+    font-size: 15px;
+    color: #59466F;
+}
+
+/* Distance and updated information */
+.home-page .hospital-card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    color: #716482;
+    font-size: 14px;
+}
+
+/* Call button */
+.home-page .hospital-card-actions {
+    margin-top: auto;
+}
+
+.home-page .hospital-call-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 18px;
+    border-radius: 12px;
+    background: #4B168C;
+    color: #FFFFFF !important;
+    text-decoration: none !important;
+    font-weight: 700;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.home-page .hospital-call-button:hover {
+    background: #32105F;
+    transform: translateY(-2px);
+}
+
+/* IMPORTANT: Keep the call icon small */
+.home-page .hospital-call-button svg {
+    display: block;
+    width: 20px !important;
+    height: 20px !important;
+    min-width: 20px;
+    max-width: 20px;
+    flex-shrink: 0;
+}
+
+/* Prevent SVGs inside hospital cards from becoming oversized */
+.home-page .hospital-card svg {
+    max-width: 24px;
+    max-height: 24px;
+}
+
+/* Empty state */
+.home-page .empty-results {
+    padding: 40px 24px;
+    text-align: center;
+    border: 1px dashed #D8C4F2;
+    border-radius: 20px;
+    color: #716482;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .home-page .hospital-list {
+        grid-template-columns: 1fr;
+    }
+
+    .home-page .hospital-card {
+        padding: 20px;
+    }
+
+    .home-page .hospital-results-section {
+        padding: 0 16px;
+    }
+}
+
+
+/* Fix oversized empty-results SVG */
+.homepage .empty-results-icon {
+    width: 60px !important;
+    height: 60px !important;
+    overflow: hidden;
+}
+
+.homepage .empty-results-icon svg {
+    width: 42px !important;
+    height: 42px !important;
+    max-width: 42px !important;
+    max-height: 42px !important;
 }

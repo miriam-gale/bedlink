@@ -79,4 +79,23 @@ return [
   'err.403.title'       => 'Wontumi mmue krataafa yi',                               // CHECK
   'err.403.text'        => 'Krataafa yi yɛ ma obi foforɔ. Sɛ wosusu sɛ mfomsoɔ wɔ mu a, ka kyerɛ wo ayaresabea panin.', // CHECK
   'err.403.home'        => 'Kɔ "Hwehwɛ mpa"',                                        // CHECK
+
+
+    'pub.hero.eyebrow'     => 'Ayaresa a ɛnyɛ den',
+  'pub.hero.title'       => 'Hwehwɛ ayaresabea mpa a ɛda hɔ',
+  'pub.hero.near'        => 'bɛn wo',
+  'pub.hero.sub'         => 'Hwɛ ayaresabea mpa a ɛda hɔ wɔ wo mpɔtam, na nya ayaresa a wohia no ntɛm.',
+  'pub.hero.img_alt'     => 'Ghana ayaresa adwumayɛni a ɔgyina ayaresabea bi ho',
+  'pub.search.town_ph'   => 'Kyerɛw wo kurow din',
+  'pub.results.title'    => 'Ayaresabea a mpa wɔ hɔ',
+  'pub.results.sub'      => 'Ayaresabea a ɛne wo hwehwɛ hyia',
+  'pub.results.start'    => 'Hwehwɛ ayaresabea na hu mpa a ɛda hɔ.',
+  'pub.card.nhis'        => 'NHIS',
+  'pub.card.call'        => 'Frɛ ayaresabea no',
+  'pub.feat.live.title'  => 'Mpa a ɛda hɔ seesei',
+  'pub.feat.live.desc'   => 'Hu mpa a ɛda hɔ wɔ ayaresabea ahorow mu.',
+  'pub.feat.trust.title' => 'Ayaresabea a wobɛtumi de wo ho ato so',
+  'pub.feat.trust.desc'  => 'Aban ne NHIS ayaresabea ka ho.',
+  'pub.feat.fast.title'  => 'Ayaresa ntɛm',
+  'pub.feat.fast.desc'   => 'Nya mpa a ɛfata na wɔnsa wo yare ntɛm.',
 ];

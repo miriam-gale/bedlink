@@ -91,6 +91,25 @@ $words = [
   'err.403.text'          => 'Baafa nɛɛ ji kɛha mɔ kroko ni kɛtsuɔ nii. Kɛji osusuɔ akɛ enɛ ji tɔmɔ lɛ, na ohelatsamɔhe nɔkwɛlɔ lɛ.',   // EN: This page is for a different kind of user. If you think this is a mistake, contact your hospital admin.
 
   'err.403.home'          => 'Yaa Taomɔ saatso',   // EN: Go to Find a bed
+
+    // --- Homepage redesign ---
+  'pub.hero.eyebrow'      => 'Helatsamɔ ni mlɛo',   // EN: Healthcare, made easier
+  'pub.hero.title'        => 'Taomɔ helatsamɔhe saatso ni aheee nɔ ko',   // EN: Find a free hospital bed
+  'pub.hero.near'         => 'ni bɛŋkɛ bo',   // EN: near you
+  'pub.hero.sub'          => 'Kwɛmɔ helatsamɔhei asaatsoi ni yɔɔ ni bɛŋkɛ bo, ni ona helatsamɔ ni ohiaa lɛ oya.',   // EN: Check hospital bed availability near you and find the care you need, faster.
+  'pub.hero.img_alt'      => 'Ghana helatsamɔ nitsulɔ ni damɔ helatsamɔhe ko masɛi',   // EN: Ghanaian health worker standing beside a hospital
+  'pub.search.town_ph'    => 'ŋmaa omaŋ lɛ',   // EN: Enter your town
+  'pub.results.title'     => 'Helatsamɔhei ni saatsoi yɔɔ',   // EN: Available hospitals
+  'pub.results.sub'       => 'Helatsamɔhei ni kɛ otaomɔ lɛ kpaa gbee',   // EN: Hospitals matching your search
+  'pub.results.start'     => 'Taomɔ helatsamɔhei koni ona saatsoi ni aheee nɔ ko.',   // EN: Search for hospitals to see available beds.
+  'pub.card.nhis'         => 'NHIS',   // EN: NHIS
+  'pub.card.call'         => 'Tswaa helatsamɔhe lɛ',   // EN: Call hospital
+  'pub.feat.live.title'   => 'Saatsoi ni yɔɔ wala',   // EN: Real-time availability
+  'pub.feat.live.desc'    => 'Na saatsoi ni aheee nɔ ko yɛ helatsamɔhei srɔtoi amli.',   // EN: Find available beds across hospitals.
+  'pub.feat.trust.title'  => 'Helatsamɔhei ni ahe yɔɔ ŋwanejee',   // EN: Trusted hospitals
+  'pub.feat.trust.desc'   => 'Nɔyeli kɛ NHIS helatsamɔhei fata he.',   // EN: Government and NHIS facilities included.
+  'pub.feat.fast.title'   => 'Helatsamɔ oya',   // EN: Faster care
+  'pub.feat.fast.desc'    => 'Na saatso ni sa, ni akwɛ bo oya.',   // EN: Find the right bed and get treated sooner.
 ];
 
 return array_filter($words, fn($w) => $w !== '');   // skip the ones not translated yet
